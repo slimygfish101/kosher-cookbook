@@ -1,0 +1,72 @@
+{
+ "P001": {
+  "upload_id": "4cfbd8b8-4b7f-443c-b604-84099c24efc8",
+  "path": "inbox/batch-02/001-1792424660313-shot.jpg",
+  "file_name": "IMG_3573.png",
+  "taken_at": null,
+  "kind": "screenshot"
+ },
+ "P002": {
+  "upload_id": "b27ff77f-b5bf-41ae-89e0-02aaae552ba6",
+  "path": "inbox/batch-02/002-1792424661720-shot.jpg",
+  "file_name": "IMG_1846.png",
+  "taken_at": null,
+  "kind": "screenshot"
+ },
+ "P003": {
+  "upload_id": "ba5e7305-fd4f-4f04-b2dd-3d13506ae019",
+  "path": "inbox/batch-02/003-1792424662724-shot.jpg",
+  "file_name": "IMG_1847.png",
+  "taken_at": null,
+  "kind": "screenshot"
+ },
+ "P004": {
+  "upload_id": "cc48f540-bbe0-401a-aad6-e7e440b0604e",
+  "path": "inbox/batch-02/004-1792424663444-shot.jpg",
+  "file_name": "IMG_3572.png",
+  "taken_at": null,
+  "kind": "screenshot"
+ },
+ "P005": {
+  "upload_id": "a622ea15-76fb-4303-a4df-19bd23b61f67",
+  "path": "inbox/batch-02/005-1792424664049-shot.jpg",
+  "file_name": "IMG_1845.png",
+  "taken_at": null,
+  "kind": "screenshot"
+ },
+ "P006": {
+  "upload_id": "99bb363a-0d20-49c0-8afa-5cffa7f38006",
+  "path": "inbox/batch-02/006-1792424664776-shot.jpg",
+  "file_name": "IMG_8013.png",
+  "taken_at": null,
+  "kind": "screenshot"
+ },
+ "P007": {
+  "upload_id": "f7e49d91-94f8-42d9-a9b0-36f0fff87eeb",
+  "path": "inbox/batch-02/007-1792424665543-shot.jpg",
+  "file_name": "IMG_8012.png",
+  "taken_at": null,
+  "kind": "screenshot"
+ },
+ "P008": {
+  "upload_id": "331fc4b6-8d47-4a16-a2b3-b3565d91275b",
+  "path": "inbox/batch-02/008-1792424666277-shot.jpg",
+  "file_name": "a03945a2-d347-4e92-abad-80db42924f96.jpeg",
+  "taken_at": null,
+  "kind": "screenshot"
+ },
+ "P009": {
+  "upload_id": "acfe7005-90fd-4583-8078-ca111ef8bca0",
+  "path": "inbox/batch-02/010-1792424668781-shot.jpg",
+  "file_name": "IMG_8011.png",
+  "taken_at": null,
+  "kind": "screenshot"
+ },
+ "P010": {
+  "upload_id": "f064e070-0d5b-407e-90fa-36b630216e8f",
+  "path": "inbox/batch-02/009-1792424667424.jpg",
+  "file_name": "IMG_7997.jpeg",
+  "taken_at": "2024-10-02T21:38:59+00:00",
+  "kind": "clipping"
+ }
+}

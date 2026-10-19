@@ -64,8 +64,9 @@ def cmd_finish(batch, d):
     ids = json.load(open(f'{d}/ids.json'))
     missing = []
     for stem in ids:
-        code, _ = curl('-o', '/dev/null', '-I', f'{U}/storage/v1/object/public/photos/{slug(batch)}/photos/{stem}.webp')
-        if code != '200':
+        # each photo must be kept somewhere: as a recipe's photo copy, or on the "needs my help" list
+        codes = [curl('-o', '/dev/null', '-I', f'{U}/storage/v1/object/public/photos/{slug(batch)}/{folder}/{stem}.webp')[0] for folder in ('photos', 'help')]
+        if '200' not in codes:
             missing.append(stem)
     if missing:
         raise SystemExit(f'not finishing: no high-res copy saved yet for {missing}')

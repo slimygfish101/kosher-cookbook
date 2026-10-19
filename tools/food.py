@@ -2,6 +2,7 @@ import json, sys, os
 from PIL import Image
 b = sys.argv[1]
 recipes = json.load(open(f'{b}/recipes.json'))
+os.makedirs(f'{b}/food', exist_ok=True)
 # crop boxes as fractions of the upright image: (left, top, right, bottom)
 # crops.json: photo stem -> [left, top, right, bottom] fractions of the upright photo showing the food picture.
 # Photos not listed are treated as a two-page spread with the picture on the right-hand page.
@@ -10,9 +11,9 @@ special = json.load(open(f'{b}/crops.json')) if os.path.exists(f'{b}/crops.json'
 rot = json.load(open(f'{b}/rotate.json')) if os.path.exists(f'{b}/rotate.json') else {}
 done = {}
 for r in recipes:
-    if not r['photos']:
-        continue  # typed out from a link or pasted text, no photo
-    src = r['photos'][-1]
+    if not r['photos'] or ('food_photo' in r and not r['food_photo']):
+        continue  # no picture of the dish
+    src = r.get('food_photo') or r['photos'][-1]
     im = Image.open(f'{b}/full/{src}.jpg')
     im = im.rotate(rot.get(src, 0), expand=True)
     W, H = im.size

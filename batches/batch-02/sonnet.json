@@ -1,0 +1,160 @@
+[
+{
+"title": "Crunchy Crackling Baby Red Potatoes",
+"subtitle": null,
+"recipe_by": null,
+"source": "betweencarpools.com",
+"description": null,
+"yield_text": null,
+"servings": null,
+"time_printed": null,
+"time_estimate": "About 1 hour (boil, cool, then 25-30 mins bake plus more turned over)",
+"ingredients": [
+{"group": null, "text": "3 lbs baby red potatoes (2 bags Trader Joe's)"},
+{"group": null, "text": "1 heaping tsp sweet paprika"},
+{"group": null, "text": "1 ½ tsp kosher salt (add more or less to your preference)"},
+{"group": null, "text": "4 tbsp dry parsley flakes"},
+{"group": null, "text": "5 garlic cloves; crushed or 5 frozen cubes"},
+{"group": null, "text": "1 heaping tbsp mayonnaise"},
+{"group": null, "text": "½ cup oil"}
+],
+"steps": [
+"Boil potatoes until fork tender in salted water.",
+"Carefully drain. Cool completely, and then cut in half.",
+"Meanwhile, preheat oven to 375°F.",
+"Line a REAL metal baking sheet with parchment paper.",
+"In a large bowl, mix together spices, garlic, mayonnaise, and oil.",
+"Add potatoes and toss to coat. Transfer potatoes, cut side down, onto a baking sheet and bake for 25-30 mins. Turn potatoes over (they should be nice and roasted by now) and continue to bake until desired doneness. You can keep the potatoes cut side down longer if you want them darker and crispier."
+],
+"clipping_notes": [],
+"kosher_type": "pareve",
+"section": "sides",
+"unsure": [
+"Title: first line 'Crunchy Crackling' is cropped at the top of P005_top; I read it as 'Crunchy Crackling' and cannot rule out a word above it (e.g. a byline/prefix).",
+"Step 6: the word 'down' in 'cut side down longer' is partly hidden by a floating button in P003_bottom; read as 'down' (also confirmed earlier in the same step).",
+"No author/byline visible in these screenshots."
+],
+"picture": null
+},
+{
+"title": "Silan Caramelized onion brisket",
+"subtitle": null,
+"recipe_by": "Faigy Reiner",
+"source": "WhatsApp status (Faigy Reiner, Recipe Developer)",
+"description": null,
+"yield_text": null,
+"servings": null,
+"time_printed": null,
+"time_estimate": "About 5½ hours plus cooling and chilling (1–1½ hours caramelizing onions, about 3½ hours baking, then cool completely and refrigerate until firm)",
+"ingredients": [
+{"group": null, "text": "3-4 lb second cut brisket or dekel"},
+{"group": null, "text": "1 tablespoon kosher salt"},
+{"group": null, "text": "1/2 tsp black pepper"},
+{"group": null, "text": "6 white onions - thinly sliced"},
+{"group": null, "text": "1/4 cup oil"},
+{"group": null, "text": "3 tsp kosher salt"},
+{"group": null, "text": "8 cloves garlic - smashed"},
+{"group": null, "text": "2 tablespoons Tuscanini tomato paste"},
+{"group": null, "text": "1/3 cup Heaven n earth date syrup"},
+{"group": null, "text": "1 cup dry red wine"},
+{"group": null, "text": "2 cups chicken broth"},
+{"group": null, "text": "2 tsp paprika"},
+{"group": null, "text": "2 tsp onion powder"},
+{"group": null, "text": "1/4 tsp black pepper"},
+{"group": null, "text": "3 bay leaves"}
+],
+"steps": [
+"Preheat the oven to 325°.Pat the brisket/ dekel dry and season generously with salt and black pepper. Heat 2 tablespoons of oil in a large oven-safe pot or Dutch oven over medium-high heat. Sear the brisket for 5 minutes per side, until deeply browned. Remove and set aside. Add the remaining oil, onions, and salt to the pot. Cook over medium-low heat, stirring every few minutes, until the onions are deeply golden and caramelized, about 1–1 ½ hours. Stir in the garlic, tomato paste, and silan. Cook for 2–3 minutes, until the tomato paste darkens. Pour in the red wine, scraping up any browned bits from the bottom of the pan. Simmer until reduced by half. Stir in the chicken broth, spices and bay leaves.  Return the brisket (and any juices) to the pot, nestling it into the sauce. Cover the pot and transfer to oven.  Bake for about 3 ½ hours, until the brisket is fork-tender. Let the brisket cool completely in the sauce. Remove the meat and refrigerate until firm, then slice against the grain. Return the sliced brisket to the sauce, reheat gently, serve warm with plenty of caramelized onions and sauce spooned over the top."
+],
+"clipping_notes": [],
+"kosher_type": "meat",
+"section": "meat_mains",
+"unsure": [
+"The ingredient list is shown as two blocks separated by a blank line (brisket + salt + pepper; then onions onward); I kept them ungrouped and in printed order. Salt and black pepper each appear twice (one for seasoning the meat, one for the sauce).",
+"The method is a single unbroken paragraph; kept as one step (a logo watermark overlaps a few words but all text was readable). 'Preheat the oven to 325°.Pat' is printed with no space after the period.",
+"No title/author line other than the 'Faigy Reiner' account header; assumed WhatsApp status because of the 'Reply' bar."
+],
+"picture": null
+},
+{
+"title": "Maple Bourbon Ribs",
+"subtitle": "How to Make Amazing Maple Bourbon Back Ribs",
+"recipe_by": "Victoria Dwek",
+"source": "betweencarpools.com",
+"description": "Back ribs are one of my favorite culinary secrets. They present beautifully and they taste like much more expensive meat. Once you know how to cook them, they’ll be one of your favorite secrets too.",
+"yield_text": "Serves: One rack feeds 3-4 meat eaters",
+"servings": null,
+"time_printed": null,
+"time_estimate": "About 3½ hours (3 hours covered bake plus prep)",
+"ingredients": [
+{"group": null, "text": "1 Rack Back Ribs"},
+{"group": "Spice Rub", "text": "2 tablespoons brown sugar"},
+{"group": "Spice Rub", "text": "2 teaspoons smoked paprika"},
+{"group": "Spice Rub", "text": "2 teaspoons garlic powder"},
+{"group": "Spice Rub", "text": "2 teaspoon onion powder"},
+{"group": "Spice Rub", "text": "¼ teaspoon crushed red pepper"},
+{"group": "Spice Rub", "text": "1 teaspoon salt"},
+{"group": "Spice Rub", "text": "¼ teaspoon black pepper"},
+{"group": "Sauce", "text": "1 cup ketchup"},
+{"group": "Sauce", "text": "½ cup maple syrup"},
+{"group": "Sauce", "text": "¼ - ½ cup bourbon"},
+{"group": "Sauce", "text": "1 tablespoon Worcestershire Sauce"},
+{"group": "Sauce", "text": "1 teaspoon liquid smoke"},
+{"group": "Sauce", "text": "½ teaspoon onion powder"},
+{"group": "Sauce", "text": "½ teaspoon garlic powder"},
+{"group": "Sauce", "text": "½ teaspoon smoked paprika"},
+{"group": "Sauce", "text": "½ teaspoon salt"},
+{"group": "Sauce", "text": "¼ teaspoon black pepper"}
+],
+"steps": [
+"Preheat oven to 350F.",
+"Combine all spice rub ingredients and rub all over the ribs.",
+"Add ribs to a Dutch oven, roasting pan, or baking pan. Add beef stock most of the way up the sides of the ribs. Cover tightly and bake for 3 hours.",
+"Meanwhile, combine all sauce ingredients."
+],
+"clipping_notes": [
+{"label": "To serve", "text": "To serve, pour sauce over ribs before rewarming or keep sauce warmish and pour over ribs before serving. Note: Whether you need the broth when rewarming depends on how long you’re going to be rewarming for. If your ribs are basically warm and you’re heating up for just 15-20 minutes, then you can get rid of the broth and pour the sauce over to rewarm. But if you’re going to be rewarming for longer, then it’s best to keep the ribs in the liquid. While it’s fine to pour the sauce over while the ribs are still in the broth, you’ll lose some of the sauce."}
+],
+"kosher_type": "meat",
+"section": "meat_mains",
+"unsure": [
+"Step 3 calls for 'beef stock' but no beef stock (or amount) appears in the ingredient list; an ad banner covers the area right after the last sauce ingredient (P007_bottom), so a line (e.g. beef stock with an amount) may be hidden. Nothing was added.",
+"Description: the page has a further line starting 'If y…' that is covered by an ad banner (P009_bottom) and could not be read; the words 'They' and 'expensive' are partly clipped by floating buttons but read as 'They' and 'expensive'.",
+"Printed unit inconsistencies kept as shown: '2 teaspoon onion powder' (singular) in the rub.",
+"Title choice: recipe-card title is 'Maple Bourbon Ribs'; the article headline 'How to Make Amazing Maple Bourbon Back Ribs' was put in subtitle. Byline 'BY VICTORIA DWEK | SEPTEMBER 12, 2021'.",
+"servings left null because printed as 'One rack feeds 3-4 meat eaters' (a range)."
+],
+"picture": "P009 top: the red-handled baking dish of maple bourbon ribs in orange sauce on white marble, about 14-64% from the top (also a small thumbnail of the same photo in P007 top, about 30-48% from the top, right side)"
+},
+{
+"title": "French Roast",
+"subtitle": null,
+"recipe_by": "chantzyw",
+"source": "Instagram (@chantzyw)",
+"description": "Butter soft!\nBeen making this meat for like forever  Even tho my family likes a meat which is more “steak - like” - this is the only roast I make. It’s super versatile and can be used on any meat - do feel free to play around. I will also include a healthier option at the end. Here goes.",
+"yield_text": null,
+"servings": null,
+"time_printed": "3-4 hours",
+"time_estimate": "About 3-4 hours, plus cooling before slicing",
+"ingredients": [
+{"group": null, "text": "2 tsp dry mustard powder- found near the spices (no you cannot substitute regular mustard from the jar)"},
+{"group": null, "text": "1/3 cup soy sauce"},
+{"group": null, "text": "2/3 cup brown sugar"},
+{"group": null, "text": "4 tsp garlic powder"}
+],
+"steps": [
+"That’s it. Mix all the ingredients together & pour over your meat.",
+"Bake covered on 350 for 3-4 hours depending on the size of the roast  Slice when cold."
+],
+"clipping_notes": [
+{"label": "Healthier version", "text": "Healthier version : substitute brown golden Monk fruit for the brown sugar. Substitute Aminos for the soy sauce. It will taste exactly the same as the original."}
+],
+"kosher_type": "meat",
+"section": "meat_mains",
+"unsure": [
+"The cut/amount of meat is not stated anywhere (the ingredient list is only the 4 marinade items); hashtags mention #brisket, the caption says 'French Roast'.",
+"Post also contains '@healthyonthebeach' and hashtags (#frenchroast #cookingwithchantzy #brisket #easymeat #easyroast #meatmadeeasy #easyfrenchroast #frenchroastsuccos) and 'Send your likes & comments' - left out of text; not a recipe line."
+],
+"picture": "P008 top: sliced French roast on a white platter, top of the screenshot, about 5-40% from the top"
+}
+]

@@ -16,6 +16,8 @@ for r in recipes:
     W, H = im.size
     page = im.crop((0, 0, int(W * 0.53), H)) if src in spreads else im
     page.thumbnail((2400, 2400)); page.save(f'{d}/page.webp', 'WEBP', quality=72)
+    if not os.path.exists(f'{b}/food/{r["id"]}.jpg'):
+        continue  # no picture of the dish: page copy only
     food = Image.open(f'{b}/food/{r["id"]}.jpg')
     f2 = food.copy(); f2.thumbnail((1200, 1200)); f2.save(f'{d}/food.webp', 'WEBP', quality=78)
     f3 = food.copy(); f3.thumbnail((480, 480)); f3.save(f'{d}/thumb.webp', 'WEBP', quality=72)

@@ -12,12 +12,13 @@ A routine checks every night at about 2:20 AM (America/New_York); you can also d
 2. `convert.py <work dir>/heic <work dir>/view` (in a scratchpad venv with pillow + pillow-heif) – JPEGs in `full/` and
    smaller viewing copies in `view/`. Look at each photo; write `rotate.json` (stem → degrees counter-clockwise to make it
    upright), `spreads.json` (stems that are two-page magazine spreads) and, where the food picture isn't on the
-   right-hand page of a spread, `crops.json` (stem → [left, top, right, bottom] fractions).
+   right-hand page of a spread, `crops.json` (stem → [left, top, right, bottom] fractions). In `recipes.json`,
+   `food_photo` names the photo that shows the dish (null = no picture of the dish).
    `ids.json` gives each item a `kind`: `clipping`, `screenshot`, `pdf` or `item` (a link or pasted text).
    - **Screenshots** (`kind: screenshot`, uploaded with "-shot" in the name) are clear digital text: hand their reading
      to a **Sonnet subagent** (Agent tool, model "sonnet"), several screenshots of one recipe together (they are in the
      order taken/picked; consecutive screenshots of one recipe scrolled down belong together). If a screenshot shows the
-     dish, crop it as the food picture (crops.json). Mark these recipes `"source": "screenshot"`.
+     dish, crop it as the food picture (crops.json). Mark these recipes `"source_type": "screenshot"` (`source` stays the site/app name for the credit line).
      Paper clippings (`kind: clipping`) keep the careful reading by the main model.
    **Not every inbox item is a photo.** Items can also be:
    - **PDF** (`P00n.pdf`): run `pdftotext -layout`. If it has real text, use that text exactly (no reading errors) and
@@ -28,7 +29,7 @@ A routine checks every night at about 2:20 AM (America/New_York); you can also d
    - **Pasted text** (`P00n.json`, `{"kind":"text","text":…}`), sometimes followed by a photo item that is its picture.
    For link and pasted-text items, hand the formatting (text → title, ingredients, steps, servings, time) to a
    **Sonnet subagent** (Agent tool, model "sonnet") to save usage; review its result before adding it. Mark these
-   recipes with `"source": "link"` or `"source": "text"` in `recipes.json`; `"photos"` lists only real photo stems.
+   recipes with `"source_type": "link"` or `"source_type": "text"` in `recipes.json`; `"photos"` lists only real photo stems.
 3. Read each recipe page; `add.py` appends the typed-out recipe to `recipes.json`. Anything unclear goes in `needs_help` or `help_items.json`.
 4. `food.py` – crop the food picture; `web.py` – make shrunk page/food/thumb WebP copies.
 5. `upload.py <batch dir> "Batch NN"` – upload pictures (page, food, thumb, and a ~3000 px copy of every original photo in

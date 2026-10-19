@@ -49,7 +49,7 @@ for r in recipes:
         'page_image': imgs.get('page'), 'food_image': imgs.get('food'), 'thumb_image': imgs.get('thumb'),
         'drive_page_ids': [i for i in map(drive_id, r['photos']) if i], 'drive_food_id': drive_id(r['photos'][-1]),
         'photo_images': [photo_copy(x) for x in r['photos']],
-        'batch': batch, 'source': r.get('source', 'photo'),
+        'batch': batch, 'source': r.get('source_type', 'photo'),
         'mixes_fish_and_meat': bool(r.get('contains_fish') and r['kosher_type'] == 'meat'),
         'needs_help': bool(r['needs_help']), 'needs_help_reason': r['needs_help'],
         'original': {**r, 'source_text': f'{by}{r["source"]}{pg}', 'time_is_estimate': not r['time_printed']},
