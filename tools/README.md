@@ -28,3 +28,9 @@ Sections (see `src/config.js`): Salads, Soups, Dairy Mains (fish too), Chicken M
 There is no Appetizers section: an appetizer goes in the section matching what it's made of (fish → Dairy Mains,
 chicken → Chicken Mains, meat → Meat Mains, salad → Salads) and also gets the "Appetizers" label.
 The database key for Salads is still `salads_appetizers` (only the name shown changed).
+
+## "Read now" button
+The app's Add clippings page has a code-protected **Read now** button. It calls `api/read-now.js` on Vercel, which checks
+the 4-digit code and fires the "Read uploaded recipe photos" routine through its API trigger. The code and the routine's
+URL/token live only in Vercel's environment variables (`READ_NOW_PIN`, `CLAUDE_ROUTINE_URL`, `CLAUDE_ROUTINE_TOKEN`).
+Run markers in `photos/inbox/_runs/` (named `<ms timestamp>-app.txt` / `-night.txt`) stop two readers working at once.

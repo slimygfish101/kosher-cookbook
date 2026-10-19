@@ -852,6 +852,15 @@ async function viewUpload() {
       <div id="upload-plan"></div>
     </div>
     <h2 class="section-head">Waiting to be read</h2>
+    ${waiting.size ? `<form class="card pad stack" id="read-now-form" style="margin-bottom:14px">
+      <div><b>Read them now</b> <span class="muted small">— instead of waiting for tonight. Only for the person with the 4-digit code; it uses Claude usage.</span></div>
+      <div class="row">
+        <input type="password" name="pin" inputmode="numeric" pattern="[0-9]{4}" maxlength="4" autocomplete="off" placeholder="Code" required style="width:110px;padding:10px 12px;border:1px solid var(--line);border-radius:10px;font-size:1.1rem;letter-spacing:.3em" value="${esc(store('cookbook-read-code') ?? '')}">
+        <button class="btn primary">⚡ Read now</button>
+        <label class="small muted"><input type="checkbox" name="remember" ${store('cookbook-read-code') ? 'checked' : ''}> Remember on this device</label>
+      </div>
+      <div id="read-now-msg" class="small"></div>
+    </form>` : ''}
     ${waiting.size ? `<div class="list">${[...waiting].map(([batch, g]) => `<div class="item"><div class="grow"><b>${esc(batch)}</b><div class="muted small">${g.count} photo${g.count === 1 ? '' : 's'} · uploaded ${new Date(g.at).toLocaleDateString()}${g.by ? ` by ${esc(g.by)}` : ''}</div></div><span class="badge" style="background:var(--warn-bg);color:var(--warn)">Waiting</span></div>`).join('')}</div>` : '<p class="empty">Nothing waiting. Everything uploaded so far has been read.</p>'}
     <p class="muted small" style="margin-top:20px">Prefer typing a recipe in yourself? <a href="#/new">Type in a recipe</a>.</p>`;
 }
@@ -1095,6 +1104,29 @@ document.addEventListener('submit', async (e) => {
   if (form.id === 'edit-form') return saveEdit(form);
   if (form.id === 'new-label') {
     if (await createLabel(form.name.value)) { toast('Label created'); route(); }
+    return;
+  }
+  if (form.id === 'read-now-form') {
+    const pin = form.pin.value.trim();
+    const msg = document.getElementById('read-now-msg');
+    const button = form.querySelector('button');
+    store('cookbook-read-code', form.remember.checked ? pin : '');
+    button.disabled = true;
+    msg.textContent = 'Checking…';
+    try {
+      const r = await fetch('/api/read-now', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ pin }) });
+      const { status } = await r.json().catch(() => ({}));
+      msg.innerHTML = {
+        started: '✅ Claude started reading. New recipes usually show up within about an hour, and anything unclear goes on the "needs my help" list.',
+        wrong_code: '❌ That code isn\'t right.',
+        nothing_waiting: 'Nothing is waiting to be read.',
+        already_running: '⏳ Claude is already reading photos right now. They\'ll show up soon.',
+        not_set_up: 'The Read now button isn\'t set up yet (the code and Claude key still need to be added in Vercel).',
+      }[status] ?? 'Something went wrong. Please try again in a few minutes.';
+    } catch {
+      msg.textContent = 'Couldn\'t reach the server. Check your internet and try again.';
+    }
+    button.disabled = false;
     return;
   }
   if (form.id === 'note-form') {
