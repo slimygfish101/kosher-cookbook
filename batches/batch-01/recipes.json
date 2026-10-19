@@ -1,0 +1,2680 @@
+[
+ {
+  "id": "flaked-teriyaki-salmon",
+  "photos": [
+   "IMG_0662"
+  ],
+  "title": "Flaked Teriyaki Salmon",
+  "subtitle": "Over Crispy Rice",
+  "recipe_by": "Yossi and Malky Levine",
+  "source": "The Ami Food Magazine (Whisk) — The Yom Tov Cookbook, September 2, 2026",
+  "magazine_category": "Fish",
+  "section": "salads_appetizers",
+  "kosher_type": "pareve",
+  "contains_fish": true,
+  "description": "This is a great light fish appetizer for Yom Tov, especially when you know there's a full meal still coming. It's got the flavor, the textures, the color...everything in one bite. Presentation is 10/10, and that's what we call a score!",
+  "yield_text": "8–10 pieces, serves 6–8 as an appetizer",
+  "servings": 7,
+  "time_printed": null,
+  "time_estimate": "About 1 hour 15 minutes, including 30 minutes chilling the rice",
+  "ingredients": [
+   {
+    "group": "Salmon",
+    "text": "4 salmon fillets"
+   },
+   {
+    "group": "Salmon",
+    "text": "¼ cup sweet teriyaki sauce"
+   },
+   {
+    "group": "Crispy Rice",
+    "text": "2½ cups raw sushi rice"
+   },
+   {
+    "group": "Crispy Rice",
+    "text": "3 cups water"
+   },
+   {
+    "group": "Crispy Rice",
+    "text": "2 tablespoons rice vinegar"
+   },
+   {
+    "group": "Crispy Rice",
+    "text": "1 teaspoon salt"
+   },
+   {
+    "group": "Crispy Rice",
+    "text": "1½ tablespoons sugar"
+   },
+   {
+    "group": "Crispy Rice",
+    "text": "2 teaspoons sesame oil"
+   },
+   {
+    "group": "Crispy Rice",
+    "text": "Oil, for searing"
+   },
+   {
+    "group": "Spicy Mayo",
+    "text": "½ cup mayonnaise"
+   },
+   {
+    "group": "Spicy Mayo",
+    "text": "2 tablespoons sriracha"
+   },
+   {
+    "group": "Spicy Mayo",
+    "text": "1 tablespoon honey"
+   },
+   {
+    "group": "Spicy Mayo",
+    "text": "1 teaspoon toasted sesame oil"
+   },
+   {
+    "group": "For Serving",
+    "text": "Avocado, sweet sauce, black and white sesame seeds, julienned carrots, julienned cucumber, sliced scallions, alfalfa sprouts, sliced red chili, kale (optional)"
+   }
+  ],
+  "steps": [
+   "Cook the sushi rice in a medium saucepan with the 3 cups water. Bring to a boil, cover, reduce heat to low, and cook about 15 minutes. Remove from heat and let stand, covered, for 10 minutes. Mix with rice vinegar, salt, sugar, and sesame oil.",
+   "Press the rice firmly into an oiled, parchment paper-lined 9x13-inch pan. Chill about 30 minutes, then cut into 3–4-inch rectangles.",
+   "Heat a large skillet over medium-high heat with a thin layer of oil. Sear the rice 3–4 minutes per side, until golden and crispy.",
+   "Preheat oven to 400°F. Place the salmon in a baking pan, brush with teriyaki sauce, and bake 12–15 minutes, until cooked through. Flake into large pieces.",
+   "Mix all the spicy mayo ingredients until smooth.",
+   "Top each crispy rice rectangle with sliced avocado, a pinch of salt, flaked teriyaki salmon, sweet sauce, julienned carrots and cucumber, and spicy mayo.",
+   "Garnish with sesame seeds, scallions, alfalfa sprouts, and sliced red chili. Serve over kale, if desired."
+  ],
+  "clipping_notes": [
+   {
+    "label": "Note",
+    "text": "The crispy rice can be prepared in advance and brought to room temperature before serving."
+   }
+  ],
+  "needs_help": null
+ },
+ {
+  "id": "seared-everything-tuna",
+  "photos": [
+   "IMG_0663"
+  ],
+  "title": "Seared Everything Tuna",
+  "subtitle": "with Charred Scallion Sauce",
+  "recipe_by": "Dina Besancon (@spiceandsoul.mi)",
+  "source": "The Ami Food Magazine (Whisk) — The Yom Tov Cookbook, September 2, 2026",
+  "page": 24,
+  "magazine_category": "Fish",
+  "section": "salads_appetizers",
+  "kosher_type": "pareve",
+  "contains_fish": true,
+  "description": "Chag is my time to play around with different fish. Tuna is one of the easiest, because it's so incredibly versatile and delicious. Barely searing it keeps the center buttery and tender, while the charred scallion sauce adds smokiness, fresh cilantro and lime bring brightness, and just enough jalapeño gives it a subtle kick.",
+  "yield_text": "Serves 10 as an appetizer",
+  "servings": 10,
+  "time_printed": null,
+  "time_estimate": "About 30 minutes",
+  "ingredients": [
+   {
+    "group": "Tuna",
+    "text": "2 lb. sushi-grade tuna steak"
+   },
+   {
+    "group": "Tuna",
+    "text": "Soy sauce"
+   },
+   {
+    "group": "Tuna",
+    "text": "Everything bagel seasoning"
+   },
+   {
+    "group": "Tuna",
+    "text": "Sesame seeds"
+   },
+   {
+    "group": "Tuna",
+    "text": "Kosher salt"
+   },
+   {
+    "group": "Tuna",
+    "text": "Olive oil, for pan searing"
+   },
+   {
+    "group": "Charred Scallion Sauce",
+    "text": "1 cup packed fresh cilantro"
+   },
+   {
+    "group": "Charred Scallion Sauce",
+    "text": "3 scallions, trimmed"
+   },
+   {
+    "group": "Charred Scallion Sauce",
+    "text": "½ sweet Spanish onion"
+   },
+   {
+    "group": "Charred Scallion Sauce",
+    "text": "1 jalapeño, seeded (for less heat)"
+   },
+   {
+    "group": "Charred Scallion Sauce",
+    "text": "6 cloves garlic"
+   },
+   {
+    "group": "Charred Scallion Sauce",
+    "text": "¼ cup mayonnaise"
+   },
+   {
+    "group": "Charred Scallion Sauce",
+    "text": "Juice of 1 lime"
+   },
+   {
+    "group": "Charred Scallion Sauce",
+    "text": "1 teaspoon kosher salt"
+   },
+   {
+    "group": "For Serving",
+    "text": "Microgreens or cilantro"
+   },
+   {
+    "group": "For Serving",
+    "text": "Thinly sliced Fresno chili"
+   },
+   {
+    "group": "For Serving",
+    "text": "Extra-virgin olive oil"
+   },
+   {
+    "group": "For Serving",
+    "text": "Coarse kosher salt"
+   }
+  ],
+  "steps": [
+   "Heat a skillet over medium-high heat and drizzle with olive oil.",
+   "Trim the scallions and cut them in half. Place them in the skillet with the onion (cut-side down) and the whole jalapeño.",
+   "Pan sear until charred, about 5 minutes, turning as needed (scallions char quickly, so keep an eye on them). Remove and let cool.",
+   "Blend the charred scallions, onion, half the jalapeño, garlic, cilantro, lime juice, kosher salt, and mayonnaise until smooth.",
+   "Cut the tuna into long, thick rectangular pieces, then slice each piece diagonally in half to create large triangular portions.",
+   "Lightly coat with soy sauce.",
+   "Combine the everything bagel seasoning and sesame seeds, then roll the tuna in the mixture, pressing gently so it adheres.",
+   "Heat a skillet over medium-high heat.",
+   "Pan sear 15–30 seconds per side, just until a thin white border forms while the center remains completely rare.",
+   "Refrigerate if serving the next day.",
+   "Before serving, slice the tuna thinly with a sharp knife. Spread a spoonful of sauce onto each plate. Arrange 4 overlapping slices of tuna over the sauce. Garnish with microgreens or cilantro and thinly sliced Fresno chili. Finish with extra-virgin olive oil and coarse kosher salt."
+  ],
+  "clipping_notes": [
+   {
+    "label": "Variations",
+    "text": "This sauce is great on its own as a dip, and with chicken too!"
+   }
+  ],
+  "needs_help": null
+ },
+ {
+  "id": "lemon-sumac-branzino",
+  "photos": [
+   "IMG_0664"
+  ],
+  "title": "Lemon Sumac Branzino",
+  "subtitle": null,
+  "recipe_by": "Dina Besancon (@spiceandsoul.mi)",
+  "source": "The Ami Food Magazine (Whisk) — The Yom Tov Cookbook, September 2, 2026",
+  "page": 26,
+  "magazine_category": "Fish",
+  "section": "dairy_mains",
+  "kosher_type": "pareve",
+  "contains_fish": true,
+  "description": "Holiday meals can get heavy fast, so I almost always begin with a light fish course. Instead of a richer fish like salmon, I reach for branzino—delicate, mild, without an overly fishy taste. It's elegant enough for Yom Tov, yet simple enough for a crowd, and it always disappears.",
+  "yield_text": "Serves 6–7 as a main; 10–12 as an appetizer",
+  "servings": 6,
+  "time_printed": null,
+  "time_estimate": "About 25 minutes",
+  "ingredients": [
+   {
+    "group": null,
+    "text": "7 branzino fillets"
+   },
+   {
+    "group": null,
+    "text": "4 frozen garlic cubes (about 1 cube for every 2 fillets), thawed slightly"
+   },
+   {
+    "group": null,
+    "text": "2 lemons (1 for juicing, 1 thinly sliced)"
+   },
+   {
+    "group": null,
+    "text": "Extra-virgin olive oil"
+   },
+   {
+    "group": null,
+    "text": "1–1½ teaspoons sumac"
+   },
+   {
+    "group": null,
+    "text": "Kosher salt"
+   },
+   {
+    "group": null,
+    "text": "Freshly cracked black pepper"
+   },
+   {
+    "group": null,
+    "text": "2 tablespoons chopped fresh or frozen cilantro"
+   },
+   {
+    "group": null,
+    "text": "1 Fresno chili, thinly sliced (optional)"
+   },
+   {
+    "group": "For Serving",
+    "text": "Fresh cilantro, dill, and parsley, finely chopped"
+   },
+   {
+    "group": "For Serving",
+    "text": "Lemon wedges"
+   }
+  ],
+  "steps": [
+   "Preheat oven to 425°F.",
+   "Arrange branzino on a parchment paper-lined baking sheet.",
+   "Drizzle with extra-virgin olive oil.",
+   "Squeeze 1 lemon over the fish, then spread the thawed garlic over each fillet.",
+   "Season with sumac, kosher salt, and freshly cracked black pepper.",
+   "Sprinkle with cilantro.",
+   "Top with Fresno slices, if using, then lemon slices.",
+   "Roast uncovered for about 12 minutes, until the fish flakes easily.",
+   "Before serving, scatter chopped cilantro, dill, and parsley over the fish. Serve with lemon wedges."
+  ],
+  "clipping_notes": [
+   {
+    "label": "Variations",
+    "text": "Turn leftover branzino into mini fish tostadas: cut circles out of tortilla wraps and toast until crisp. Top with flaked branzino, sliced avocado, quick-pickled red onion, and a drizzle of lemon crema (mayo or dairy-free yogurt whisked with lemon juice, a little zest, a pinch of salt, and a splash of water to thin it to drizzle consistency)."
+   }
+  ],
+  "needs_help": "The clipping says it works as a main (serves 6–7) or an appetizer (10–12). I put it in Dairy Mains (fish mains). Should it go in Salads & Appetizers instead?"
+ },
+ {
+  "id": "maple-glazed-salmon",
+  "photos": [
+   "IMG_0665",
+   "IMG_0666"
+  ],
+  "title": "Maple-Glazed Salmon",
+  "subtitle": "with Pomegranate Gremolata",
+  "recipe_by": "Vera Newman (@marblespoon)",
+  "source": "The Ami Food Magazine (Whisk) — The Yom Tov Cookbook, September 2, 2026",
+  "page": 28,
+  "magazine_category": "Fish",
+  "section": "dairy_mains",
+  "kosher_type": "pareve",
+  "contains_fish": true,
+  "description": "An impressive, festive-looking salmon that presents beautifully and disappears fast. The pomegranate gremolata is optional, but highly recommended to take this dish to the next level.",
+  "yield_text": "Serves 6–8 as a main; 10–12 as an appetizer",
+  "servings": 7,
+  "time_printed": null,
+  "time_estimate": "About 50 minutes",
+  "ingredients": [
+   {
+    "group": "Salmon",
+    "text": "1 (2–3 lb.) side of salmon"
+   },
+   {
+    "group": "Salmon",
+    "text": "3 frozen garlic cubes, defrosted"
+   },
+   {
+    "group": "Salmon",
+    "text": "2 tablespoons fresh lemon juice"
+   },
+   {
+    "group": "Salmon",
+    "text": "1 tablespoon olive oil"
+   },
+   {
+    "group": "Maple Glaze",
+    "text": "2 tablespoons cold water"
+   },
+   {
+    "group": "Maple Glaze",
+    "text": "1 teaspoon cornstarch"
+   },
+   {
+    "group": "Maple Glaze",
+    "text": "1 cup pure maple syrup"
+   },
+   {
+    "group": "Maple Glaze",
+    "text": "2 tablespoons low-sodium soy sauce"
+   },
+   {
+    "group": "Maple Glaze",
+    "text": "1 tablespoon honey"
+   },
+   {
+    "group": "Maple Glaze",
+    "text": "1 teaspoon fresh lemon juice"
+   },
+   {
+    "group": "Maple Glaze",
+    "text": "1 frozen ginger cube"
+   },
+   {
+    "group": "Maple Glaze",
+    "text": "½ teaspoon sea salt"
+   },
+   {
+    "group": "Pomegranate Gremolata",
+    "text": "¼ cup fresh parsley, chopped"
+   },
+   {
+    "group": "Pomegranate Gremolata",
+    "text": "2–3 teaspoons lemon zest (from 1 large lemon)"
+   },
+   {
+    "group": "Pomegranate Gremolata",
+    "text": "2 teaspoons shallot, finely minced"
+   },
+   {
+    "group": "Pomegranate Gremolata",
+    "text": "2 tablespoons pomegranate seeds"
+   },
+   {
+    "group": "Pomegranate Gremolata",
+    "text": "2–3 teaspoons extra-virgin olive oil"
+   },
+   {
+    "group": "Pomegranate Gremolata",
+    "text": "¼ teaspoon Maldon salt or flaky sea salt"
+   }
+  ],
+  "steps": [
+   "Preheat oven to 350°F. Line a baking sheet with parchment paper.",
+   "Place salmon on the prepared baking sheet. Mix the garlic cubes, lemon juice, and olive oil. Massage the mixture into the salmon.",
+   "Bake, covered, for 15 minutes.",
+   "In a small bowl, stir together the cold water and cornstarch until smooth to make a slurry. In a medium saucepan, combine all remaining glaze ingredients, then add the slurry, stirring to combine. Bring to a boil over medium heat, then lower heat and simmer, uncovered, for 10 minutes.",
+   "Remove salmon from the oven, uncover, and pour the sauce over it. Return to the oven and bake, uncovered, for 20 minutes.",
+   "In a small bowl, combine all gremolata ingredients. Refrigerate until ready to use.",
+   "Spoon sauce over the salmon and garnish with the pomegranate gremolata."
+  ],
+  "clipping_notes": [
+   {
+    "label": "Variations",
+    "text": "Double the maple glaze and use it on grilled chicken cutlets, too. Grill the cutlets 1–2 minutes per side, then spoon the glaze over the chicken and bake at 400°F until cooked through."
+   }
+  ],
+  "needs_help": "The clipping says it works as a main (serves 6–8) or an appetizer (10–12). I put it in Dairy Mains (fish mains). Should it go in Salads & Appetizers instead?"
+ },
+ {
+  "id": "hot-honey-salmon",
+  "photos": [
+   "IMG_0667"
+  ],
+  "title": "Hot Honey Salmon",
+  "subtitle": "with Arugula, Pear & Pecan Salad",
+  "recipe_by": "Malky Ludmir",
+  "source": "The Ami Food Magazine (Whisk) — The Yom Tov Cookbook, September 2, 2026",
+  "page": 30,
+  "magazine_category": "Fish",
+  "section": "dairy_mains",
+  "kosher_type": "pareve",
+  "contains_fish": true,
+  "description": "I usually only make cooked fish for Shabbos, but on the rare occasion that I bake it, there's only one flavor profile my family likes: honey mustard. This hot honey recipe includes those flavors, but the heat makes it that much better. Served with the arugula pear salad, it's a perfect dish. If you don't have hot honey handy, it's easy to make your own by simmering 1 cup of honey with 1–2 tablespoons of crushed red pepper flakes in a small saucepan over medium-low heat for about 5 minutes.",
+  "yield_text": "Serves 4 as a main",
+  "servings": 4,
+  "time_printed": null,
+  "time_estimate": "About 30 minutes",
+  "ingredients": [
+   {
+    "group": "Salmon",
+    "text": "4 center-cut salmon fillets (6 oz./170 g each)"
+   },
+   {
+    "group": "Salmon",
+    "text": "Kosher salt and freshly ground black pepper"
+   },
+   {
+    "group": "Salmon",
+    "text": "1 teaspoon smoked paprika"
+   },
+   {
+    "group": "Salmon",
+    "text": "1 teaspoon garlic powder"
+   },
+   {
+    "group": "Salmon",
+    "text": "2 tablespoons Dijon mustard"
+   },
+   {
+    "group": "Salmon",
+    "text": "3 tablespoons hot honey"
+   },
+   {
+    "group": "Salmon",
+    "text": "1 tablespoon soy sauce"
+   },
+   {
+    "group": "Salmon",
+    "text": "1 tablespoon fresh lemon juice"
+   },
+   {
+    "group": "Salmon",
+    "text": "1 teaspoon lemon zest"
+   },
+   {
+    "group": "Salmon",
+    "text": "1 tablespoon olive oil"
+   },
+   {
+    "group": "Salmon",
+    "text": "1 small garlic clove, finely grated"
+   },
+   {
+    "group": "Arugula, Pear & Pecan Salad",
+    "text": "Baby arugula"
+   },
+   {
+    "group": "Arugula, Pear & Pecan Salad",
+    "text": "1 ripe pear, thinly sliced"
+   },
+   {
+    "group": "Arugula, Pear & Pecan Salad",
+    "text": "Candied or toasted pecans"
+   },
+   {
+    "group": "Arugula, Pear & Pecan Salad",
+    "text": "Pomegranate seeds (optional)"
+   },
+   {
+    "group": "Arugula, Pear & Pecan Salad",
+    "text": "3 tablespoons olive oil"
+   },
+   {
+    "group": "Arugula, Pear & Pecan Salad",
+    "text": "1 tablespoon lemon juice"
+   },
+   {
+    "group": "Arugula, Pear & Pecan Salad",
+    "text": "1 teaspoon Dijon mustard"
+   },
+   {
+    "group": "Arugula, Pear & Pecan Salad",
+    "text": "1 teaspoon honey"
+   },
+   {
+    "group": "Arugula, Pear & Pecan Salad",
+    "text": "Salt and pepper"
+   }
+  ],
+  "steps": [
+   "Heat the oven to 425°F (220°C).",
+   "Pat the salmon dry and season with salt, pepper, smoked paprika, and garlic powder.",
+   "Whisk together the Dijon, hot honey, soy sauce, lemon juice, zest, olive oil, and grated garlic.",
+   "Place the salmon on a parchment paper-lined baking tray and generously brush with the glaze.",
+   "Roast 10–12 minutes, depending on thickness.",
+   "Switch the oven to broil for 1–2 minutes until the glaze bubbles and caramelizes into a glossy finish (watch carefully to prevent burning). This broiled finish creates the signature lacquered look.",
+   "Let rest for 2 minutes, then spoon any pan juices over the salmon and finish with flaky salt, herbs, and a final drizzle of hot honey.",
+   "Prepare the salad: toss the arugula, sliced pear, candied or toasted pecans, and pomegranate seeds (if using). Whisk together the olive oil, lemon juice, Dijon, honey, salt, and pepper. Dress the salad just before serving."
+  ],
+  "clipping_notes": [],
+  "needs_help": null
+ },
+ {
+  "id": "roasted-mint-eggplant",
+  "photos": [
+   "IMG_0668"
+  ],
+  "title": "Roasted Mint Eggplant",
+  "subtitle": "with Cashew Cream",
+  "recipe_by": "Esther Seryl Klein",
+  "source": "The Ami Food Magazine (Whisk) — The Yom Tov Cookbook, September 2, 2026",
+  "page": 32,
+  "magazine_category": "Salads & Sides",
+  "section": "salads_appetizers",
+  "kosher_type": "pareve",
+  "contains_fish": false,
+  "description": "I like trying cuisines of all different cultures. This dish was inspired by Kashke Bademjan, a Persian dish traditionally made with cultured yogurt whey. I adapted this pareve version as a Shabbos dip. For eggplant fans like me, this is a whole new way to enjoy it!",
+  "yield_text": "Serves 8–10 as a side",
+  "servings": 9,
+  "time_printed": null,
+  "time_estimate": "About 1 hour 15 minutes, including salting the eggplant",
+  "ingredients": [
+   {
+    "group": "Eggplant",
+    "text": "2 large eggplants"
+   },
+   {
+    "group": "Eggplant",
+    "text": "1 teaspoon salt, plus more to taste"
+   },
+   {
+    "group": "Eggplant",
+    "text": "3 tablespoons extra-virgin olive oil, for roasting"
+   },
+   {
+    "group": "Sautéed Mint Onions",
+    "text": "2 tablespoons extra-virgin olive oil"
+   },
+   {
+    "group": "Sautéed Mint Onions",
+    "text": "2 medium yellow onions, thinly sliced into half-moons"
+   },
+   {
+    "group": "Sautéed Mint Onions",
+    "text": "4 cloves garlic, grated"
+   },
+   {
+    "group": "Sautéed Mint Onions",
+    "text": "⅓ teaspoon ground turmeric"
+   },
+   {
+    "group": "Sautéed Mint Onions",
+    "text": "1 tablespoon dried mint"
+   },
+   {
+    "group": "Sautéed Mint Onions",
+    "text": "⅓ cup pine nuts"
+   },
+   {
+    "group": "Sautéed Mint Onions",
+    "text": "2 tablespoons fresh mint or flat-leaf parsley leaves, for garnish"
+   },
+   {
+    "group": "Sautéed Mint Onions",
+    "text": "1 tablespoon extra-virgin olive oil, for finishing"
+   },
+   {
+    "group": "Cashew Cream",
+    "text": "1 cup raw cashews, soaked in hot water for 30 minutes (reserve the liquid)"
+   },
+   {
+    "group": "Cashew Cream",
+    "text": "Juice of 1–2 lemons, about 4–5 tablespoons"
+   },
+   {
+    "group": "Cashew Cream",
+    "text": "½ teaspoon salt"
+   },
+   {
+    "group": "Cashew Cream",
+    "text": "3 tablespoons water (or reserved cashew soaking liquid), plus more as needed"
+   }
+  ],
+  "steps": [
+   "Slice the eggplant into rounds about ½-inch thick. Lay on a sheet pan or rack, sprinkle generously with the 1 teaspoon salt, and let sit 20–30 minutes to draw out moisture and bitterness.",
+   "Preheat oven to 400°F. Pat rounds dry, arrange on a parchment paper-lined baking sheet, brush both sides with the 3 tablespoons olive oil, and roast 25–30 minutes, flipping once halfway, until golden brown and fork-tender.",
+   "Prepare the cashew cream: drain the soaked cashews and blend with the reserved soaking liquid (or 3 tablespoons water), lemon juice, and ½ teaspoon salt until completely smooth, scraping down the sides of the blender as needed and adding more water if too thick—aim for a spreadable, yogurt-like consistency. Taste and adjust salt or lemon.",
+   "Toast the pine nuts in a small dry skillet over medium-low heat until golden and fragrant, tossing often, about 2–3 minutes. Set aside.",
+   "Prepare the mint onions: heat the 2 tablespoons olive oil in a pan over medium-high heat. Add onions with a pinch of salt and sauté, stirring occasionally, until golden brown, about 12–15 minutes. Add grated garlic and cook until fragrant and golden, another 1–2 minutes. Stir in turmeric and dried mint and cook 1–2 minutes more until fragrant. Season to taste with salt.",
+   "To serve, spread cashew cream across a serving plate in a swoosh. Arrange roasted eggplant rounds over the cream. Spoon the warm onion mixture over each round, then scatter with toasted pine nuts and fresh mint or parsley. Finish with a drizzle of the oil from the onions or with additional extra-virgin olive oil."
+  ],
+  "clipping_notes": [],
+  "needs_help": "This is a side dish (serves 8–10 as a side), and the author also calls it a Shabbos dip. There's no Sides section, so I put it in Salads & Appetizers. Is that right?"
+ },
+ {
+  "id": "oyster-steak-ribbon-salad",
+  "photos": [
+   "IMG_0669"
+  ],
+  "title": "Oyster Steak Ribbon Salad",
+  "subtitle": null,
+  "recipe_by": "Yossi and Malky Levine",
+  "source": "The Ami Food Magazine (Whisk) — The Yom Tov Cookbook, September 2, 2026",
+  "page": 34,
+  "magazine_category": "Salads & Sides",
+  "section": "salads_appetizers",
+  "kosher_type": "meat",
+  "contains_fish": false,
+  "description": "A Yom Tov meal is a perfect occasion to serve a centerpiece salad. This one balances tender, savory oyster steak with bright vegetable ribbons and crunchy toppings for a dish that's visually stunning, almost effortless, and guaranteed to impress. Definitely a winner!",
+  "yield_text": "Serves 8–10 as a side",
+  "servings": 9,
+  "time_printed": null,
+  "time_estimate": "About 1 hour, including 30 minutes marinating",
+  "ingredients": [
+   {
+    "group": "Steak",
+    "text": "1 lb. oyster steak"
+   },
+   {
+    "group": "Steak",
+    "text": "2 tablespoons soy sauce"
+   },
+   {
+    "group": "Steak",
+    "text": "2 frozen garlic cubes"
+   },
+   {
+    "group": "Steak",
+    "text": "2 tablespoons dark brown sugar"
+   },
+   {
+    "group": "Salad",
+    "text": "2 cups baby arugula"
+   },
+   {
+    "group": "Salad",
+    "text": "3 colored carrots, peeled into ribbons"
+   },
+   {
+    "group": "Salad",
+    "text": "1 zucchini, peeled into ribbons"
+   },
+   {
+    "group": "Salad",
+    "text": "3–4 radishes, thinly sliced"
+   },
+   {
+    "group": "Toppings",
+    "text": "½ cup pomegranate seeds"
+   },
+   {
+    "group": "Toppings",
+    "text": "¼ cup mint leaves, roughly chopped"
+   },
+   {
+    "group": "Toppings",
+    "text": "¼ cup toasted sesame seeds"
+   },
+   {
+    "group": "Toppings",
+    "text": "¼ cup toasted peanuts"
+   },
+   {
+    "group": "Dressing",
+    "text": "¼ cup oil"
+   },
+   {
+    "group": "Dressing",
+    "text": "¼ cup vinegar"
+   },
+   {
+    "group": "Dressing",
+    "text": "¼ cup honey"
+   },
+   {
+    "group": "Dressing",
+    "text": "2 tablespoons soy sauce"
+   },
+   {
+    "group": "Dressing",
+    "text": "1 tablespoon sesame oil"
+   },
+   {
+    "group": "Dressing",
+    "text": "1 frozen garlic cube"
+   },
+   {
+    "group": "For Serving",
+    "text": "1 lime, cut into wedges"
+   }
+  ],
+  "steps": [
+   "Combine soy sauce, garlic, and brown sugar. Add steak and marinate 30 minutes.",
+   "Heat a skillet over high heat. Sear steak 5 minutes per side. Let it rest 5–10 minutes, then slice thinly.",
+   "Whisk all dressing ingredients together and toss the vegetables with dressing.",
+   "Arrange the salad on a platter, top with pomegranate seeds, mint, sesame seeds, and peanuts. Add the sliced steak and serve with lime wedges."
+  ],
+  "clipping_notes": [],
+  "needs_help": null
+ },
+ {
+  "id": "zaatar-techinah-kale-salad",
+  "photos": [
+   "IMG_0670"
+  ],
+  "title": "Za'atar Techinah Kale Salad",
+  "subtitle": null,
+  "recipe_by": "Sarah Schepansky (@asprinkle_of_sarah)",
+  "source": "The Ami Food Magazine (Whisk) — The Yom Tov Cookbook, September 2, 2026",
+  "page": 38,
+  "magazine_category": "Salads & Sides",
+  "section": "salads_appetizers",
+  "kosher_type": "pareve",
+  "contains_fish": false,
+  "description": "If kale salads have never been high on your list of Yom Tov-worthy offerings, this recipe will completely change your mind. Roasted root veggies and crispy chickpeas, mixed in a velvety za'atar techinah dressing, make for a beautiful, delicious, and nourishing dish.",
+  "yield_text": "Serves 8–10 as a side",
+  "servings": 9,
+  "time_printed": null,
+  "time_estimate": "About 1 hour",
+  "ingredients": [
+   {
+    "group": null,
+    "text": "½ bag kale, chopped"
+   },
+   {
+    "group": "Roasted Vegetables",
+    "text": "1 sweet potato, cubed"
+   },
+   {
+    "group": "Roasted Vegetables",
+    "text": "1 small cauliflower, cut into florets"
+   },
+   {
+    "group": "Roasted Vegetables",
+    "text": "1 (15.5-oz.) can chickpeas, drained"
+   },
+   {
+    "group": "Roasted Vegetables",
+    "text": "2 tablespoons olive oil"
+   },
+   {
+    "group": "Roasted Vegetables",
+    "text": "1 teaspoon salt"
+   },
+   {
+    "group": "Roasted Vegetables",
+    "text": "½ teaspoon pepper"
+   },
+   {
+    "group": "Roasted Vegetables",
+    "text": "½ teaspoon paprika"
+   },
+   {
+    "group": "Roasted Vegetables",
+    "text": "½ teaspoon smoked paprika"
+   },
+   {
+    "group": "Roasted Vegetables",
+    "text": "½ teaspoon garlic powder"
+   },
+   {
+    "group": "Roasted Vegetables",
+    "text": "¼ teaspoon ground turmeric"
+   },
+   {
+    "group": "Sautéed Vegetables",
+    "text": "½ red onion, sliced"
+   },
+   {
+    "group": "Sautéed Vegetables",
+    "text": "1 zucchini, chopped"
+   },
+   {
+    "group": "Sautéed Vegetables",
+    "text": "1 cup string beans"
+   },
+   {
+    "group": "Sautéed Vegetables",
+    "text": "Olive oil, for sautéing"
+   },
+   {
+    "group": "Sautéed Vegetables",
+    "text": "Salt and pepper to taste"
+   },
+   {
+    "group": "Sautéed Vegetables",
+    "text": "~1 tablespoon honey, for drizzling"
+   },
+   {
+    "group": "Dressing",
+    "text": "¼ cup techinah"
+   },
+   {
+    "group": "Dressing",
+    "text": "3 tablespoons lemon juice"
+   },
+   {
+    "group": "Dressing",
+    "text": "2 tablespoons red wine vinegar"
+   },
+   {
+    "group": "Dressing",
+    "text": "1 tablespoon Dijon mustard"
+   },
+   {
+    "group": "Dressing",
+    "text": "1 tablespoon honey"
+   },
+   {
+    "group": "Dressing",
+    "text": "3 tablespoons water"
+   },
+   {
+    "group": "Dressing",
+    "text": "3 tablespoons olive oil"
+   },
+   {
+    "group": "Dressing",
+    "text": "1½ teaspoons za'atar"
+   },
+   {
+    "group": "Dressing",
+    "text": "Salt and pepper"
+   },
+   {
+    "group": "For Serving",
+    "text": "Pomegranate seeds"
+   }
+  ],
+  "steps": [
+   "Preheat oven to 400°F. Toss the sweet potato, cauliflower, and chickpeas with olive oil and spices. Roast 35–40 minutes, stirring halfway.",
+   "Sauté the red onion, zucchini, and string beans in olive oil until tender. Season with salt and pepper and drizzle with honey, to taste.",
+   "Whisk together all dressing ingredients.",
+   "Massage the kale with a little dressing. Top with the roasted and sautéed vegetables. Drizzle with the remaining dressing and sprinkle with pomegranate seeds. Toss before serving."
+  ],
+  "clipping_notes": [
+   {
+    "label": "Variation",
+    "text": "This dressing is also great on a classic combination of fresh lettuce, tomatoes, olives, chickpeas, and purple onion, if you don't have time for the roasted veggies. And if you're making either version for a dairy meal, add crumbled feta too!"
+   }
+  ],
+  "needs_help": null
+ },
+ {
+  "id": "asian-crunch-slaw",
+  "photos": [
+   "IMG_0671",
+   "IMG_0672"
+  ],
+  "title": "Asian Crunch Slaw",
+  "subtitle": null,
+  "recipe_by": "Ayala Friedman (@jerusalem_sourdough)",
+  "source": "The Ami Food Magazine (Whisk) — The Yom Tov Cookbook, September 2, 2026",
+  "page": 40,
+  "magazine_category": "Salads",
+  "section": "salads_appetizers",
+  "kosher_type": "pareve",
+  "contains_fish": false,
+  "description": "Once my family realized my salads were really good, I somehow became the designated salad maker for every family gathering and event. This crunch slaw is my ultimate go-to—it comes together quickly, keeps its texture, and its fresh and delightful flavor is always a hit.",
+  "yield_text": "Serves 8–10 as a side",
+  "servings": 9,
+  "time_printed": null,
+  "time_estimate": "About 20 minutes",
+  "ingredients": [
+   {
+    "group": "For the Slaw",
+    "text": "½ medium green cabbage, cut into thin strips"
+   },
+   {
+    "group": "For the Slaw",
+    "text": "1 carrot, peeled into thin strips using a vegetable peeler"
+   },
+   {
+    "group": "For the Slaw",
+    "text": "1 apple, cut into thin strips"
+   },
+   {
+    "group": "For the Slaw",
+    "text": "2–3 scallions, thinly sliced"
+   },
+   {
+    "group": "For the Slaw",
+    "text": "½ cup toasted sliced almonds (or toasted sunflower or pumpkin seeds, to be nut-free)"
+   },
+   {
+    "group": "For the Slaw",
+    "text": "2 tablespoons toasted black sesame seeds"
+   },
+   {
+    "group": "For the Dressing",
+    "text": "½ cup mayonnaise (see vegan option, below)"
+   },
+   {
+    "group": "For the Dressing",
+    "text": "1 tablespoon soy sauce (or tamari, to be gluten-free)"
+   },
+   {
+    "group": "For the Dressing",
+    "text": "1 tablespoon apple cider vinegar"
+   },
+   {
+    "group": "For the Dressing",
+    "text": "1 tablespoon maple syrup"
+   },
+   {
+    "group": "For the Dressing",
+    "text": "1 tablespoon sesame oil"
+   },
+   {
+    "group": "For the Dressing",
+    "text": "Juice of ½ lemon"
+   },
+   {
+    "group": "For the Dressing",
+    "text": "Pinch of salt"
+   },
+   {
+    "group": "Vegan Mayonnaise",
+    "text": "½ cup soaked cashews, blended with 3–4 tablespoons soy milk or water to a creamy consistency"
+   }
+  ],
+  "steps": [
+   "Cut the cabbage into thin strips.",
+   "Peel the carrot into thin strips using a vegetable peeler.",
+   "Cut the apple into thin strips.",
+   "Thinly slice the scallions.",
+   "Add all salad ingredients to a large bowl.",
+   "In a separate bowl, whisk together all dressing ingredients. (For the vegan version, substitute the blended cashews for the mayonnaise.)",
+   "Pour the dressing over the salad just before serving and toss until evenly coated."
+  ],
+  "clipping_notes": [
+   {
+    "label": "Prep in Advance",
+    "text": "Cabbage, carrot, and scallions can be prepped up to 24 hours ahead and stored in airtight containers in the fridge. Dressing can be made up to 3 days ahead. Cut the apple and toss with dressing just before serving to keep everything crisp."
+   },
+   {
+    "label": "Tips",
+    "text": "If using raw sliced almonds, toast them in a dry skillet over medium heat for 3–5 minutes, stirring frequently, until they're lightly golden and fragrant. You can also toast them in the oven at 350°F (175°C) for about 6–8 minutes."
+   }
+  ],
+  "needs_help": null
+ },
+ {
+  "id": "sukkos-marrow-soup",
+  "photos": [
+   "IMG_0673"
+  ],
+  "title": "Sukkos Marrow Soup",
+  "subtitle": null,
+  "recipe_by": "Shoshana Gevert",
+  "source": "The Ami Food Magazine (Whisk) — The Yom Tov Cookbook, September 2, 2026",
+  "page": 42,
+  "magazine_category": "Soups",
+  "section": "soups",
+  "kosher_type": "meat",
+  "contains_fish": false,
+  "description": "My wonderful mother-in-law first introduced me to this soup when she served it in the sukkah out of a hollowed-out pumpkin, her yearly tradition. When we moved to Eretz Yisrael, I had to have the recipe, and now it's the dish my guests remember and request seconds and thirds—even the kids! Rustic and seasonal, this hearty soup is the only dish you need for a cold night in the sukkah, with a warm slice of sourdough on the side.",
+  "yield_text": "Serves 10–12",
+  "servings": 11,
+  "time_printed": null,
+  "time_estimate": "About 4 hours (mostly simmering)",
+  "ingredients": [
+   {
+    "group": null,
+    "text": "3–4 tablespoons olive oil"
+   },
+   {
+    "group": null,
+    "text": "2 onions, diced"
+   },
+   {
+    "group": null,
+    "text": "6–8 cloves garlic, minced"
+   },
+   {
+    "group": null,
+    "text": "2–3 pieces boneless flanken or 1 shank bone-in (can substitute an equivalent amount of crosscut shanks, which have both meat and marrow)"
+   },
+   {
+    "group": null,
+    "text": "4–6 nice marrow bones"
+   },
+   {
+    "group": null,
+    "text": "1–2 zucchini, cubed"
+   },
+   {
+    "group": null,
+    "text": "2 carrots, sliced or cubed"
+   },
+   {
+    "group": null,
+    "text": "2 stalks celery, diced"
+   },
+   {
+    "group": null,
+    "text": "1–2 cups sliced mushrooms"
+   },
+   {
+    "group": null,
+    "text": "4 tomatoes, diced"
+   },
+   {
+    "group": null,
+    "text": "1 parsnip, cubed or sliced"
+   },
+   {
+    "group": null,
+    "text": "1 turnip, cubed"
+   },
+   {
+    "group": null,
+    "text": "3–4 medium potatoes, cubed"
+   },
+   {
+    "group": null,
+    "text": "2–3 tablespoons chicken consommé powder (optional)"
+   },
+   {
+    "group": null,
+    "text": "Salt and pepper, to taste"
+   },
+   {
+    "group": null,
+    "text": "2–3 bay leaves"
+   },
+   {
+    "group": null,
+    "text": "Generous shake of garlic powder, paprika, and Italian seasoning (or a mix of oregano, basil, and thyme)"
+   },
+   {
+    "group": null,
+    "text": "2 cups barley"
+   },
+   {
+    "group": "Equipment",
+    "text": "A very large pot"
+   }
+  ],
+  "steps": [
+   "Sear the meat on high heat at the bottom of the pot with olive oil until browned; remove from pot and set aside.",
+   "Sauté onion and garlic in the same pot until onions are translucent, about 3–5 minutes.",
+   "Add all the veggies, spices, and marrow bones, and return the meat to the pot. Continue sautéing another 5 minutes.",
+   "Add barley and water (water should come about 3–4 inches above the surface of the solids).",
+   "Simmer 3–4 hours."
+  ],
+  "clipping_notes": [
+   {
+    "label": "Freezer Friendly",
+    "text": "This can be stored up to 3 months in the freezer. Reheat in a nonstick pot with some added water, since the soup is quite thick and the bottom will burn otherwise."
+   },
+   {
+    "label": "Variations",
+    "text": "It's okay if you don't include every vegetable listed; the soup will still be delicious."
+   }
+  ],
+  "needs_help": null
+ },
+ {
+  "id": "creamy-asparagus-soup",
+  "photos": [
+   "IMG_0674"
+  ],
+  "title": "Creamy Asparagus Soup",
+  "subtitle": null,
+  "recipe_by": "Yossi and Malky Levine",
+  "source": "The Ami Food Magazine (Whisk) — The Yom Tov Cookbook, September 2, 2026",
+  "page": 44,
+  "magazine_category": "Soups",
+  "section": "soups",
+  "kosher_type": "pareve",
+  "contains_fish": false,
+  "description": "Silky-smooth and surprisingly light, this asparagus soup is a refreshing opener for a heavy autumn meal. Sautéed zucchini and a single potato give it that luxurious, velvety texture—no heavy cream required.",
+  "yield_text": "Serves 8–10",
+  "servings": 9,
+  "time_printed": null,
+  "time_estimate": "About 1 hour",
+  "ingredients": [
+   {
+    "group": null,
+    "text": "2 tablespoons oil"
+   },
+   {
+    "group": null,
+    "text": "1 onion, diced"
+   },
+   {
+    "group": null,
+    "text": "5 cloves garlic, minced"
+   },
+   {
+    "group": null,
+    "text": "1 zucchini, diced"
+   },
+   {
+    "group": null,
+    "text": "2 bunches asparagus, checked and diced, tips cut and reserved"
+   },
+   {
+    "group": null,
+    "text": "1 potato, cubed"
+   },
+   {
+    "group": null,
+    "text": "2 cups frozen spinach"
+   },
+   {
+    "group": null,
+    "text": "1 tablespoon salt"
+   },
+   {
+    "group": null,
+    "text": "½ teaspoon black pepper"
+   },
+   {
+    "group": null,
+    "text": "10 cups water"
+   },
+   {
+    "group": "For Serving",
+    "text": "Garlic croutons, seared asparagus tips, drizzle of olive oil, flaky salt"
+   }
+  ],
+  "steps": [
+   "Heat the oil in a large pot over medium heat. Add the onion and sauté 4–5 minutes. Add the garlic and sauté 1 minute, then add the diced asparagus and zucchini and sauté another 5–6 minutes.",
+   "Add the potato, spinach, salt, black pepper, and water. Bring to a boil, then reduce to medium-low and simmer 30 minutes, until the vegetables are very soft.",
+   "Meanwhile, sear the reserved asparagus tips in a small skillet with a little oil until tender.",
+   "Allow soup to cool and blend until smooth. When serving, top with garlic croutons, seared asparagus tips, and a drizzle of olive oil."
+  ],
+  "clipping_notes": [
+   {
+    "label": "Freezer Friendly",
+    "text": "Once completely cooled, freeze in an airtight container for up to 3 months. Thaw overnight in the fridge and reheat slowly on the stovetop, stirring occasionally, for best texture."
+   }
+  ],
+  "needs_help": null
+ },
+ {
+  "id": "chunky-creamy-chicken-soup",
+  "photos": [
+   "IMG_0675"
+  ],
+  "title": "Chunky Creamy Chicken Soup",
+  "subtitle": null,
+  "recipe_by": "Yocheved Shvarzblat (@tastynsimple, tastynsimple.com)",
+  "source": "The Ami Food Magazine (Whisk) — The Yom Tov Cookbook, September 2, 2026",
+  "page": 46,
+  "magazine_category": "Soups",
+  "section": "soups",
+  "kosher_type": "meat",
+  "contains_fish": false,
+  "description": "The first thing I do when planning my Yom Tov meals is to sit down with a pen and map out the days. I fill in each meal with an appetizer (soup for the night meal), protein, starch and vegetable sides, and dessert, then I start plugging in all the recipes my family looks forward to year after year. This soup is always one of the first to make the list. Tender chunks of chicken and hearty vegetables simmer in a rich, creamy broth that's both comforting and elegant. The pot is always scraped clean before the chag is over.",
+  "yield_text": "Serves 8–10",
+  "servings": 9,
+  "time_printed": null,
+  "time_estimate": "About 1 hour 45 minutes",
+  "ingredients": [
+   {
+    "group": null,
+    "text": "6 tablespoons olive oil"
+   },
+   {
+    "group": null,
+    "text": "2 medium onions, finely diced"
+   },
+   {
+    "group": null,
+    "text": "5 cloves garlic, minced"
+   },
+   {
+    "group": null,
+    "text": "8 cups chicken broth"
+   },
+   {
+    "group": null,
+    "text": "2 lbs. boneless, skinless chicken breast, cut into 1-inch cubes"
+   },
+   {
+    "group": null,
+    "text": "10 sprigs fresh dill"
+   },
+   {
+    "group": null,
+    "text": "10 sprigs fresh parsley"
+   },
+   {
+    "group": null,
+    "text": "3½ teaspoons kosher salt"
+   },
+   {
+    "group": null,
+    "text": "1 teaspoon freshly ground black pepper"
+   },
+   {
+    "group": null,
+    "text": "2 medium zucchini, diced"
+   },
+   {
+    "group": null,
+    "text": "5 stalks celery, thinly sliced"
+   },
+   {
+    "group": null,
+    "text": "1 cup baby carrots, chopped"
+   },
+   {
+    "group": null,
+    "text": "2 cups water"
+   },
+   {
+    "group": null,
+    "text": "1 cup all-purpose flour"
+   }
+  ],
+  "steps": [
+   "Heat the olive oil in a 6-quart or larger soup pot over medium heat. Add the onions and sauté until softened and lightly golden, about 8–10 minutes.",
+   "Stir in the garlic and cook 30–60 seconds, until fragrant.",
+   "Pour in the 8 cups chicken broth. Add the chicken, zucchini, celery, carrots, salt, pepper, dill, and parsley (tie the herbs together or place them in a soup herb bag if desired).",
+   "Bring the soup to a boil, then reduce heat to medium-low, cover, and simmer 45–60 minutes, until the chicken is cooked through and the vegetables are tender.",
+   "Remove and discard the dill and parsley.",
+   "In a medium bowl, whisk together the flour with the 2 cups cold water until completely smooth. Slowly pour the slurry into the soup while stirring continuously.",
+   "Simmer over low heat 15 minutes, stirring occasionally, until the soup is thick, creamy, and velvety.",
+   "Taste and adjust seasoning if needed. Serve hot."
+  ],
+  "clipping_notes": [],
+  "needs_help": null
+ },
+ {
+  "id": "butternut-squash-soup-candied-pepper-steak",
+  "photos": [
+   "IMG_0676"
+  ],
+  "title": "Butternut Squash Soup",
+  "subtitle": "with Candied Pepper Steak",
+  "recipe_by": "Sruly Meyer (@srulycooks)",
+  "source": "The Ami Food Magazine (Whisk) — The Yom Tov Cookbook, September 2, 2026",
+  "page": 48,
+  "magazine_category": "Soups",
+  "section": "soups",
+  "kosher_type": "meat",
+  "kosher_note": "The soup by itself (without the candied pepper steak) is pareve.",
+  "contains_fish": false,
+  "description": "I've always loved soups. The classics are great, but in my never-ending quest to make every soup I can, I decided to try butternut squash soup since it isn't something I grew up eating and isn't always on the menu at typical kosher restaurants. It's actually fairly simple to make, and the flavors are amazing—velvety and smooth, and the Granny Smith apple provides a great tart contrast. My family requests it after every fast, and yours might too, once they try it.",
+  "yield_text": "Serves 6–8",
+  "servings": 7,
+  "time_printed": null,
+  "time_estimate": "About 1 hour 15 minutes",
+  "ingredients": [
+   {
+    "group": "Soup",
+    "text": "2–3 tablespoons olive oil"
+   },
+   {
+    "group": "Soup",
+    "text": "2 large sweet yellow onions, diced"
+   },
+   {
+    "group": "Soup",
+    "text": "4 stalks celery, chopped"
+   },
+   {
+    "group": "Soup",
+    "text": "4 medium carrots, peeled and chopped"
+   },
+   {
+    "group": "Soup",
+    "text": "1 Granny Smith apple, peeled, cored, and chopped"
+   },
+   {
+    "group": "Soup",
+    "text": "1 large butternut squash, peeled, seeded, and cubed"
+   },
+   {
+    "group": "Soup",
+    "text": "2 medium parsnips, peeled and chopped"
+   },
+   {
+    "group": "Soup",
+    "text": "Salt and freshly ground black pepper, to taste"
+   },
+   {
+    "group": "Soup",
+    "text": "2 cups water, plus up to 1 additional cup if needed (don't make it too thin)"
+   },
+   {
+    "group": "Soup",
+    "text": "Fresh parsley, chopped, for garnish"
+   },
+   {
+    "group": "Candied Pepper Steak",
+    "text": "1 tablespoon olive oil (optional, if needed)"
+   },
+   {
+    "group": "Candied Pepper Steak",
+    "text": "2 lbs. pepper steak, cut into thin strips"
+   },
+   {
+    "group": "Candied Pepper Steak",
+    "text": "½ cup teriyaki sauce"
+   }
+  ],
+  "steps": [
+   "Soup: Heat the olive oil in a large soup pot over medium heat. Add the onions, celery, carrots, and apple. Sauté 8–10 minutes, stirring occasionally, until the onions are soft and fragrant.",
+   "Add the butternut squash and parsnips. Season generously with salt and pepper and stir together.",
+   "Pour in 2 cups of water and bring to a boil.",
+   "Reduce heat to low, cover, and simmer for about 35–45 minutes, or until all the vegetables are very tender.",
+   "Use an immersion blender to blend the soup until completely smooth. For a thinner consistency, stir in up to 1 additional cup of water.",
+   "Taste and adjust seasoning with more salt and pepper if needed.",
+   "Candied pepper steak: Heat a large skillet over medium-high heat. Add a tablespoon of olive oil if needed. Add the pepper steak and cook for 3–5 minutes, until it begins to brown.",
+   "Pour in the teriyaki sauce and stir to coat the meat evenly. Reduce the heat to medium-low to avoid overcooking the meat or burning the caramelizing sauce. Continue cooking slowly, stirring often, until the sauce reduces and becomes thick, sticky, and caramelized, coating the beef. The edges should turn slightly chewy and \"candied.\"",
+   "Sprinkle the soup with fresh parsley and serve with candied pepper steak on the side, or sprinkled on top for extra flavor."
+  ],
+  "clipping_notes": [
+   {
+    "label": "Freezer Friendly",
+    "text": "Once completely cooled, freeze in an airtight container for up to 3 months. Thaw overnight in the fridge and reheat slowly on the stovetop, stirring well (add a little water if needed) to bring back the velvety texture."
+   },
+   {
+    "label": "Prep in Advance",
+    "text": "Peel and chop the vegetables up to 1–2 days in advance and keep refrigerated in airtight containers. The Granny Smith apple is best peeled and chopped right before cooking so it doesn't brown. The pepper steak can also be sliced ahead of time and refrigerated until ready to cook."
+   },
+   {
+    "label": "Variations",
+    "text": "The candied pepper steak is great tossed into a salad, stuffed into a wrap, or served over rice with roasted vegetables."
+   }
+  ],
+  "needs_help": null
+ },
+ {
+  "id": "flanken-and-cabbage-soup",
+  "photos": [
+   "IMG_0677"
+  ],
+  "title": "Flanken and Cabbage Soup",
+  "subtitle": null,
+  "recipe_by": "Matti Addess (@Mattis_Kitchen_Israel)",
+  "source": "The Ami Food Magazine (Whisk) — The Yom Tov Cookbook, September 2, 2026",
+  "page": 50,
+  "magazine_category": "Soups",
+  "section": "soups",
+  "kosher_type": "meat",
+  "contains_fish": false,
+  "description": "Growing up, my mom always made a hearty fleishig soup as the first course of our Erev Yom Kippur meal. We would have challah and honey and soup, and then everyone would run upstairs to shower and finish getting ready for Yom Kippur. Afterward we continued with the main course. This is one tradition that I carried over to my own family. I make a big pot of this soup before Yom Kippur, then freeze the remainder and serve it on Sukkos as well. Nobody complains when they see it again—it tastes even better then!",
+  "yield_text": "Serves 8–10",
+  "servings": 9,
+  "time_printed": null,
+  "time_estimate": "About 2 hours 30 minutes (mostly simmering)",
+  "ingredients": [
+   {
+    "group": null,
+    "text": "2 lbs. (1 kilo) flanken"
+   },
+   {
+    "group": null,
+    "text": "1–2 tablespoons oil"
+   },
+   {
+    "group": null,
+    "text": "1 onion, sliced"
+   },
+   {
+    "group": null,
+    "text": "1 head cabbage, sliced"
+   },
+   {
+    "group": null,
+    "text": "3 carrots, shredded or cut small"
+   },
+   {
+    "group": null,
+    "text": "1 green apple, shredded or cut small"
+   },
+   {
+    "group": null,
+    "text": "1 (28-oz.) can crushed tomatoes"
+   },
+   {
+    "group": null,
+    "text": "2 tablespoons tomato paste"
+   },
+   {
+    "group": null,
+    "text": "½ cup lemon juice"
+   },
+   {
+    "group": null,
+    "text": "2 teaspoons salt"
+   },
+   {
+    "group": null,
+    "text": "½ teaspoon black pepper"
+   },
+   {
+    "group": null,
+    "text": "4 cups water"
+   }
+  ],
+  "steps": [
+   "Sear flanken on all sides and remove from the pot.",
+   "Sauté onion until translucent.",
+   "Add sliced cabbage, shredded carrots, and shredded green apple.",
+   "Add the crushed tomatoes, tomato paste, lemon juice, salt, pepper, and water. Finally, add the flanken back in with its juices.",
+   "Bring to a simmer and cook for about 2 hours, or until the meat can be pulled apart. Shred the meat and return it to the pot."
+  ],
+  "clipping_notes": [
+   {
+    "label": "Freezer Friendly",
+    "text": "Once completely cooled, this can be frozen in an airtight container for up to 3 months."
+   }
+  ],
+  "needs_help": null
+ },
+ {
+  "id": "chicken-pargiyot-porchetta",
+  "photos": [
+   "IMG_0678"
+  ],
+  "title": "Chicken Pargiyot Porchetta",
+  "subtitle": null,
+  "recipe_by": "Ornit Ovadiah",
+  "source": "The Ami Food Magazine (Whisk) — The Yom Tov Cookbook, September 2, 2026",
+  "page": 52,
+  "magazine_category": "Chicken",
+  "section": "chicken_mains",
+  "kosher_type": "meat",
+  "contains_fish": false,
+  "description": "One of my favorite dishes, this is delicious and nutritious, and looks impressive, too. It is fantastic with either of these sauces; it's so hard to choose between them, I make this often just to have a chance to use them both!",
+  "yield_text": "Serves 6 as a main; 10–12 as an appetizer",
+  "servings": 6,
+  "time_printed": null,
+  "time_estimate": "About 1 hour 30 minutes",
+  "ingredients": [
+   {
+    "group": "Chicken",
+    "text": "6 boneless chicken thighs/pargiyot (dark chicken cutlets)"
+   },
+   {
+    "group": "Filling",
+    "text": "1½ onions"
+   },
+   {
+    "group": "Filling",
+    "text": "1 (8-oz.) box champignon (button) mushrooms"
+   },
+   {
+    "group": "Filling",
+    "text": "3 cloves garlic"
+   },
+   {
+    "group": "Filling",
+    "text": "3 leaves chard (optional)"
+   },
+   {
+    "group": "Filling",
+    "text": "3 handfuls parsley"
+   },
+   {
+    "group": "Filling",
+    "text": "Olive oil"
+   },
+   {
+    "group": "Filling",
+    "text": "Fine salt and freshly ground black pepper, to taste"
+   },
+   {
+    "group": "Sauce Option 1: Sweet Chili-Ginger Sauce",
+    "text": "Canola oil"
+   },
+   {
+    "group": "Sauce Option 1: Sweet Chili-Ginger Sauce",
+    "text": "6 cloves garlic, crushed"
+   },
+   {
+    "group": "Sauce Option 1: Sweet Chili-Ginger Sauce",
+    "text": "1½ teaspoons crushed ginger"
+   },
+   {
+    "group": "Sauce Option 1: Sweet Chili-Ginger Sauce",
+    "text": "¾ teaspoon crushed red pepper flakes"
+   },
+   {
+    "group": "Sauce Option 1: Sweet Chili-Ginger Sauce",
+    "text": "3 tablespoons tomato paste"
+   },
+   {
+    "group": "Sauce Option 1: Sweet Chili-Ginger Sauce",
+    "text": "6 tablespoons sugar"
+   },
+   {
+    "group": "Sauce Option 1: Sweet Chili-Ginger Sauce",
+    "text": "¾ cup sweet chili sauce"
+   },
+   {
+    "group": "Sauce Option 1: Sweet Chili-Ginger Sauce",
+    "text": "¾ cup soy sauce"
+   },
+   {
+    "group": "Sauce Option 1: Sweet Chili-Ginger Sauce",
+    "text": "1 cup orange juice"
+   },
+   {
+    "group": "Sauce Option 1: Sweet Chili-Ginger Sauce",
+    "text": "¾ package cilantro, finely chopped"
+   },
+   {
+    "group": "Sauce Option 2: Orange-Pomegranate Sauce",
+    "text": "1½ cups orange juice"
+   },
+   {
+    "group": "Sauce Option 2: Orange-Pomegranate Sauce",
+    "text": "½ cup pomegranate concentrate"
+   },
+   {
+    "group": "Sauce Option 2: Orange-Pomegranate Sauce",
+    "text": "2¼ cups chicken stock"
+   },
+   {
+    "group": "Sauce Option 2: Orange-Pomegranate Sauce",
+    "text": "Salt and pepper"
+   }
+  ],
+  "steps": [
+   "Prepare the filling: finely chop the onion, mushrooms, garlic, chard, and parsley.",
+   "Heat olive oil in a pan and sauté the onion until golden.",
+   "Add mushrooms and garlic and sauté until browned.",
+   "Add the chard, cook briefly, then stir in the parsley and salt and pepper.",
+   "Remove from heat and let cool.",
+   "Roll the chicken: place one piece of chicken on parchment paper or plastic wrap, landscape-style (like rolling sushi), with a line of filling near the side closest to you. Using the parchment paper or plastic wrap for leverage, fold the near edge up and over the filling, then keep rolling forward, pressing gently as you go to keep the log tight and even. The parchment/wrap is just a rolling aid—it won't go in the pan. Once rolled, place the log in your pan. Repeat with the remaining pieces of chicken.",
+   "Pour ½ the sauce—whichever option you're using—over the chicken and cook, covered, at 350°F for 25 minutes. At that point, continue with the next step or remove the chicken from the oven and freeze it for later use.",
+   "Baste chicken with sauce from the pan or some of the reserved sauce and roast another 15 minutes or until browned.",
+   "Remove from oven and let it sit for a few minutes, then slice each log into pieces, like sushi. Arrange upright on platter or individual plates and pour reserved sauce over before serving.",
+   "Sweet chili-ginger sauce: Heat oil in a pot, add the garlic, ginger, and pepper flakes, and sauté 2 minutes. Add tomato paste and continue to sauté another 1–2 minutes. Add sugar and let it caramelize lightly. Add the sweet chili sauce, soy sauce, and orange juice, and bring to a boil. Remove from heat and stir in the chopped cilantro.",
+   "Orange-pomegranate sauce: Combine the orange juice, pomegranate concentrate, and chicken stock in a pot. Reduce and season to taste."
+  ],
+  "clipping_notes": [],
+  "needs_help": null
+ },
+ {
+  "id": "mini-chicken-wonton-tacos",
+  "photos": [
+   "IMG_0679",
+   "IMG_0680"
+  ],
+  "title": "Mini Chicken Wonton Tacos",
+  "subtitle": null,
+  "recipe_by": "Vera Newman (@marblespoon)",
+  "source": "The Ami Food Magazine (Whisk) — The Yom Tov Cookbook, September 2, 2026",
+  "page": 54,
+  "magazine_category": "Chicken",
+  "section": "salads_appetizers",
+  "kosher_type": "meat",
+  "contains_fish": false,
+  "description": "These little bites of yumminess are really everything you'd want in an appetizer. The slaw really brightens this dish, and the chicken is so delicious, you'll be lucky if you have any leftovers by the time you plate this appetizer!",
+  "yield_text": "18 pieces; serves 6–8 as an appetizer",
+  "servings": 7,
+  "time_printed": null,
+  "time_estimate": "About 1 hour 45 minutes, including 1 hour marinating",
+  "ingredients": [
+   {
+    "group": "Filling",
+    "text": "1 lb. boneless chicken breast, diced into small cubes"
+   },
+   {
+    "group": "Filling",
+    "text": "2 tablespoons + ¼ cup sweet chili sauce, divided"
+   },
+   {
+    "group": "Filling",
+    "text": "2 tablespoons sweet teriyaki sauce or hoisin sauce"
+   },
+   {
+    "group": "Filling",
+    "text": "1 tablespoon sesame oil"
+   },
+   {
+    "group": "Filling",
+    "text": "1 tablespoon soy sauce"
+   },
+   {
+    "group": "Filling",
+    "text": "2 frozen garlic cubes"
+   },
+   {
+    "group": "Filling",
+    "text": "½ teaspoon garlic powder"
+   },
+   {
+    "group": "Filling",
+    "text": "¼ teaspoon crushed red pepper (optional)"
+   },
+   {
+    "group": "Filling",
+    "text": "½ teaspoon sea salt"
+   },
+   {
+    "group": "Filling",
+    "text": "2 tablespoons oil, for searing"
+   },
+   {
+    "group": "Wonton Tacos",
+    "text": "18 wonton wrappers"
+   },
+   {
+    "group": "Wonton Tacos",
+    "text": "Oil, for brushing, or cooking spray"
+   },
+   {
+    "group": "Garlic Mayo",
+    "text": "3 cloves garlic, grated with a microplane"
+   },
+   {
+    "group": "Garlic Mayo",
+    "text": "½ cup mayonnaise"
+   },
+   {
+    "group": "Garlic Mayo",
+    "text": "1¼ teaspoons freshly squeezed lemon juice"
+   },
+   {
+    "group": "Garlic Mayo",
+    "text": "½ teaspoon sea salt"
+   },
+   {
+    "group": "Asian Slaw",
+    "text": "1½ cups red cabbage, shredded"
+   },
+   {
+    "group": "Asian Slaw",
+    "text": "1½ cups green cabbage, shredded"
+   },
+   {
+    "group": "Asian Slaw",
+    "text": "3 radishes, julienned"
+   },
+   {
+    "group": "Asian Slaw",
+    "text": "¼ cup scallions, thinly sliced"
+   },
+   {
+    "group": "Asian Slaw",
+    "text": "¼ cup fresh cilantro, chopped"
+   },
+   {
+    "group": "Asian Slaw",
+    "text": "1 tablespoon sesame seeds"
+   },
+   {
+    "group": "Asian Slaw",
+    "text": "1 tablespoon oil"
+   },
+   {
+    "group": "Asian Slaw",
+    "text": "1 tablespoon rice wine vinegar"
+   },
+   {
+    "group": "Asian Slaw",
+    "text": "1½ teaspoons soy sauce"
+   },
+   {
+    "group": "Asian Slaw",
+    "text": "1 tablespoon honey"
+   },
+   {
+    "group": "Asian Slaw",
+    "text": "¼ teaspoon garlic powder"
+   },
+   {
+    "group": "Asian Slaw",
+    "text": "½ teaspoon sea salt"
+   }
+  ],
+  "steps": [
+   "Prepare the chicken: in a mixing bowl, combine diced chicken with 2 tablespoons chili sauce, teriyaki sauce, sesame oil, soy sauce, garlic cubes, garlic powder, crushed red pepper (if using), and salt. Cover and marinate in the refrigerator for 1 hour, up to overnight.",
+   "In a large frying pan, heat oil over high heat. Add chicken with marinade; cook 6–7 minutes, stirring frequently, until cooked through.",
+   "Remove from heat; stir in the remaining ¼ cup sweet chili sauce. Toss to coat.",
+   "Prepare the mayo: in a small bowl, whisk together grated garlic, mayonnaise, lemon juice and sea salt.",
+   "Prepare the slaw: in a large bowl, combine cabbages, radish, scallions, cilantro, and sesame seeds. Add oil, rice wine vinegar, soy sauce, honey, garlic powder, and salt. Stir well to coat.",
+   "Just before serving, lay out the baked or fried wonton shells. Spread each shell with a bit of garlic mayo, add a spoonful of the chicken mixture, and top with Asian slaw.",
+   "Wonton taco shells (flat oven-baked or fillable fried): Heat oven to 375°F. Coat both sides of each wonton wrapper with cooking spray or brush with oil. Lay flat on a parchment-paper lined baking sheet and bake 5–8 minutes, watching closely so they don't burn. Alternatively, you can fry them into a fillable taco shape (this requires taco shell tongs): in a medium pot, heat oil over medium-high heat. Place a wonton wrapper into the taco shell tongs. Dip the filled tongs into hot oil and fry until the wrapper turns golden brown, about 1 minute. Repeat with remaining wrappers."
+  ],
+  "clipping_notes": [
+   {
+    "label": "Variations",
+    "text": "Serve it as a salad: add the cooked filling to the Asian slaw, and top with crushed wonton tacos."
+   },
+   {
+    "label": "Taco Shell Hack",
+    "text": "Want to make fillable taco shells but don't have taco shell tongs? Use the oven method—no special equipment needed. Drape wonton wrappers over the sides of 9x13-inch baking pans as needed; don't overlap the wrappers. After 5 minutes, remove from the oven and immediately and gently open them up a little while still pliable. Return to the oven and bake an additional 2–3 minutes until crispy, watching closely so they don't over-crisp."
+   }
+  ],
+  "needs_help": null
+ },
+ {
+  "id": "honey-lemon-chicken-dates-shallots",
+  "photos": [
+   "IMG_0681"
+  ],
+  "title": "Honey Lemon Chicken",
+  "subtitle": "with Dates and Shallots",
+  "recipe_by": "Tammy Israel (@saladsnsweets)",
+  "source": "The Ami Food Magazine (Whisk) — The Yom Tov Cookbook, September 2, 2026",
+  "page": 56,
+  "magazine_category": "Chicken",
+  "section": "chicken_mains",
+  "kosher_type": "meat",
+  "contains_fish": false,
+  "description": "I don't think this chicken needs much of an intro: the flavors that come through in this dish are seriously incredible. The dates get soft and crispy on the edges, the shallots and garlic turn into jam heaven, and the lemon and rosemary pair so perfectly with the honey glaze. Take my word for it, it's a must-make—total flavor heaven.",
+  "yield_text": "Serves 8–10",
+  "servings": 9,
+  "time_printed": null,
+  "time_estimate": "About 2 hours 15 minutes (mostly in the oven)",
+  "ingredients": [
+   {
+    "group": null,
+    "text": "10–12 pieces bone-in chicken legs and thighs"
+   },
+   {
+    "group": null,
+    "text": "12 large garlic cloves"
+   },
+   {
+    "group": null,
+    "text": "6 large Medjool dates, halved and pitted"
+   },
+   {
+    "group": null,
+    "text": "2 sprigs rosemary"
+   },
+   {
+    "group": null,
+    "text": "4–5 French shallots"
+   },
+   {
+    "group": null,
+    "text": "1 lemon, zested and then sliced (zest to be used in sauce)"
+   },
+   {
+    "group": "Sauce",
+    "text": "¼ cup + 2 tablespoons honey"
+   },
+   {
+    "group": "Sauce",
+    "text": "¼ cup olive oil"
+   },
+   {
+    "group": "Sauce",
+    "text": "Zest from 1 lemon (about 1 tablespoon)"
+   },
+   {
+    "group": "Sauce",
+    "text": "1 teaspoon kosher salt"
+   },
+   {
+    "group": "Sauce",
+    "text": "½ tsp black pepper"
+   }
+  ],
+  "steps": [
+   "Assemble chicken pieces in a roasting pan in a single layer.",
+   "Place garlic, dates, rosemary, shallots, and lemon slices around the chicken pieces, tucking them in between.",
+   "Mix the sauce ingredients together until smooth and blended, and pour over the chicken.",
+   "Use a brush or spoon to spread evenly.",
+   "Bake covered at 350°F (or 325°F convection) for 1 hour 30 minutes.",
+   "Uncover and cook for an additional 20–30 minutes, or until the top of the chicken is nicely caramelized."
+  ],
+  "clipping_notes": [
+   {
+    "label": "Tips",
+    "text": "This caramelizes best in a heavy-duty pot, like a Dutch oven, or a roasting pan with a lid."
+   }
+  ],
+  "needs_help": null
+ },
+ {
+  "id": "lemon-chicken-white-wine-sauce",
+  "photos": [
+   "IMG_0682"
+  ],
+  "title": "Lemon Chicken",
+  "subtitle": "with White Wine Sauce",
+  "recipe_by": "Talia Krief (@kriefkitchen)",
+  "source": "The Ami Food Magazine (Whisk) — The Yom Tov Cookbook, September 2, 2026",
+  "page": 58,
+  "magazine_category": "Chicken",
+  "section": "chicken_mains",
+  "kosher_type": "meat",
+  "contains_fish": false,
+  "description": "I grew up in an Ashkenazi family whose main food groups were cheesy pasta and chicken nuggets. My Sephardic husband introduced me to a whole new world of flavors, and I fell in love with it. One thing I needed time to appreciate was the generous use of lemon in everything. My palate has since adjusted, and now I add copious amounts of lemon to my recipes, too. This lemony chicken is one of my favorite Shabbos or chag dishes from my husband's family that we've tweaked and made our own over the years. Breaded and pan-fried, the chicken has that crispy, craveable quality, and the bright lemon-wine sauce cuts through the richness for a refreshing taste.",
+  "yield_text": "Serves 6–8",
+  "servings": 7,
+  "time_printed": null,
+  "time_estimate": "About 1 hour 30 minutes",
+  "ingredients": [
+   {
+    "group": "Chicken",
+    "text": "2 lbs. boneless, skinless chicken breasts"
+   },
+   {
+    "group": "Chicken",
+    "text": "Salt and black pepper, to taste"
+   },
+   {
+    "group": "Chicken",
+    "text": "2 eggs, beaten"
+   },
+   {
+    "group": "Chicken",
+    "text": "2 cups all-purpose flour"
+   },
+   {
+    "group": "Chicken",
+    "text": "Oil, for frying"
+   },
+   {
+    "group": "White Wine Sauce",
+    "text": "1 onion, finely chopped"
+   },
+   {
+    "group": "White Wine Sauce",
+    "text": "1 tablespoon chopped garlic"
+   },
+   {
+    "group": "White Wine Sauce",
+    "text": "1 cup dry white wine"
+   },
+   {
+    "group": "White Wine Sauce",
+    "text": "Juice of 1 lemon"
+   },
+   {
+    "group": "White Wine Sauce",
+    "text": "½ tablespoon citric acid"
+   },
+   {
+    "group": "White Wine Sauce",
+    "text": "2 cups chicken broth (or 2 cups water mixed with chicken consommé)"
+   },
+   {
+    "group": "For Serving",
+    "text": "Lemon slices"
+   },
+   {
+    "group": "For Serving",
+    "text": "Fresh parsley, chopped"
+   }
+  ],
+  "steps": [
+   "Preheat the oven to 350°F (175°C).",
+   "Season the chicken with salt and pepper. Dip each piece into the beaten eggs, then dredge in the flour, shaking off any excess.",
+   "Heat a thin layer of oil in a large skillet over medium-high heat. Sear the chicken 2–3 minutes per side, until lightly golden and mostly cooked through. Transfer to a plate.",
+   "In the same skillet, sauté the onion 4–5 minutes until softened. Add the garlic and cook for 1 minute.",
+   "Pour in the white wine, scraping up any browned bits from the bottom of the pan. Stir in the lemon juice, citric acid, and chicken broth. Bring to a boil, then reduce heat and simmer for 20 minutes.",
+   "Arrange the chicken in a baking dish and pour the sauce over the top. Add the lemon slices.",
+   "Cover tightly with foil and bake for 30 minutes. Remove the foil and continue baking for 20 minutes, until the chicken is tender and the sauce has slightly reduced.",
+   "Garnish with fresh parsley before serving."
+  ],
+  "clipping_notes": [],
+  "needs_help": null
+ },
+ {
+  "id": "honey-pomegranate-grilled-chicken-steak",
+  "photos": [
+   "IMG_0683"
+  ],
+  "title": "Honey Pomegranate Grilled Chicken Steak",
+  "subtitle": "with Japanese Sweet Potato Purée",
+  "recipe_by": "Yossi and Malky Levine",
+  "source": "The Ami Food Magazine (Whisk) — The Yom Tov Cookbook, September 2, 2026",
+  "page": 60,
+  "magazine_category": "Chicken",
+  "section": "chicken_mains",
+  "kosher_type": "meat",
+  "contains_fish": false,
+  "description": "This recipe is great for Yom Tov, because chicken steak plates so beautifully, it almost feels like a meat dish. The smooth sweet potato purée offers a dynamic contrast to the rich flavor of the honey pomegranate sauce. Sprinkle some pomegranate arils around the plate for that extra festive touch.",
+  "yield_text": "Serves 4",
+  "servings": 4,
+  "time_printed": null,
+  "time_estimate": "About 1 hour 15 minutes",
+  "ingredients": [
+   {
+    "group": "Chicken",
+    "text": "4 chicken steaks"
+   },
+   {
+    "group": "Chicken",
+    "text": "½ teaspoon salt"
+   },
+   {
+    "group": "Chicken",
+    "text": "½ teaspoon black pepper"
+   },
+   {
+    "group": "Chicken",
+    "text": "1 teaspoon garlic powder"
+   },
+   {
+    "group": "Chicken",
+    "text": "1 tablespoon olive oil"
+   },
+   {
+    "group": "Sauce",
+    "text": "4 shallots, roughly sliced"
+   },
+   {
+    "group": "Sauce",
+    "text": "5 cloves garlic, halved"
+   },
+   {
+    "group": "Sauce",
+    "text": "1 small zucchini, diced"
+   },
+   {
+    "group": "Sauce",
+    "text": "2 cups water"
+   },
+   {
+    "group": "Sauce",
+    "text": "1 cup white wine"
+   },
+   {
+    "group": "Sauce",
+    "text": "¼ cup pomegranate syrup"
+   },
+   {
+    "group": "Sauce",
+    "text": "½ cup honey"
+   },
+   {
+    "group": "Sauce",
+    "text": "2 beets, cut into chunks"
+   },
+   {
+    "group": "Japanese Sweet Potato Purée",
+    "text": "1 Japanese sweet potato"
+   },
+   {
+    "group": "Japanese Sweet Potato Purée",
+    "text": "1 tablespoon margarine or oil"
+   },
+   {
+    "group": "Japanese Sweet Potato Purée",
+    "text": "2 teaspoons honey"
+   },
+   {
+    "group": "Japanese Sweet Potato Purée",
+    "text": "½ teaspoon salt"
+   }
+  ],
+  "steps": [
+   "Season the chicken with salt, black pepper, garlic powder, and olive oil. Heat a large frying pan over high heat and sear the chicken 5 minutes per side. Remove from the pan.",
+   "Add the shallots and sear for 3 minutes, scraping up the browned bits from the pan. Add the garlic and zucchini and cook another 3 minutes.",
+   "Add the water, white wine, pomegranate syrup, honey, and beets. Reduce heat to medium-low, return the chicken to the pan, and cook for about 45 minutes.",
+   "Prepare the Japanese sweet potato purée: cook the sweet potato in a pot with water to cover, until very tender. Let cool slightly, transfer to a hand-blender cup, and add the margarine, honey, and salt. Blend until smooth and creamy."
+  ],
+  "clipping_notes": [],
+  "needs_help": null
+ },
+ {
+  "id": "red-wine-honey-strip-steak-bites",
+  "photos": [
+   "IMG_0684"
+  ],
+  "title": "Red Wine & Honey Strip Steak Bites",
+  "subtitle": null,
+  "recipe_by": "Yossi and Malky Levine",
+  "source": "The Ami Food Magazine (Whisk) — The Yom Tov Cookbook, September 2, 2026",
+  "page": 62,
+  "magazine_category": "Meat",
+  "section": "salads_appetizers",
+  "kosher_type": "meat",
+  "contains_fish": false,
+  "description": "These red-wine-and-honey strip steak bites pack savory flavor, tender beef, and a satisfying pastry crunch into a single, elegant bite! The presentation may look complicated, but the process is surprisingly simple. Serve under glass domes for that extra-special wow factor!",
+  "yield_text": "12–16 bites; serves 6–8 as an appetizer",
+  "servings": 7,
+  "time_printed": null,
+  "time_estimate": "About 45 minutes",
+  "ingredients": [
+   {
+    "group": null,
+    "text": "1 sheet puff pastry"
+   },
+   {
+    "group": null,
+    "text": "1½ lb. strip steak (well marbled) or surprise steak, about 2 inches thick"
+   },
+   {
+    "group": null,
+    "text": "1 tablespoon olive oil"
+   },
+   {
+    "group": null,
+    "text": "Spice rub (recipe follows)"
+   },
+   {
+    "group": null,
+    "text": "1 tablespoon margarine"
+   },
+   {
+    "group": null,
+    "text": "1 clove garlic, crushed"
+   },
+   {
+    "group": null,
+    "text": "2–3 sprigs fresh thyme"
+   },
+   {
+    "group": null,
+    "text": "¼ cup dry red wine"
+   },
+   {
+    "group": null,
+    "text": "1 tablespoon honey"
+   },
+   {
+    "group": "Spice Rub",
+    "text": "1 teaspoon kosher salt"
+   },
+   {
+    "group": "Spice Rub",
+    "text": "½ teaspoon coarse black pepper"
+   },
+   {
+    "group": "Spice Rub",
+    "text": "½ teaspoon garlic powder"
+   },
+   {
+    "group": "Spice Rub",
+    "text": "1 teaspoon dried thyme"
+   },
+   {
+    "group": "For Serving",
+    "text": "Mayonnaise"
+   },
+   {
+    "group": "For Serving",
+    "text": "Garlic confit"
+   },
+   {
+    "group": "For Serving",
+    "text": "Frisée lettuce"
+   }
+  ],
+  "steps": [
+   "Cut puff pastry into rounds with a cookie cutter (about 2 inches). Place on a parchment paper-lined baking sheet and bake at 400°F for 12–15 minutes, until puffed and golden. Set aside.",
+   "Pat steak dry. Rub with olive oil and season evenly with the spice rub.",
+   "Heat a frying pan over medium-high heat. Add some oil and sear the steak 6–7 minutes per side.",
+   "Add margarine, crushed garlic, and fresh thyme. Baste 1 minute.",
+   "Add red wine and cook 1 minute. Stir in honey and cook another minute, until lightly glazed.",
+   "Let steak rest 5–10 minutes, then cut into bite-sized cubes.",
+   "Place each steak bite on a puff pastry round. Top with mayonnaise, garlic confit, and frisée."
+  ],
+  "clipping_notes": [],
+  "needs_help": null
+ },
+ {
+  "id": "minute-steaks-red-wine-sauce",
+  "photos": [
+   "IMG_0685",
+   "IMG_0686"
+  ],
+  "title": "Minute Steaks",
+  "subtitle": "in Red Wine Sauce",
+  "recipe_by": "Sarah Schepansky (@asprinkle_of_sarah)",
+  "source": "The Ami Food Magazine (Whisk) — The Yom Tov Cookbook, September 2, 2026",
+  "page": 64,
+  "magazine_category": "Meat",
+  "section": "meat_mains",
+  "kosher_type": "meat",
+  "contains_fish": false,
+  "description": "Slow-cooked in a rich, savory wine sauce with sweet caramelized onions, the meat becomes melt-in-your-mouth soft as it absorbs all the aromatic flavors. Finished with rosemary, thyme, and pomegranate, this is perfect served over mashed potatoes, rice, or creamy polenta.",
+  "yield_text": "Serves 6–8",
+  "servings": 7,
+  "time_printed": null,
+  "time_estimate": "About 4 hours (mostly slow cooking)",
+  "ingredients": [
+   {
+    "group": null,
+    "text": "2 tablespoons olive oil"
+   },
+   {
+    "group": null,
+    "text": "2–3 lbs. minute steaks or minute roast, cut to your preferred thickness"
+   },
+   {
+    "group": null,
+    "text": "Montreal steak seasoning"
+   },
+   {
+    "group": null,
+    "text": "1 teaspoon garlic powder"
+   },
+   {
+    "group": null,
+    "text": "1 large onion, thinly sliced"
+   },
+   {
+    "group": null,
+    "text": "5 cloves garlic, minced"
+   },
+   {
+    "group": null,
+    "text": "8 oz. mushrooms, sliced (optional)"
+   },
+   {
+    "group": null,
+    "text": "1 cup dry red wine"
+   },
+   {
+    "group": null,
+    "text": "½ cup teriyaki sauce"
+   },
+   {
+    "group": "For Serving (optional—use one or two)",
+    "text": "Fresh rosemary sprigs"
+   },
+   {
+    "group": "For Serving (optional—use one or two)",
+    "text": "Fresh thyme leaves"
+   },
+   {
+    "group": "For Serving (optional—use one or two)",
+    "text": "Pomegranate arils"
+   }
+  ],
+  "steps": [
+   "Heat the olive oil in a large skillet or Dutch oven over medium-high heat.",
+   "Season the minute steaks generously on both sides with Montreal steak seasoning and garlic powder.",
+   "Sear the steaks 1–2 minutes per side until nicely browned. Remove from the pan and set aside.",
+   "In the same pan, sauté the sliced onions, garlic, and mushrooms (if using) until softened and lightly caramelized.",
+   "Pour in the red wine, scraping up any browned bits from the bottom of the pan. Stir in the teriyaki sauce and bring to a gentle simmer.",
+   "Return the steaks to the pan, spooning the sauce over the meat.",
+   "Cover and cook over low heat for 3–3½ hours, or until the steaks are tender.",
+   "Spoon the steaks and sauce over a bed of mashed potatoes, rice, or polenta. Garnish with fresh rosemary, thyme, and a scatter of pomegranate arils before serving."
+  ],
+  "clipping_notes": [
+   {
+    "label": "Note",
+    "text": "Pictured here is a thick-cut minute steak, but the recipe works with any cut."
+   }
+  ],
+  "needs_help": null
+ },
+ {
+  "id": "maple-garlic-silver-tip-roast",
+  "photos": [
+   "IMG_0687"
+  ],
+  "shared_photo_with": "orzo-roasted-butternut-squash-spinach",
+  "title": "Maple Garlic Silver Tip Roast",
+  "subtitle": null,
+  "recipe_by": "Mor Eitan Fyman (@morofeverything)",
+  "source": "The Ami Food Magazine (Whisk) — The Yom Tov Cookbook, September 2, 2026",
+  "page": 66,
+  "magazine_category": "Meat",
+  "section": "meat_mains",
+  "kosher_type": "meat",
+  "contains_fish": false,
+  "description": "Minimal effort, maximum compliments. This roast has been a staple on my holiday table for years. Sweet, garlicky and incredibly tender, it's even better the next day, making it the perfect make-ahead main course for Shabbos or any holiday entertaining.",
+  "yield_text": "Serves 6–8",
+  "servings": 7,
+  "time_printed": null,
+  "time_estimate": "About 3½–4 hours plus marinating and overnight chilling (bakes about 45 minutes per pound)",
+  "ingredients": [
+   {
+    "group": null,
+    "text": "1 silver tip roast (3–4 lb., but any size works)"
+   },
+   {
+    "group": null,
+    "text": "¾ cup low-sodium soy sauce"
+   },
+   {
+    "group": null,
+    "text": "½ cup water"
+   },
+   {
+    "group": null,
+    "text": "¼ cup brown sugar"
+   },
+   {
+    "group": null,
+    "text": "1 tablespoon maple syrup"
+   },
+   {
+    "group": null,
+    "text": "1 tablespoon red wine vinegar"
+   },
+   {
+    "group": null,
+    "text": "8–10 cloves garlic, grated or minced"
+   },
+   {
+    "group": null,
+    "text": "1 teaspoon garlic powder"
+   },
+   {
+    "group": null,
+    "text": "3 scallions, thinly sliced, plus more for garnish"
+   }
+  ],
+  "steps": [
+   "Whisk together soy sauce, water, brown sugar, maple syrup, red wine vinegar, garlic and garlic powder. Stir in the scallions.",
+   "Place the roast in a roasting pan or deep baking dish and pour the marinade evenly over the meat. Marinate at least 1 hour, or overnight for best flavor.",
+   "Bake covered at 350°F for about 45 minutes per pound, until fork tender.",
+   "Cool completely.",
+   "Refrigerate for a few hours, preferably overnight.",
+   "Slice against the grain, return to the cooking juices, gently reheat and garnish with additional scallions."
+  ],
+  "clipping_notes": [
+   {
+    "label": "Freezer Friendly",
+    "text": "Freeze sliced roast in its juices and thaw overnight before reheating."
+   },
+   {
+    "label": "Tips",
+    "text": "Chilling before slicing makes it easier to cut and keeps it juicy."
+   }
+  ],
+  "needs_help": null
+ },
+ {
+  "id": "orzo-roasted-butternut-squash-spinach",
+  "photos": [
+   "IMG_0687"
+  ],
+  "shared_photo_with": "maple-garlic-silver-tip-roast",
+  "title": "Orzo with Roasted Butternut Squash & Spinach",
+  "subtitle": null,
+  "recipe_by": "Faigy Murray (@mykitchen_mystudio)",
+  "source": "The Ami Food Magazine (Whisk) — The Yom Tov Cookbook, September 2, 2026",
+  "page": 66,
+  "magazine_category": "Meat (side dish)",
+  "section": "meat_mains",
+  "kosher_type": "meat",
+  "kosher_note": "Meat because of the chicken stock. With vegetable stock it would be pareve.",
+  "contains_fish": false,
+  "description": "A colorful go-to vegetable side: roasted garlic brings big flavor, and the sweet, soft butternut squash pairs beautifully with the spinach. Toasting the orzo first infuses it with a deep, nutty aroma that brings the whole dish together.",
+  "yield_text": null,
+  "servings": null,
+  "time_printed": null,
+  "time_estimate": "About 1 hour",
+  "ingredients": [
+   {
+    "group": null,
+    "text": "3 tablespoons olive oil, divided"
+   },
+   {
+    "group": null,
+    "text": "1 butternut squash, cubed"
+   },
+   {
+    "group": null,
+    "text": "4 cloves garlic, minced"
+   },
+   {
+    "group": null,
+    "text": "1½ cups orzo*"
+   },
+   {
+    "group": null,
+    "text": "2½ cups chicken stock"
+   },
+   {
+    "group": null,
+    "text": "Approx. 2 cups frozen spinach, defrosted and squeezed dry"
+   },
+   {
+    "group": null,
+    "text": "Salt and pepper"
+   }
+  ],
+  "steps": [
+   "On a parchment-lined baking sheet, toss the butternut squash with salt and the 1 tablespoon oil. Bake the squash at 400°F for about 40 minutes, or until nicely roasted.",
+   "While the squash is baking, cook the orzo. In a large frying pan, add 2 tablespoons oil, the garlic, and the orzo. Turn heat to medium and, stirring frequently, brown the orzo. It browns quickly, so watch it closely.",
+   "Once browned, add the chicken stock. Either continue cooking on the stove at a low simmer for about 20 minutes until the orzo is ready, or transfer to a 9x13-inch pan, cover tightly, and bake at 350°F for about 30 minutes, checking after 20.",
+   "When the orzo is ready, toss with the roasted butternut squash, defrosted spinach, salt and pepper.",
+   "To reheat: cover and heat through gently. Overheating will dry it out."
+  ],
+  "clipping_notes": [
+   {
+    "label": "Variation",
+    "text": "Can substitute another grain such as rice or quinoa, though this may alter the baking times."
+   }
+  ],
+  "needs_help": "This is a side dish printed on the same page as the Silver Tip Roast. There's no Sides section, and it isn't a main, salad or appetizer. Which section should it go in? (Also: the clipping has an asterisk after 'orzo*', but I couldn't see the footnote on the page. It may be on another page.)"
+ },
+ {
+  "id": "onion-soup-silan-flanken",
+  "photos": [
+   "IMG_0688"
+  ],
+  "title": "Onion Soup Silan Flanken",
+  "subtitle": null,
+  "recipe_by": "Kay Robyn Ashkenazi (@kaysinthekitchen)",
+  "source": "The Ami Food Magazine (Whisk) — The Yom Tov Cookbook, September 2, 2026",
+  "page": 68,
+  "magazine_category": "Meat",
+  "section": "meat_mains",
+  "kosher_type": "meat",
+  "contains_fish": false,
+  "description": "Life is busy, so when it comes to dinner—whether weeknight or Yom Tov—I need good food, but I also need it to be quick and easy. This is a hearty, flavorful dish that tastes like you spent hours in the kitchen, but takes almost no time! I'm obsessed with onions, so you'll find them in some form in almost every recipe I develop. Here, the savory flavor of the onion soup mix is perfectly balanced by the sweetness of the silan in the velvety glaze.",
+  "yield_text": "Serves 4–6",
+  "servings": 5,
+  "time_printed": null,
+  "time_estimate": "About 3–3½ hours (mostly in the oven)",
+  "ingredients": [
+   {
+    "group": null,
+    "text": "1 tablespoon oil (preferably avocado oil)"
+   },
+   {
+    "group": null,
+    "text": "2 medium onions, sliced in half moons"
+   },
+   {
+    "group": null,
+    "text": "3 cloves garlic, sliced"
+   },
+   {
+    "group": null,
+    "text": "1½–2 lbs. boneless flanken or chuck beef"
+   },
+   {
+    "group": null,
+    "text": "Paprika, salt, and black pepper, to taste"
+   },
+   {
+    "group": null,
+    "text": "2 tablespoons onion soup mix"
+   },
+   {
+    "group": null,
+    "text": "2 tablespoons silan (date syrup)"
+   },
+   {
+    "group": null,
+    "text": "½–¾ cup water"
+   }
+  ],
+  "steps": [
+   "Heat oil in a roaster or Dutch oven over a medium flame and sauté onions until nicely colored.",
+   "Add sliced garlic and sauté until fragrant. Push onion and garlic to the side of the pan.",
+   "Season meat with paprika, salt, and black pepper. Sear on both sides.",
+   "Sprinkle meat with onion soup mix and drizzle silan all around.",
+   "Add the water directly into the pan to dilute the soup mix and thin the silan.",
+   "Cook on the stovetop 10–15 minutes, then transfer to a preheated 325°F oven and cook, covered, for 2½–3 hours until the meat is soft."
+  ],
+  "clipping_notes": [
+   {
+    "label": "Freezer Friendly",
+    "text": "Freezes very well—best in a vacuum-sealed bag, or squeeze all the air out of a ziptop bag and double-bag to keep it fresh. Thaw overnight in the fridge and reheat in a parchment-lined 9x13-inch pan."
+   },
+   {
+    "label": "Leftovers",
+    "text": "Shred the meat and use it in puff pastry squares, egg rolls, or rice paper wraps for pulled-beef hors d'oeuvres."
+   }
+  ],
+  "needs_help": null
+ },
+ {
+  "id": "sticky-ribs-bbq-garlic-confit-mash",
+  "photos": [
+   "IMG_0689"
+  ],
+  "title": "Sticky Ribs",
+  "subtitle": "with BBQ Sauce + Garlic Confit Mash",
+  "recipe_by": "Rebekah Durham (@noshbyrebekah)",
+  "source": "The Ami Food Magazine (Whisk) — The Yom Tov Cookbook, September 2, 2026",
+  "page": 70,
+  "magazine_category": "Meat",
+  "section": "meat_mains",
+  "kosher_type": "meat",
+  "contains_fish": false,
+  "description": "Growing up in Memphis, barbecue was everywhere, and everything was made with barbecue sauce. Since I couldn't find my favorite barbecue sauces here in Israel, I started making my own—which turned out much better than the store bought! This is the dish I made in the Hachefit finale, to rave reviews. Now you can enjoy this homey Southern barbecue sauce in your own kitchen!",
+  "yield_text": "Serves 6–8",
+  "servings": 7,
+  "time_printed": null,
+  "time_estimate": "About 5–6 hours (meat bakes 4–5 hours), or 8–9 hours in a slow cooker",
+  "ingredients": [
+   {
+    "group": "Barbecue Sauce",
+    "text": "1 (15-oz. / 425 g) can tomato sauce"
+   },
+   {
+    "group": "Barbecue Sauce",
+    "text": "6 tablespoons tomato paste"
+   },
+   {
+    "group": "Barbecue Sauce",
+    "text": "1 small onion, finely chopped"
+   },
+   {
+    "group": "Barbecue Sauce",
+    "text": "3 cloves garlic, finely chopped"
+   },
+   {
+    "group": "Barbecue Sauce",
+    "text": "2 tablespoons apple cider vinegar or white vinegar"
+   },
+   {
+    "group": "Barbecue Sauce",
+    "text": "1 tablespoon smoked paprika (or regular)"
+   },
+   {
+    "group": "Barbecue Sauce",
+    "text": "1 teaspoon cumin"
+   },
+   {
+    "group": "Barbecue Sauce",
+    "text": "1 teaspoon garlic powder"
+   },
+   {
+    "group": "Barbecue Sauce",
+    "text": "½ teaspoon salt"
+   },
+   {
+    "group": "Barbecue Sauce",
+    "text": "½ teaspoon pepper"
+   },
+   {
+    "group": "Barbecue Sauce",
+    "text": "1 tablespoon olive oil"
+   },
+   {
+    "group": "Barbecue Sauce",
+    "text": "2 tablespoons silan (date syrup)"
+   },
+   {
+    "group": "Barbecue Sauce",
+    "text": "½ cup water"
+   },
+   {
+    "group": "Meat",
+    "text": "5-bone flanken rack or 3–4 lbs. (1½–2 kilo) brisket"
+   },
+   {
+    "group": "Meat",
+    "text": "Salt, pepper, paprika, and garlic powder (for seasoning)"
+   },
+   {
+    "group": "Garlic Confit Mash",
+    "text": "1–2 cups peeled garlic"
+   },
+   {
+    "group": "Garlic Confit Mash",
+    "text": "Olive oil (enough to fully cover the garlic)"
+   },
+   {
+    "group": "Garlic Confit Mash",
+    "text": "8–12 potatoes (3–4 lbs.)"
+   },
+   {
+    "group": "Garlic Confit Mash",
+    "text": "¼–½ cup dairy-free milk"
+   },
+   {
+    "group": "Garlic Confit Mash",
+    "text": "Salt"
+   },
+   {
+    "group": "Fried Pastrami",
+    "text": "6 oz. pastrami, diced"
+   },
+   {
+    "group": "Fried Pastrami",
+    "text": "½ onion, diced"
+   },
+   {
+    "group": "Crispy Onions",
+    "text": "½–1 onion, sliced"
+   },
+   {
+    "group": "Crispy Onions",
+    "text": "Flour"
+   }
+  ],
+  "steps": [
+   "Whisk all sauce ingredients together to combine. (Optional: Cook some of the sauce down separately in a saucepan to use as a thick dip when serving.)",
+   "Season the meat well. Place in a baking dish and cover completely with the sauce mixture.",
+   "Bake at 300°F (150°C) for 4–5 hours or slow cook on low for 8–9 hours.",
+   "Garlic confit: Place garlic in an oven-safe dish and cover with oil. Bake at 350°F (180°C) for about 40 minutes until soft and golden. Blend most of the garlic into a paste; reserve a few whole cloves for topping.",
+   "Peel, cube, and boil potatoes until fork-tender.",
+   "Drain and mash.",
+   "Mix in pareve milk, the roasted garlic and garlic oil, and salt until creamy.",
+   "Dice pastrami with ½ onion and fry until crispy.",
+   "Coat sliced onions in flour and fry until golden.",
+   "Top mashed potatoes with fried pastrami, crispy onions and reserved whole cloves."
+  ],
+  "clipping_notes": [
+   {
+    "label": "Tips",
+    "text": "Make a big batch of the sauce and freeze it in smaller portions so there's always some on hand. It keeps in the fridge for a week or two and in the freezer for 4–6 months."
+   }
+  ],
+  "needs_help": null
+ },
+ {
+  "id": "savory-hamantaschen-dipping-sauce",
+  "photos": [
+   "IMG_0659"
+  ],
+  "title": "Savory Hamantaschen",
+  "subtitle": "with Dipping Sauce",
+  "recipe_by": null,
+  "source": "Binder clipping (magazine name not shown)",
+  "page": null,
+  "magazine_category": null,
+  "section": "salads_appetizers",
+  "kosher_type": "meat",
+  "contains_fish": false,
+  "description": null,
+  "yield_text": null,
+  "servings": null,
+  "time_printed": null,
+  "time_estimate": "About 1 hour 15 minutes, including 30 minutes marinating",
+  "ingredients": [
+   {
+    "group": "For the Hamantaschen",
+    "text": "3 chicken cutlets"
+   },
+   {
+    "group": "For the Hamantaschen",
+    "text": "2 Tbsp honey"
+   },
+   {
+    "group": "For the Hamantaschen",
+    "text": "3 cloves garlic"
+   },
+   {
+    "group": "For the Hamantaschen",
+    "text": "1 full Tbsp salt"
+   },
+   {
+    "group": "For the Hamantaschen",
+    "text": "2 Tbsp soy sauce"
+   },
+   {
+    "group": "For the Hamantaschen",
+    "text": "2 Tbsp apple juice"
+   },
+   {
+    "group": "For the Hamantaschen",
+    "text": "¼ cup finely diced red pepper"
+   },
+   {
+    "group": "For the Hamantaschen",
+    "text": "4 frozen malawah"
+   },
+   {
+    "group": "Dipping Sauce",
+    "text": "1 cup apricot jam"
+   },
+   {
+    "group": "Dipping Sauce",
+    "text": "2 Tbsp mustard"
+   },
+   {
+    "group": "Dipping Sauce",
+    "text": "2 Tbsp soy sauce"
+   },
+   {
+    "group": "Dipping Sauce",
+    "text": "1 Tbsp honey"
+   }
+  ],
+  "steps": [
+   "Cut chicken into small cubes. Combine the honey, garlic, salt, soy sauce and juice to form a marinade. Marinade the chicken cubes in this mixture for a minimum of half an hour. Add the diced red pepper.",
+   "Allow the malawah dough to defrost inside its plastic wrap for 10 minutes. Remove the wrap and cut into 2¼-inch circles. Allow these circles to defrost an additional 5 minutes.",
+   "Use a rolling pin or your hands to stretch each circle to a 3½-inch circle. Place a heaping teaspoon of the chicken mixture in the middle of each circle. Pinch three ends together to form a hamantasch shape.",
+   "Fry on both sides until golden. Make sure to keep the flame low enough so that the chicken gets cooked inside.",
+   "Serve warm with dipping sauce.",
+   "Dipping sauce: Combine all ingredients and mix thoroughly."
+  ],
+  "clipping_notes": [],
+  "suggested_labels": [
+   "Purim"
+  ],
+  "needs_help": "Please check one amount: the \"1\" in \"1 cup apricot jam\" is partly hidden in the photo. (The servings and magazine name aren't printed on the clipping.)"
+ },
+ {
+  "id": "medley-of-peppers",
+  "photos": [
+   "IMG_0660"
+  ],
+  "title": "Medley of Peppers",
+  "subtitle": null,
+  "recipe_by": null,
+  "source": "Binder clipping (magazine name not shown) (Purim feature)",
+  "page": null,
+  "magazine_category": "Recipes",
+  "section": "salads_appetizers",
+  "kosher_type": "pareve",
+  "contains_fish": false,
+  "description": "Cookbooks these days are filled with salad after salad, but for some reason it's never enough! I constantly get requests for new salad ideas, and as I rattle off the typical salads I hear sighs on the other end of the line. Well, I hope this one pleases all those searching for a new salad. Although I usually prefer a lettuce salad, this travels better.",
+  "yield_text": null,
+  "servings": null,
+  "time_printed": null,
+  "time_estimate": "About 20 minutes",
+  "ingredients": [
+   {
+    "group": "Salad",
+    "text": "2½ cups of sliced peppers in three colors, for a total of 7½ cups"
+   },
+   {
+    "group": "Salad",
+    "text": "½ cup salted almonds"
+   },
+   {
+    "group": "Salad",
+    "text": "½ cup cashews"
+   },
+   {
+    "group": "Salad",
+    "text": "½ cup raw pecans"
+   },
+   {
+    "group": "Salad",
+    "text": "½ cup pine nuts"
+   },
+   {
+    "group": "Salad",
+    "text": "3 Tbsp chopped dill"
+   },
+   {
+    "group": "Salad",
+    "text": "3 Tbsp chopped parsley"
+   },
+   {
+    "group": "Dressing",
+    "text": "2 tsp mustard"
+   },
+   {
+    "group": "Dressing",
+    "text": "3 Tbsp orange juice"
+   },
+   {
+    "group": "Dressing",
+    "text": "3 Tbsp olive oil"
+   },
+   {
+    "group": "Dressing",
+    "text": "2 tsp honey"
+   },
+   {
+    "group": "Dressing",
+    "text": "1 tsp lemon juice"
+   },
+   {
+    "group": "Dressing",
+    "text": "Salt (depending on the saltiness of the nuts)"
+   }
+  ],
+  "steps": [
+   "Place almonds, cashews, and pecans in a ziplock bag. With a kitchen mallet, bang the nuts until they are slightly crushed. Leave pine nuts whole.",
+   "Layer peppers and nuts in a serving bowl. Top with chopped herbs.",
+   "Combine dressing ingredients and store separately.",
+   "Mix the dressing into the salad 10 minutes before serving."
+  ],
+  "clipping_notes": [],
+  "suggested_labels": [
+   "Purim"
+  ],
+  "needs_help": "This clipping shows two food pictures: a layered salad in a glass bowl (top right) and sliced peppers with nuts in a white bowl (bottom left). I used the layered bowl because it matches 'layer peppers and nuts... top with herbs.' Is that the right one, or does the bottom picture go with a different recipe?"
+ }
+]
