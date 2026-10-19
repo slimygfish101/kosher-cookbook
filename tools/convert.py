@@ -5,7 +5,10 @@ pillow_heif.register_heif_opener()
 src, view = sys.argv[1], sys.argv[2]
 for f in sorted(glob.glob(os.path.join(src, '*'))):
     b = os.path.splitext(os.path.basename(f))[0]
-    im = ImageOps.exif_transpose(Image.open(f))
+    try:
+        im = ImageOps.exif_transpose(Image.open(f))
+    except Exception:
+        print(b, 'not a photo (PDF or link/text item) - skipped'); continue
     exif = im.getexif()
     dt = Image.open(f).getexif().get_ifd(0x8769).get(36867) or Image.open(f).getexif().get(306)
     im = im.convert('RGB')

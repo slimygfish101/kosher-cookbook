@@ -36,7 +36,7 @@ rows = []
 for r in recipes:
     if r['title'] in have: print('skip (already added)', r['title']); continue
     p = f'{slug}/{r["id"]}'
-    for n in ('page', 'food', 'thumb'): up(f'{b}/out/{r["id"]}/{n}.webp', f'{p}/{n}.webp')
+    imgs = {n: up(f'{b}/out/{r["id"]}/{n}.webp', f'{p}/{n}.webp') for n in ('page', 'food', 'thumb') if os.path.exists(f'{b}/out/{r["id"]}/{n}.webp')}
     by = f'Recipe by {r["recipe_by"]}. ' if r.get('recipe_by') else ''
     pg = f', page {r["page"]}' if r.get('page') else ''
     rows.append({
@@ -44,12 +44,12 @@ for r in recipes:
         'section': r['section'], 'kosher_type': r['kosher_type'], 'description': r['description'],
         'ingredients': r['ingredients'], 'steps': r['steps'],
         'servings': r['servings'], 'servings_text': r['yield_text'],
-        'total_time': r['time_printed'] or (f'About {r["time_estimate"][6:]}' if r['time_estimate'].startswith('About ') else r['time_estimate']),
+        'total_time': r.get('time_printed') or r.get('time_estimate'),
         'tips': r.get('clipping_notes', []), 'credit': f'{by}{r["source"]}{pg}',
-        'page_image': f'{p}/page.webp', 'food_image': f'{p}/food.webp', 'thumb_image': f'{p}/thumb.webp',
+        'page_image': imgs.get('page'), 'food_image': imgs.get('food'), 'thumb_image': imgs.get('thumb'),
         'drive_page_ids': [i for i in map(drive_id, r['photos']) if i], 'drive_food_id': drive_id(r['photos'][-1]),
         'photo_images': [photo_copy(x) for x in r['photos']],
-        'batch': batch, 'source': 'photo',
+        'batch': batch, 'source': r.get('source', 'photo'),
         'mixes_fish_and_meat': bool(r.get('contains_fish') and r['kosher_type'] == 'meat'),
         'needs_help': bool(r['needs_help']), 'needs_help_reason': r['needs_help'],
         'original': {**r, 'source_text': f'{by}{r["source"]}{pg}', 'time_is_estimate': not r['time_printed']},

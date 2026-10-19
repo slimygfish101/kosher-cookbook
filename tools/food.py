@@ -10,6 +10,8 @@ special = json.load(open(f'{b}/crops.json')) if os.path.exists(f'{b}/crops.json'
 rot = json.load(open(f'{b}/rotate.json')) if os.path.exists(f'{b}/rotate.json') else {}
 done = {}
 for r in recipes:
+    if not r['photos']:
+        continue  # typed out from a link or pasted text, no photo
     src = r['photos'][-1]
     im = Image.open(f'{b}/full/{src}.jpg')
     im = im.rotate(rot.get(src, 0), expand=True)

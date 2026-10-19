@@ -353,8 +353,103 @@ const textToTips = (text) => text.split('\n').map((l) => l.trim()).filter(Boolea
   return m ? { label: m[1].trim(), text: m[2].trim() } : { label: null, text: l };
 });
 
+// ---------- Add from a link ----------
+
+let imported = null; // a recipe read from a website, waiting to be checked and saved
+
+const DAIRY = /\b(milk|butter|cheese|cream|yogh?urt|parmesan|mozzarella|ricotta|feta|cheddar|labaneh|ghee)\b/i;
+const NOT_DAIRY = /\b(non-?dairy|dairy-?free|pareve|parve|coconut (milk|cream)|almond milk|oat milk|soy milk|margarine|peanut butter|cocoa butter)\b/gi;
+
+function guessKosher(ingredients) {
+  const text = ingredients.join(' \n ');
+  if (MEAT.test(text)) return 'meat';
+  if (DAIRY.test(text.replace(NOT_DAIRY, ''))) return 'dairy';
+  return 'pareve';
+}
+
+function guessSection(r) {
+  const t = `${r.title} ${r.category ?? ''} ${r.keywords ?? ''}`.toLowerCase();
+  const ing = r.ingredients.join(' ').toLowerCase();
+  if (/dessert|cake|cookie|brownie|pie\b|muffin|tart|pudding|ice cream|sweet/.test(t)) return 'desserts';
+  if (/soup/.test(t)) return 'soups';
+  if (/salad|slaw/.test(t)) return 'salads_appetizers';
+  if (/side|kugel|rice|potato|vegetable|roasted veg/.test(t) && !/main/.test(t)) return 'sides';
+  if (/chicken|turkey|pargiyot|duck/.test(t) || /chicken|turkey/.test(ing)) return 'chicken_mains';
+  if (MEAT.test(t) || MEAT.test(ing)) return 'meat_mains';
+  if (FISH.test(t) || FISH.test(ing) || DAIRY.test(ing)) return 'dairy_mains';
+  return '';
+}
+
+async function importLink(url) {
+  const msg = document.getElementById('link-msg');
+  msg.innerHTML = '<p class="muted">Reading the recipe from that page…</p>';
+  let data;
+  try {
+    data = await fetch(`/api/import?url=${encodeURIComponent(url)}`).then((r) => r.json());
+  } catch {
+    msg.innerHTML = '<div class="banner danger">Couldn\'t reach that page. Check the link and your internet.</div>';
+    return;
+  }
+  if (data.found) {
+    const r = data.recipe;
+    imported = {
+      title: r.title,
+      section: guessSection(r),
+      kosher_type: guessKosher(r.ingredients),
+      servings: r.servings,
+      servings_text: r.yield_text ?? '',
+      total_time: r.total_time ?? '',
+      description: r.description ?? '',
+      ingredients: r.ingredients.map((text) => ({ group: null, text })),
+      steps: r.steps.map((st) => (st.section ? `${st.section}: ${st.text}` : st.text)),
+      tips: [],
+      credit: `${r.author ? `Recipe by ${r.author}. ` : ''}From ${r.site} — ${r.url}`,
+      image_url: r.image,
+    };
+    location.hash = '#/new';
+    return;
+  }
+  const why = {
+    social: 'Instagram, Facebook and TikTok don\'t let apps read their posts.',
+    unreachable: 'That website doesn\'t let apps read its pages directly.',
+    no_recipe_data: 'That page doesn\'t include a ready-made recipe.',
+    bad_link: 'That doesn\'t look like a web link.',
+  }[data.reason] ?? 'That page couldn\'t be read.';
+  msg.innerHTML = data.reason === 'social'
+    ? `<div class="banner warn">${why} Instead, open the post, copy the recipe text from the caption, and paste it in the box below. You can add the post's picture too (take a screenshot or save it to your photos).</div>`
+    : `<div class="banner warn">${why} Claude can read it for you instead (it's added to the "waiting to be read" list).</div>
+       <button class="btn primary" data-send-link="${esc(url)}">Send this link to Claude</button>`;
+}
+
+// Links and pasted text that need Claude go into the same inbox as photos, as a small text file.
+async function addToInbox(item, photo) {
+  const { data } = await db.from('uploads').select('batch').is('processed_at', null);
+  const counts = new Map();
+  for (const u of data ?? []) counts.set(u.batch, (counts.get(u.batch) ?? 0) + 1);
+  const open = [...counts].filter(([, n]) => n < BATCH_MAX).map(([b]) => b).sort().pop();
+  const batch = open ?? `Batch ${String(await nextBatchNumber()).padStart(2, '0')}`;
+  let position = (counts.get(batch) ?? 0) + 1;
+  const slug = batch.toLowerCase().replace(/\s+/g, '-');
+  const by = store('cookbook-name') || null;
+  const path = `inbox/${slug}/${String(position).padStart(3, '0')}-${Date.now()}.json`;
+  const body = new Blob([JSON.stringify(item)], { type: 'application/json' });
+  await db.storage.from(PHOTO_BUCKET).upload(path, body, { contentType: 'application/json' }).then((r) => { if (r.error) throw r.error; });
+  const label = item.kind === 'link' ? `Link: ${item.url}` : `Pasted recipe: ${item.text.slice(0, 60)}`;
+  await db.from('uploads').insert({ batch, path, file_name: label.slice(0, 200), size_bytes: body.size, position, uploaded_by: by }).throwOnError();
+  if (photo && photo.size) {
+    position++;
+    const blob = await shrinkForReading(photo);
+    const ppath = `inbox/${slug}/${String(position).padStart(3, '0')}-${Date.now()}.jpg`;
+    await db.storage.from(PHOTO_BUCKET).upload(ppath, blob, { contentType: blob.type || 'image/jpeg' }).then((r) => { if (r.error) throw r.error; });
+    await db.from('uploads').insert({ batch, path: ppath, file_name: `Picture for the pasted recipe above (${photo.name})`.slice(0, 200), size_bytes: photo.size, position, uploaded_by: by }).throwOnError();
+  }
+  return batch;
+}
+
 async function viewEdit(id) {
   let r = { title: '', section: '', kosher_type: '', servings: null, servings_text: '', total_time: '', description: '', ingredients: [], steps: [], tips: [], credit: '' };
+  const fromLink = !id && imported;
+  if (fromLink) r = imported;
   if (id) {
     const { data, error } = await db.from('recipes').select('*').eq('id', id).maybeSingle();
     if (error) throw error;
@@ -365,7 +460,10 @@ async function viewEdit(id) {
   const opt = (list, val) => list.map((x) => `<option value="${x.key}" ${x.key === val ? 'selected' : ''}>${esc(x.name)}</option>`).join('');
   return `<form class="form" id="edit-form">
     <h1>${id ? 'Fix recipe' : 'Add a recipe'}</h1>
-    ${id ? '<p class="muted">Change anything that was misread. The original reading is kept, so you can always undo.</p>' : '<p class="muted">Type a recipe in yourself. To add clippings from photos instead, put them in a new Drive batch folder and ask Claude to read it.</p>'}
+    ${id ? '<p class="muted">Change anything that was misread. The original reading is kept, so you can always undo.</p>'
+      : fromLink ? '<div class="banner info">Copied word for word from the website. Please check the <b>section</b> and <b>Meat / Dairy / Pareve</b> (they\'re only suggestions), then tap Add recipe.</div>'
+      : '<p class="muted">Type a recipe in yourself. For clippings, use <a href="#/add">Add clippings</a> instead.</p>'}
+    ${fromLink && r.image_url ? `<img src="/api/import?image=${encodeURIComponent(r.image_url)}" alt="" style="max-height:220px;border-radius:12px;margin:8px 0"><input type="hidden" name="image_url" value="${esc(r.image_url)}">` : ''}
     <label>Recipe name</label><input type="text" name="title" value="${esc(r.title)}" required>
     <div class="two">
       <div><label>Section</label><select name="section" required><option value="">Choose…</option>${opt(SECTIONS, r.section)}</select></div>
@@ -448,7 +546,12 @@ async function saveEdit(form) {
   button.textContent = 'Saving…';
   try {
     const folder = `typed/${id ?? crypto.randomUUID()}`;
-    const food = f.get('food');
+    let food = f.get('food');
+    const imageUrl = f.get('image_url');
+    if ((!food || !food.size) && imageUrl) {
+      const img = await fetch(`/api/import?image=${encodeURIComponent(imageUrl)}`);
+      if (img.ok) food = await img.blob();
+    }
     if (food && food.size) {
       row.food_image = await uploadPhoto(food, folder, 'food', 1200);
       row.thumb_image = await uploadPhoto(food, folder, 'thumb', 480);
@@ -460,9 +563,13 @@ async function saveEdit(form) {
     if (id) {
       ({ data: saved } = await db.from('recipes').update(row).eq('id', id).select('id').single().throwOnError());
     } else {
-      row.source = 'typed';
+      row.source = imported ? 'link' : 'typed';
+      if (imported) {
+        row.original = { title: imported.title, section: row.section, kosher_type: row.kosher_type, description: imported.description, ingredients: imported.ingredients, steps: imported.steps, clipping_notes: [], servings: imported.servings, yield_text: imported.servings_text, source_text: imported.credit, image_url: imported.image_url };
+      }
       ({ data: saved } = await db.from('recipes').insert(row).select('id').single().throwOnError());
     }
+    imported = null;
     await loadAll();
     toast(id ? 'Saved' : 'Recipe added');
     location.hash = `#/recipe/${saved.id}`;
@@ -848,7 +955,7 @@ async function viewUpload() {
     <p class="muted">Pick the photos of your clippings from your phone's photo gallery. Take the recipe page first and its food picture right after (or the whole two-page spread). The app puts them in order and sorts them into batches of about ${BATCH_MAX} photos. They're read overnight and show up in the cookbook the next morning. Can't wait? Open Claude and say <b>"read my uploads"</b> to have them read right away.</p>
     <p class="muted small">You can pick a whole album at once. Photos are shrunk to reading size before uploading, and photos you've uploaded before are skipped automatically.</p>
     <div class="card pad stack" id="upload-box">
-      <label class="btn primary" style="width:100%">📷 Choose photos<input type="file" id="photo-picker" accept="image/*" multiple hidden></label>
+      <label class="btn primary" style="width:100%">📷 Choose photos or PDFs<input type="file" id="photo-picker" accept="image/*,application/pdf" multiple hidden></label>
       <div id="upload-plan"></div>
     </div>
     <h2 class="section-head">Waiting to be read</h2>
@@ -862,6 +969,19 @@ async function viewUpload() {
       <div id="read-now-msg" class="small"></div>
     </form>` : ''}
     ${waiting.size ? `<div class="list">${[...waiting].map(([batch, g]) => `<div class="item"><div class="grow"><b>${esc(batch)}</b><div class="muted small">${g.count} photo${g.count === 1 ? '' : 's'} · uploaded ${new Date(g.at).toLocaleDateString()}${g.by ? ` by ${esc(g.by)}` : ''}</div></div><span class="badge" style="background:var(--warn-bg);color:var(--warn)">Waiting</span></div>`).join('')}</div>` : '<p class="empty">Nothing waiting. Everything uploaded so far has been read.</p>'}
+    <h2 class="section-head">🔗 Add from a link</h2>
+    <form class="card pad stack" id="link-form">
+      <p class="muted small" style="margin:0">Paste a link to a recipe page (for example kosher.com). Most recipe websites come in word for word, instantly, and it's free.</p>
+      <div class="row"><input type="url" name="url" placeholder="https://www.kosher.com/recipe/…" required style="flex:1;min-width:220px;padding:10px 12px;border:1px solid var(--line);border-radius:10px"><button class="btn primary">Get recipe</button></div>
+      <div id="link-msg"></div>
+    </form>
+    <h2 class="section-head">📝 Paste recipe text</h2>
+    <form class="card pad stack" id="paste-form">
+      <p class="muted small" style="margin:0">For Instagram posts or messages: copy the recipe text and paste it here. Claude will sort it into ingredients and steps (added to the "waiting to be read" list).</p>
+      <textarea name="text" rows="6" required placeholder="Paste the recipe here…" style="width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:10px"></textarea>
+      <label class="small">Picture (optional) <input type="file" name="photo" accept="image/*"></label>
+      <div class="row"><button class="btn primary">Send to Claude</button></div>
+    </form>
     <p class="muted small" style="margin-top:20px">Prefer typing a recipe in yourself? <a href="#/new">Type in a recipe</a>.</p>`;
 }
 
@@ -899,7 +1019,7 @@ async function planUpload(files) {
     ${skipped ? `<p class="muted small">${skipped} photo${skipped === 1 ? ' was' : 's were'} already uploaded before, so ${skipped === 1 ? 'it was' : 'they were'} skipped.</p>` : ''}
     ${later ? `<div class="banner warn">To stay inside the free storage, ${photos.length} photos go up now. After they've been read, choose the same photos again and the remaining ${later} will go up (the ones already uploaded are skipped automatically).</div>` : ''}
     ${allDated ? '' : '<p class="muted small">Some photos had no "date taken", so they\'re kept in the order you picked them.</p>'}
-    <div class="thumbs">${photos.slice(0, 60).map((p) => `<img src="${URL.createObjectURL(p.file)}" alt="">`).join('')}${photos.length > 60 ? `<span class="muted">+${photos.length - 60} more</span>` : ''}</div>
+    <div class="thumbs">${photos.slice(0, 60).map((p) => (p.file.type === 'application/pdf' ? '<span class="pdf-thumb">📄 PDF</span>' : `<img src="${URL.createObjectURL(p.file)}" alt="">`)).join('')}${photos.length > 60 ? `<span class="muted">+${photos.length - 60} more</span>` : ''}</div>
     <label class="small">Your name (optional) <input type="text" id="upload-name" value="${esc(store('cookbook-name') ?? '')}" style="max-width:220px"></label>
     <div class="row"><button class="btn primary" data-start-upload>Upload ${photos.length} photo${photos.length === 1 ? '' : 's'}</button><button class="btn" data-cancel-upload>Cancel</button></div>`;
 }
@@ -945,6 +1065,7 @@ async function route() {
   const params = new URLSearchParams(query ?? '');
   const navKey = { search: 'search', labels: 'labels', label: 'labels', new: 'add', add: 'add', upload: 'add', more: 'more', help: 'more', trash: 'more' }[parts[0]] ?? 'home';
   document.querySelectorAll('[data-nav]').forEach((a) => a.classList.toggle('active', a.dataset.nav === navKey));
+  if (parts[0] !== 'new') imported = null;
   try {
     let html;
     switch (parts[0]) {
@@ -1044,6 +1165,14 @@ document.addEventListener('click', async (e) => {
     return;
   }
   if ('startUpload' in d) return runUpload();
+  if (d.sendLink) {
+    try {
+      const batch = await addToInbox({ kind: 'link', url: d.sendLink });
+      toast(`Sent to Claude (${batch})`);
+      route();
+    } catch (err) { fail(err, 'send the link'); }
+    return;
+  }
   if ('cancelUpload' in d) { pendingPlan = null; return route(); }
   if (d.pic) { current.pic = d.pic; document.getElementById('pics').innerHTML = picsHtml(current.recipe); return; }
   if ('cook' in d) return openCook();
@@ -1104,6 +1233,17 @@ document.addEventListener('submit', async (e) => {
   if (form.id === 'edit-form') return saveEdit(form);
   if (form.id === 'new-label') {
     if (await createLabel(form.name.value)) { toast('Label created'); route(); }
+    return;
+  }
+  if (form.id === 'link-form') return importLink(form.url.value.trim());
+  if (form.id === 'paste-form') {
+    const button = form.querySelector('button');
+    button.disabled = true;
+    try {
+      const batch = await addToInbox({ kind: 'text', text: form.text.value.trim() }, form.photo.files[0]);
+      toast(`Sent to Claude (${batch})`);
+      route();
+    } catch (err) { fail(err, 'send the recipe'); button.disabled = false; }
     return;
   }
   if (form.id === 'read-now-form') {

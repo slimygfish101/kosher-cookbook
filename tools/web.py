@@ -8,6 +8,8 @@ rot = json.load(open(f'{b}/rotate.json')) if os.path.exists(f'{b}/rotate.json') 
 spreads = set(json.load(open(f'{b}/spreads.json'))) if os.path.exists(f'{b}/spreads.json') else set()
 tot = 0
 for r in recipes:
+    if not r['photos']:
+        continue  # typed out from a link or pasted text, no photo
     d = f'{out}/{r["id"]}'; os.makedirs(d, exist_ok=True)
     src = r['photos'][0]
     im = Image.open(f'{b}/full/{src}.jpg').rotate(rot.get(src, 0), expand=True)
