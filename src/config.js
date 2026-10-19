@@ -5,7 +5,7 @@ export const SUPABASE_KEY = 'sb_publishable_5UJAoO1FFtZeTJ7NR7n5Qw_wqJWHsdC';
 export const PHOTO_BUCKET = 'photos';
 
 export const SECTIONS = [
-  { key: 'salads_appetizers', name: 'Salads & Appetizers', kosherLabel: true },
+  { key: 'salads_appetizers', name: 'Salads', kosherLabel: true },
   { key: 'soups', name: 'Soups', kosherLabel: true },
   { key: 'dairy_mains', name: 'Dairy Mains', note: 'Fish mains are here too' },
   { key: 'chicken_mains', name: 'Chicken Mains' },
