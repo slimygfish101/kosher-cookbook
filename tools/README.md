@@ -8,5 +8,5 @@ How a batch is read (run in the cloud workspace, never on the family computer):
 4. `food.py` – crop the food picture; `web.py` – make shrunk page/food/thumb WebP copies.
 5. `upload.py <batch dir> "Batch NN"` – upload pictures to Supabase storage, insert recipes and help items, record the batch. Safe to re-run: recipes already in that batch are skipped.
 6. After the batch is added, schedule a ONE-TIME accuracy check for 4:00 AM America/New_York that night
-   (create_trigger with run_once_at, fresh session; copy the prompt of the "Recipe accuracy check (Batch 01)" routine).
+   (create_trigger with run_once_at, fresh session, model claude-sonnet-5-5 to save usage; copy the prompt of the "Recipe accuracy check (Batch 01)" routine).
    The check follows `checks/PROCEDURE.md`. The owner wants it only after new recipes, not every night.
