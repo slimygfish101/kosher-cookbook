@@ -954,7 +954,7 @@ async function waitingList() {
 async function viewUpload() {
   const waiting = await waitingList();
   return `<h1>Add clippings</h1>
-    <p class="muted">Tap the button and pick the recipe photos or screenshots. That's it: they're sent by themselves and show up in the cookbook by the next morning.</p>
+    <p class="muted">Tap the button and pick the recipe photos or screenshots. That's it: they're sent by themselves and show up in the cookbook by the next morning. Up to about 100 photos at a time works best.</p>
     <div class="card pad stack" id="upload-box">
       <label class="btn primary big" style="width:100%">📷 Choose photos<input type="file" id="photo-picker" class="photo-picker" accept="image/*,application/pdf" multiple hidden></label>
       <div id="upload-plan"></div>
@@ -990,7 +990,22 @@ let pendingPlan = null;
 let uploadNote = '';
 let pickedFromHome = null; // photos picked with the home page button, uploaded as soon as the Add page opens
 
+// While the phone prepares the chosen photos (many photos can take minutes), show that it's working.
+function showBusy(on) {
+  let el = document.getElementById('busy');
+  if (!el) {
+    el = document.createElement('div');
+    el.id = 'busy';
+    el.innerHTML = '<div class="busy-card"><div class="spinner"></div><b>Getting your photos from the phone…</b><p>With a lot of photos this can take a few minutes. Please keep this screen open.</p></div>';
+    document.body.appendChild(el);
+  }
+  el.style.display = on ? 'flex' : 'none';
+}
+document.addEventListener('click', (e) => { if (e.target.matches?.('input.photo-picker')) showBusy(true); });
+document.addEventListener('cancel', (e) => { if (e.target.matches?.('input.photo-picker')) showBusy(false); }, true);
+
 async function planUpload(files) {
+  showBusy(false);
   const planEl = document.getElementById('upload-plan');
   planEl.innerHTML = '<p class="muted">Reading the photos…</p>';
   const photos = [];
