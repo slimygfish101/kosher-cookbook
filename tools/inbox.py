@@ -54,7 +54,8 @@ def cmd_fetch(batch, d):
         r = subprocess.run(['curl', '-sS', '-f', '-o', out, f'{U}/storage/v1/object/public/photos/{quote(u["path"])}'])
         if r.returncode:
             raise SystemExit(f'download failed: {u["path"]}')
-        ids[stem] = {'upload_id': u['id'], 'path': u['path'], 'file_name': u['file_name'], 'taken_at': u['taken_at']}
+        kind = 'screenshot' if '-shot.' in u['path'] else 'pdf' if ext.lower() == '.pdf' else 'item' if ext.lower() == '.json' else 'clipping'
+        ids[stem] = {'upload_id': u['id'], 'path': u['path'], 'file_name': u['file_name'], 'taken_at': u['taken_at'], 'kind': kind}
     json.dump(ids, open(f'{d}/ids.json', 'w'), indent=1)
     print(f'{len(ids)} photos saved to {d}/heic as P001..P{len(ids):03d} (in the order they were taken)')
 

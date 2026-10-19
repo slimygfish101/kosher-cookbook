@@ -241,6 +241,8 @@ body.cooking #timers { bottom: calc(14px + env(safe-area-inset-bottom)); }
 .thumbs { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
 .thumbs img { width: 64px; height: 64px; object-fit: cover; border-radius: 8px; }
 .pdf-thumb { width: 64px; height: 64px; display: inline-flex; align-items: center; justify-content: center; background: var(--brand-soft); color: var(--brand); border-radius: 8px; font-size: .75rem; font-weight: 600; }
+.kind-choice { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.kind-choice .chip { display: inline-flex; align-items: center; }
 .share-box { margin: auto; width: min(380px, calc(100vw - 32px)); color: var(--ink); }
 .share-box .btn { width: 100%; }
 

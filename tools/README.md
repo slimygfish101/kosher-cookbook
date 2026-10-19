@@ -13,6 +13,12 @@ A routine checks every night at about 2:20 AM (America/New_York); you can also d
    smaller viewing copies in `view/`. Look at each photo; write `rotate.json` (stem → degrees counter-clockwise to make it
    upright), `spreads.json` (stems that are two-page magazine spreads) and, where the food picture isn't on the
    right-hand page of a spread, `crops.json` (stem → [left, top, right, bottom] fractions).
+   `ids.json` gives each item a `kind`: `clipping`, `screenshot`, `pdf` or `item` (a link or pasted text).
+   - **Screenshots** (`kind: screenshot`, uploaded with "-shot" in the name) are clear digital text: hand their reading
+     to a **Sonnet subagent** (Agent tool, model "sonnet"), several screenshots of one recipe together (they are in the
+     order taken/picked; consecutive screenshots of one recipe scrolled down belong together). If a screenshot shows the
+     dish, crop it as the food picture (crops.json). Mark these recipes `"source": "screenshot"`.
+     Paper clippings (`kind: clipping`) keep the careful reading by the main model.
    **Not every inbox item is a photo.** Items can also be:
    - **PDF** (`P00n.pdf`): run `pdftotext -layout`. If it has real text, use that text exactly (no reading errors) and
      render page 1 with `pdftoppm -r 150 -jpeg -singlefile` to `full/P00n.jpg` as the page copy. If it has no text

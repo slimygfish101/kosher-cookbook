@@ -4,7 +4,7 @@ Goal: re-check every recipe that was read from photos against its original photo
 every amount and unit, every step, servings, section and Meat/Dairy/Pareve — and fix confirmed misreads.
 
 ## Rules
-- Only recipes with `source = 'photo'` and `deleted_at is null` that are NOT already listed in `checks/checked.json`.
+- Only recipes with `source` = `'photo'` or `'screenshot'` and `deleted_at is null` that are NOT already listed in `checks/checked.json`.
 - Never change the `original` column, never delete anything, never touch labels, notes, or typed-in recipes.
 - A fix is only applied when a second, independent look at the photo confirms it. Every update is
   automatically saved in `recipe_history`, so it can be undone.
@@ -16,7 +16,7 @@ every amount and unit, every step, servings, section and Meat/Dairy/Pareve — a
 ## Steps
 1. Supabase: URL and publishable key are in `src/config.js` (REST at `/rest/v1/`). List candidate recipes.
    If there are none, append "nothing new to check" to `checks/log.md`, commit, and stop.
-2. For each candidate, download its original photo copies from Supabase storage: every path in `photo_images`
+2. For each candidate (screenshots too), download its original photo copies from Supabase storage: every path in `photo_images`
    (about 3000 px, best) or, if that list is empty, `page_image` (about 2400 px):
    `<SUPABASE_URL>/storage/v1/object/public/photos/<path>`.
    Cut it into 2–3 overlapping tiles of at most ~1568 px so small print is readable (Pillow in a scratchpad venv,

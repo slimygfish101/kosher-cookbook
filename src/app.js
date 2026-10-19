@@ -952,7 +952,7 @@ async function viewUpload() {
     <p class="muted">Pick the photos of your clippings from your phone's photo gallery. Take the recipe page first and its food picture right after (or the whole two-page spread). The app puts them in order and sorts them into batches of about ${BATCH_MAX} photos. They're read overnight and show up in the cookbook the next morning. Can't wait? Open Claude and say <b>"read my uploads"</b> to have them read right away.</p>
     <p class="muted small">You can pick a whole album at once. Photos are shrunk to reading size before uploading, and photos you've uploaded before are skipped automatically.</p>
     <div class="card pad stack" id="upload-box">
-      <label class="btn primary" style="width:100%">📷 Choose photos or PDFs<input type="file" id="photo-picker" accept="image/*,application/pdf" multiple hidden></label>
+      <label class="btn primary" style="width:100%">📷 Choose photos, screenshots or PDFs<input type="file" id="photo-picker" accept="image/*,application/pdf" multiple hidden></label>
       <div id="upload-plan"></div>
     </div>
     <h2 class="section-head">Waiting to be read</h2>
@@ -983,6 +983,7 @@ async function viewUpload() {
 }
 
 let pendingPlan = null;
+let pendingKind = 'clipping';
 
 async function planUpload(files) {
   const planEl = document.getElementById('upload-plan');
@@ -1011,7 +1012,15 @@ async function planUpload(files) {
   const first = await nextBatchNumber();
   const batches = splitIntoBatches(photos).map((list, i) => ({ name: `Batch ${String(first + i).padStart(2, '0')}`, photos: list }));
   pendingPlan = batches;
+  // iPhone screenshots arrive as PNG files; photos of paper arrive as JPEG/HEIC with camera data.
+  const looksLikeScreenshots = photos.every((p) => p.file.type === 'image/png' || (!p.taken && p.file.type !== 'application/pdf'));
+  pendingKind = looksLikeScreenshots ? 'screenshot' : 'clipping';
   planEl.innerHTML = `
+    <div class="kind-choice"><span class="small"><b>These are:</b></span>
+      <label class="chip ${pendingKind === 'clipping' ? 'on' : ''}"><input type="radio" name="kind" value="clipping" ${pendingKind === 'clipping' ? 'checked' : ''} hidden>📷 Photos of paper clippings</label>
+      <label class="chip ${pendingKind === 'screenshot' ? 'on' : ''}"><input type="radio" name="kind" value="screenshot" ${pendingKind === 'screenshot' ? 'checked' : ''} hidden>📱 Screenshots</label>
+    </div>
+    <p class="muted small" id="kind-note">${pendingKind === 'screenshot' ? 'Screenshots are clear digital text, so a cheaper Claude model reads them.' : 'Paper clippings get the careful reading.'}</p>
     <p><b>${photos.length} photo${photos.length === 1 ? '' : 's'}</b> → ${batches.map((b) => `${esc(b.name)} (${b.photos.length})`).join(', ')}</p>
     ${skipped ? `<p class="muted small">${skipped} photo${skipped === 1 ? ' was' : 's were'} already uploaded before, so ${skipped === 1 ? 'it was' : 'they were'} skipped.</p>` : ''}
     ${later ? `<div class="banner warn">To stay inside the free storage, ${photos.length} photos go up now. After they've been read, choose the same photos again and the remaining ${later} will go up (the ones already uploaded are skipped automatically).</div>` : ''}
@@ -1033,7 +1042,8 @@ async function runUpload() {
     const slug = p.batch.toLowerCase().replace(/\s+/g, '-');
     const blob = await shrinkForReading(p.file);
     const ext = blob === p.file ? (p.file.name.match(/\.(\w+)$/)?.[1] ?? 'jpg').toLowerCase() : 'jpg';
-    const path = `inbox/${slug}/${String(p.position).padStart(3, '0')}-${Date.now()}.${ext}`;
+    // "-shot" in the name tells the reader to use the cheaper model for this item.
+    const path = `inbox/${slug}/${String(p.position).padStart(3, '0')}-${Date.now()}${pendingKind === 'screenshot' ? '-shot' : ''}.${ext}`;
     let ok = false;
     for (let attempt = 0; attempt < 3 && !ok; attempt++) {
       const up = await db.storage.from(PHOTO_BUCKET).upload(path, blob, { contentType: blob.type || 'image/jpeg', upsert: false });
@@ -1285,6 +1295,11 @@ function refreshIngredients() {
 document.addEventListener('change', (e) => {
   if (e.target.id === 'size') { current.factor = Number(e.target.value); refreshIngredients(); }
   if (e.target.id === 'photo-picker' && e.target.files.length) planUpload(e.target.files);
+  if (e.target.name === 'kind' && e.target.closest('.kind-choice')) {
+    pendingKind = e.target.value;
+    document.querySelectorAll('.kind-choice .chip').forEach((c) => c.classList.toggle('on', c.contains(e.target)));
+    document.getElementById('kind-note').textContent = pendingKind === 'screenshot' ? 'Screenshots are clear digital text, so a cheaper Claude model reads them.' : 'Paper clippings get the careful reading.';
+  }
 });
 
 document.addEventListener('input', (e) => {
