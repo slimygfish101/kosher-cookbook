@@ -16,10 +16,12 @@ every amount and unit, every step, servings, section and Meat/Dairy/Pareve — a
 ## Steps
 1. Supabase: URL and publishable key are in `src/config.js` (REST at `/rest/v1/`). List candidate recipes.
    If there are none, append "nothing new to check" to `checks/log.md`, commit, and stop.
-2. For each candidate, download its photos (`drive_page_ids`) with the Google Drive connector
-   (`download_file_content`; the result is saved to a file — decode the base64 `content`).
-   Convert HEIC with pillow-heif (install it in a venv in the scratchpad, never system-wide); see `tools/convert.py`.
-   Rotate upright and cut the recipe page into 2–3 overlapping tiles of at most ~1568 px so small print is readable.
+2. For each candidate, download its readable recipe-page copy from Supabase storage:
+   `<SUPABASE_URL>/storage/v1/object/public/photos/<page_image>` (about 2400 px tall, sharp enough to read).
+   Cut it into 2–3 overlapping tiles of at most ~1568 px so small print is readable (Pillow in a scratchpad venv,
+   never installed system-wide). If a line is still too small or blurry to be sure, do not guess — put it on the
+   "needs my help" list. (Full-size originals are in Google Drive, `drive_page_ids`, if a session with the Drive
+   connector is available.)
 3. Run a multi-agent Workflow (keep it under ~10 agents per night):
    - Checker agents, about 4 recipes each: read the photo tiles from scratch, transcribe the recipe, then compare with the
      saved recipe JSON and return a list of differences (field, saved value, value on the photo, confidence).
