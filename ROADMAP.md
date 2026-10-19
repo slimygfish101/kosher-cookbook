@@ -8,6 +8,11 @@
 5. Timers in cook mode: tap a time in a step (e.g. "15 minutes") to start a timer
 6. Print a recipe on one clean page, and share a recipe (e.g. WhatsApp)
 
+## Also done (Oct 19)
+- Recipe size without 1½; uploads shrink to reading size and skip photos uploaded before
+- Code-protected "Read now" button (needs the owner to add 3 keys in Vercel — reminder emailed)
+- Add from a link (free word-for-word import), paste recipe text, PDF uploads
+
 ## Stage two — remind the owner when the whole app is finished
 - **Menus** (save a set of recipes as a menu, warn if a menu mixes meat and dairy). The owner has an idea for
   turning this into something bigger — ask them about it first.
