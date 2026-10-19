@@ -198,24 +198,21 @@ function viewLabels() {
 
 function viewSearch(params) {
   const q = params.get('q') ?? '';
-  const mode = params.get('in') ?? 'both';
   return `<h1>Search</h1>
-    <input class="searchbox" id="search" type="search" placeholder="Recipe name or ingredients, e.g. salmon, or: chicken, lemon" value="${esc(q)}" autocomplete="off">
-    <div class="chips filters" style="margin-top:10px">${[['both', 'Name & ingredients'], ['name', 'Name only'], ['ing', 'Ingredients only']].map(([k, name]) =>
-      `<button class="chip ${mode === k ? 'on' : ''}" data-mode="${k}">${name}</button>`).join('')}</div>
-    <p class="muted small">Tip: separate ingredients with commas to find recipes that use all of them.</p>
+    <input class="searchbox" id="search" type="search" placeholder="Search anything, e.g. salmon" value="${esc(q)}" autocomplete="off">
     <div id="results"></div>`;
 }
 
-function searchResults(q, mode) {
-  const terms = q.toLowerCase().split(',').map((t) => t.trim()).filter(Boolean);
-  if (!terms.length) return '';
-  const list = state.recipes.filter((r) => {
-    const name = r.title.toLowerCase();
-    const ing = (r.ingredients ?? []).map((i) => i.text.toLowerCase()).join(' | ');
-    return terms.every((t) => (mode !== 'ing' && name.includes(t)) || (mode !== 'name' && ing.includes(t)));
-  });
-  return `<p class="muted">${list.length} found</p>${grid(list, 'Nothing found. Try a shorter word.')}`;
+// One box: recipes whose name matches come first, then recipes that use it as an ingredient.
+function searchResults(q) {
+  const words = q.toLowerCase().replace(/,/g, ' ').split(/\s+/).filter(Boolean);
+  if (!words.length) return '';
+  const ingText = (r) => (r.ingredients ?? []).map((i) => i.text.toLowerCase()).join(' | ');
+  const inName = state.recipes.filter((r) => words.every((w) => r.title.toLowerCase().includes(w)));
+  const inIngredients = state.recipes.filter((r) => !inName.includes(r) && words.every((w) => r.title.toLowerCase().includes(w) || ingText(r).includes(w)));
+  if (!inName.length && !inIngredients.length) return '<p class="empty">Nothing found. Try a shorter word.</p>';
+  return `${inName.length ? `<h2 class="section-head">In the recipe name</h2>${grid(inName)}` : ''}
+    ${inIngredients.length ? `<h2 class="section-head">In the ingredients</h2>${grid(inIngredients)}` : ''}`;
 }
 
 function ingredientList(ingredients, factor = 1) {
@@ -1086,7 +1083,7 @@ async function route() {
     app.innerHTML = html;
     if (parts[0] === 'search') {
       const input = document.getElementById('search');
-      document.getElementById('results').innerHTML = searchResults(input.value, params.get('in') ?? 'both');
+      document.getElementById('results').innerHTML = searchResults(input.value);
       if (!input.value) input.focus();
     }
     window.scrollTo(0, 0);
@@ -1219,12 +1216,6 @@ document.addEventListener('click', async (e) => {
   }
   if ('backup' in d) return backup();
   if ('resetOriginal' in d) return resetToOriginal();
-  if (d.mode) {
-    const q = document.getElementById('search').value;
-    history.replaceState(null, '', `#/search?in=${d.mode}${q ? `&q=${encodeURIComponent(q)}` : ''}`);
-    document.querySelectorAll('[data-mode]').forEach((b) => b.classList.toggle('on', b === t));
-    document.getElementById('results').innerHTML = searchResults(q, d.mode);
-  }
 });
 
 document.addEventListener('submit', async (e) => {
@@ -1298,9 +1289,8 @@ document.addEventListener('change', (e) => {
 
 document.addEventListener('input', (e) => {
   if (e.target.id !== 'search') return;
-  const mode = new URLSearchParams(location.hash.split('?')[1] ?? '').get('in') ?? 'both';
-  history.replaceState(null, '', `#/search?in=${mode}${e.target.value ? `&q=${encodeURIComponent(e.target.value)}` : ''}`);
-  document.getElementById('results').innerHTML = searchResults(e.target.value, mode);
+  history.replaceState(null, '', `#/search${e.target.value ? `?q=${encodeURIComponent(e.target.value)}` : ''}`);
+  document.getElementById('results').innerHTML = searchResults(e.target.value);
 });
 
 window.addEventListener('hashchange', route);
