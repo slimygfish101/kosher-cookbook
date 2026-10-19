@@ -1,6 +1,6 @@
 # Roadmap
 
-## Building now (night of Oct 19, 2026)
+## Done (night of Oct 19, 2026)
 1. "Recipe size" dropdown instead of the ½×/2× buttons
 2. Simple cook mode: whole recipe on one screen, big text, screen stays on
 3. "Add clippings" in the app: pick photos from the phone, auto-batched (~30 photos), read overnight

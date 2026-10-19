@@ -16,8 +16,9 @@ every amount and unit, every step, servings, section and Meat/Dairy/Pareve — a
 ## Steps
 1. Supabase: URL and publishable key are in `src/config.js` (REST at `/rest/v1/`). List candidate recipes.
    If there are none, append "nothing new to check" to `checks/log.md`, commit, and stop.
-2. For each candidate, download its readable recipe-page copy from Supabase storage:
-   `<SUPABASE_URL>/storage/v1/object/public/photos/<page_image>` (about 2400 px tall, sharp enough to read).
+2. For each candidate, download its original photo copies from Supabase storage: every path in `photo_images`
+   (about 3000 px, best) or, if that list is empty, `page_image` (about 2400 px):
+   `<SUPABASE_URL>/storage/v1/object/public/photos/<path>`.
    Cut it into 2–3 overlapping tiles of at most ~1568 px so small print is readable (Pillow in a scratchpad venv,
    never installed system-wide). If a line is still too small or blurry to be sure, do not guess — put it on the
    "needs my help" list. (Full-size originals are in Google Drive, `drive_page_ids`, if a session with the Drive

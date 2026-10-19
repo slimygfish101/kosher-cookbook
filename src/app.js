@@ -155,7 +155,7 @@ function viewHome() {
     ${n ? `<div class="banner warn">There ${n === 1 ? 'is 1 item' : `are ${n} items`} on the <a href="#/help">"needs my help" list</a>.</div>` : ''}
     <h1>Our recipes</h1>
     <div class="tiles">${SECTIONS.map((s) => tile(`#/section/${s.key}`, s.name, state.recipes.filter((r) => r.section === s.key))).join('')}</div>
-    <div class="spread section-head"><h2 style="margin:0">My labels</h2><a class="btn small" href="#/labels">Manage labels</a></div>
+    <div class="spread section-head"><h2 style="margin:0">My labels</h2><button class="btn small" data-add-label>+ Add label</button></div>
     <div class="tiles">${labelTiles}</div>
     ${state.recipes.some((r) => !r.section) ? `<h2 class="section-head">Not sorted yet</h2>${grid(state.recipes.filter((r) => !r.section))}` : ''}
   `;
@@ -178,7 +178,7 @@ function viewLabel(id) {
   const label = state.labels.find((l) => l.id === id);
   if (!label) return notFound();
   const list = state.recipes.filter((r) => labelsOf(r.id).has(id));
-  return `<div class="spread"><h1>${label.name === 'Favorites' ? '❤️ ' : '🏷️ '}${esc(label.name)}</h1><a class="btn small" href="#/labels">Manage labels</a></div>
+  return `<div class="spread"><h1>${label.name === 'Favorites' ? '❤️ ' : '🏷️ '}${esc(label.name)}</h1>${label.built_in ? '' : `<div class="row"><button class="btn small" data-rename="${label.id}">Rename</button><button class="btn small danger" data-delete-label="${label.id}">Delete</button></div>`}</div>
     ${grid(list, 'No recipes have this label yet. Open any recipe and tap the label to add it.')}`;
 }
 
@@ -259,16 +259,18 @@ async function viewRecipe(id, params) {
         <div class="actions row">
           <button class="btn primary" data-cook>👩‍🍳 Cook mode</button>
           <a class="btn" href="#/edit/${r.id}">✏️ Fix</a>
+          <button class="btn" data-share>📤 Share</button>
+          <button class="btn" data-print>🖨️ Print</button>
         </div>
         ${r.description ? `<p class="desc">${esc(r.description)}</p>` : ''}
         <div class="panel">
           <div class="spread"><h2 style="margin:0">Ingredients</h2>
-            <div class="scaler">${[[0.5, '½×'], [1, '1×'], [1.5, '1½×'], [2, '2×'], [3, '3×']].map(([f, l]) => `<button class="chip ${f === 1 ? 'on' : ''}" data-factor="${f}">${l}</button>`).join('')}</div>
+            ${sizeSelect('size')}
           </div>
           <p class="muted small" id="scale-note" style="margin:6px 0 0">${servingsNote(r, 1)}</p>
           <div id="ingredients">${ingredientList(r.ingredients)}</div>
         </div>
-        <div class="panel"><h2>Steps</h2><ol class="steps">${(r.steps ?? []).map((s) => `<li>${esc(s)}</li>`).join('')}</ol></div>
+        <div class="panel"><h2>Steps</h2><ol class="steps">${(r.steps ?? []).map((s) => `<li>${withTimers(s)}</li>`).join('')}</ol></div>
         ${(r.tips ?? []).length ? `<div class="panel tips stack"><h2>Tips</h2>${r.tips.map((t) => `<div class="tip">${t.label ? `<b>${esc(t.label)}</b>` : ''}${esc(t.text)}</div>`).join('')}</div>` : ''}
         <div class="panel notes stack" id="notes">${notesHtml()}</div>
         ${r.deleted_at ? '' : `<div class="actions"><button class="btn small danger" data-trash="${r.id}">Move to Trash</button></div>`}
@@ -276,8 +278,14 @@ async function viewRecipe(id, params) {
     </div>`;
 }
 
+const SIZES = [[0.5, 'Half'], [1, 'As written'], [1.5, '1½ times'], [2, 'Double'], [3, 'Triple']];
+
+function sizeSelect(id) {
+  return `<label class="size"><span>Recipe size</span><select id="${id}" data-size>${SIZES.map(([f, l]) => `<option value="${f}" ${f === current.factor ? 'selected' : ''}>${l}</option>`).join('')}</select></label>`;
+}
+
 function servingsNote(r, factor) {
-  if (factor === 1) return 'Tap 2× to double, ½× to halve. All amounts update.';
+  if (factor === 1) return '';
   const base = r.servings ? ` — about ${Math.round(r.servings * factor * 10) / 10} servings` : '';
   return `Showing ${factor}× the recipe${base}. Check pan sizes and cooking times yourself.`;
 }
@@ -292,7 +300,8 @@ function picsHtml(r) {
       ${r.food_image ? `<button class="chip ${pic === 'food' ? 'on' : ''}" data-pic="food">Food picture</button>` : ''}
       ${r.page_image ? `<button class="chip ${pic === 'page' ? 'on' : ''}" data-pic="page">Original clipping</button>` : ''}
     </div>
-    ${drive.length ? `<p class="small muted">Full-size original${drive.length > 1 ? 's' : ''} in Google Drive: ${drive.map((d, i) => `<a href="${driveUrl(d)}" target="_blank" rel="noopener">photo ${i + 1}</a>`).join(' · ')}</p>` : ''}`;
+    ${(r.photo_images ?? []).length ? `<p class="small muted">Original photo${r.photo_images.length > 1 ? 's' : ''}: ${r.photo_images.map((p, i) => `<a href="${photoUrl(p)}" target="_blank" rel="noopener">photo ${i + 1}</a>`).join(' · ')}</p>` : ''}
+    ${drive.length ? `<p class="small muted">Full-size in Google Drive: ${drive.map((d, i) => `<a href="${driveUrl(d)}" target="_blank" rel="noopener">photo ${i + 1}</a>`).join(' · ')}</p>` : ''}`;
 }
 
 function labelChips(recipeId) {
@@ -490,6 +499,7 @@ function viewMore() {
       <a class="item" href="#/help"><div class="grow"><b>"Needs my help" list</b><div class="muted small">Recipes I wasn't sure about</div></div><span class="badge" style="background:var(--warn-bg);color:var(--warn)">${helpCount()}</span></a>
       <a class="item" href="#/trash"><div class="grow"><b>Trash</b><div class="muted small">Deleted recipes. You can bring them back.</div></div></a>
       <button class="item" style="text-align:left;cursor:pointer;font:inherit" data-backup><div class="grow"><b>💾 Back up everything</b><div class="muted small">Saves a copy of all recipes, labels and notes to this device</div></div></button>
+      <a class="item" href="#/add"><div class="grow"><b>📷 Add clippings</b><div class="muted small">Upload photos of clippings from your phone</div></div></a>
       <a class="item" href="#/new"><div class="grow"><b>➕ Type in a recipe</b><div class="muted small">Add a recipe yourself</div></div></a>
     </div>
     <div class="card pad" style="margin-top:20px">
@@ -562,31 +572,303 @@ document.addEventListener('visibilitychange', () => {
 
 async function openCook() {
   const r = current.recipe;
-  const steps = r.steps ?? [];
-  let i = 0;
-  let showIng = false;
   const el = document.createElement('div');
   el.className = 'cook';
   document.body.appendChild(el);
+  document.body.classList.add('cooking');
   const awake = await keepAwake();
   const render = () => {
     el.innerHTML = `
-      <div class="cook-top"><div class="cook-title">${esc(r.title)}</div><button class="btn small" data-exit>Close</button></div>
-      <div class="row" style="margin-top:10px"><button class="btn small" data-ing>${showIng ? 'Hide' : 'Show'} ingredients</button><span class="awake">${awake ? 'Screen will stay on' : 'Tip: your screen may dim on this device'}</span></div>
-      ${showIng ? `<div class="ing-panel">${ingredientList(r.ingredients, current.factor)}</div>` : ''}
-      <div class="step-no">Step ${i + 1} of ${steps.length}</div>
-      <div class="step-text">${esc(steps[i] ?? 'No steps written yet.')}</div>
-      <div class="cook-nav"><button class="prev" data-prev ${i === 0 ? 'disabled' : ''}>← Back</button><button class="next" data-next>${i >= steps.length - 1 ? 'Done ✓' : 'Next →'}</button></div>`;
+      <div class="cook-top">
+        <div class="cook-title">${esc(r.title)}</div>
+        <button class="btn" data-exit>Close</button>
+      </div>
+      <div class="row cook-bar">${sizeSelect('cook-size')}<span class="awake">${awake ? '☀️ Screen stays on' : 'Your screen may dim on this device'}</span></div>
+      <div class="cook-body">
+        <section><h2>Ingredients</h2>${ingredientList(r.ingredients, current.factor)}</section>
+        <section><h2>Steps</h2><p class="muted small">Tap a step when it's done. Tap a time to start a timer.</p>
+          <ol class="cook-steps">${(r.steps ?? []).map((step, i) => `<li data-step="${i}">${withTimers(step)}</li>`).join('') || '<li>No steps written yet.</li>'}</ol>
+        </section>
+      </div>`;
   };
-  const close = () => { el.remove(); wakeLock?.release().catch(() => {}); wakeLock = null; };
+  const close = () => {
+    el.remove();
+    document.body.classList.remove('cooking');
+    wakeLock?.release().catch(() => {});
+    wakeLock = null;
+  };
   el.addEventListener('click', (e) => {
     if (e.target.closest('[data-exit]')) return close();
-    if (e.target.closest('[data-ing]')) showIng = !showIng;
-    if (e.target.closest('[data-prev]')) i = Math.max(0, i - 1);
-    if (e.target.closest('[data-next]')) { if (i >= steps.length - 1) return close(); i++; }
+    if (e.target.closest('[data-timer]')) return; // handled by the page-wide click handler
+    const step = e.target.closest('[data-step]');
+    if (step) step.classList.toggle('done');
+  });
+  el.addEventListener('change', (e) => {
+    if (!e.target.matches('[data-size]')) return;
+    current.factor = Number(e.target.value);
+    const done = [...el.querySelectorAll('.cook-steps li.done')].map((li) => li.dataset.step);
     render();
+    done.forEach((i) => el.querySelector(`[data-step="${i}"]`)?.classList.add('done'));
+    refreshIngredients();
   });
   render();
+}
+
+// ---------- Timers ----------
+
+const NUMBER = String.raw`\d+(?:\s*[½¼¾])?|[½¼¾]`;
+const TIME_RE = new RegExp(String.raw`((?:${NUMBER})(?:\s*[–-]\s*(?:${NUMBER}))?)\s*(hours?|hrs?|minutes?|mins?|seconds?|secs?)\b(?:\s*(?:and\s+)?(\d+)\s*(minutes?|mins?))?`, 'gi');
+const UNIT_SECONDS = { h: 3600, m: 60, s: 1 };
+
+function toNumber(t) {
+  const m = t.trim().match(/^(\d*)\s*([½¼¾]?)$/);
+  return (m[1] ? Number(m[1]) : 0) + ({ '½': 0.5, '¼': 0.25, '¾': 0.75 }[m[2]] ?? 0);
+}
+
+// Turns "bake 25–30 minutes" into a tappable timer button (the longer time of a range).
+function withTimers(text) {
+  return esc(text).replace(TIME_RE, (match, amount, unit, extra) => {
+    const upper = amount.split(/[–-]/).pop();
+    let secs = toNumber(upper) * UNIT_SECONDS[unit[0].toLowerCase()];
+    if (extra) secs += Number(extra) * 60;
+    if (!secs) return match;
+    return `<button class="timer-link" data-timer="${Math.round(secs)}" data-tlabel="${match}"><span class="ti">⏱ </span>${match}</button>`;
+  });
+}
+
+const timers = [];
+let timerTick = null;
+let audio = null;
+
+function fmt(secs) {
+  const h = Math.floor(secs / 3600), m = Math.floor((secs % 3600) / 60), s = secs % 60;
+  return h ? `${h}:${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}` : `${m}:${String(s).padStart(2, '0')}`;
+}
+
+function beep() {
+  try {
+    const ctx = audio;
+    for (let i = 0; i < 6; i++) {
+      const o = ctx.createOscillator(), g = ctx.createGain();
+      o.frequency.value = 880;
+      g.gain.setValueAtTime(0.3, ctx.currentTime + i * 0.5);
+      g.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + i * 0.5 + 0.35);
+      o.connect(g).connect(ctx.destination);
+      o.start(ctx.currentTime + i * 0.5);
+      o.stop(ctx.currentTime + i * 0.5 + 0.4);
+    }
+  } catch { /* sound not available */ }
+  navigator.vibrate?.([400, 200, 400, 200, 400]);
+}
+
+function renderTimers() {
+  let bar = document.getElementById('timers');
+  if (!bar) {
+    bar = document.createElement('div');
+    bar.id = 'timers';
+    document.body.appendChild(bar);
+  }
+  // Only the numbers change each second, so the ✕ buttons stay put and are easy to tap.
+  for (const el of [...bar.children]) if (!timers.some((t) => t.id === el.dataset.id)) el.remove();
+  for (const t of timers) {
+    let el = bar.querySelector(`[data-id="${t.id}"]`);
+    if (!el) {
+      el = document.createElement('div');
+      el.className = 'timer';
+      el.dataset.id = t.id;
+      el.innerHTML = `<span class="tl">${esc(t.recipe)} · ${esc(t.label)}</span><b></b><button data-stop-timer="${t.id}" aria-label="Stop timer">✕</button>`;
+      bar.appendChild(el);
+    }
+    el.querySelector('b').textContent = t.left > 0 ? fmt(t.left) : 'Done!';
+    el.classList.toggle('ring', t.left <= 0);
+  }
+  bar.style.display = timers.length ? '' : 'none';
+}
+
+function startTimer(secs, label) {
+  try {
+    audio ??= new (window.AudioContext || window.webkitAudioContext)();
+    audio.resume();
+  } catch { /* no sound */ }
+  timers.push({ id: crypto.randomUUID(), label, recipe: current?.recipe?.title ?? '', ends: Date.now() + secs * 1000, left: secs, rang: false });
+  keepAwake();
+  timerTick ??= setInterval(() => {
+    for (const t of timers) {
+      t.left = Math.max(0, Math.round((t.ends - Date.now()) / 1000));
+      if (t.left === 0 && !t.rang) { t.rang = true; beep(); toast(`⏱ Time's up: ${t.label}`); }
+    }
+    renderTimers();
+  }, 1000);
+  renderTimers();
+  toast(`Timer started: ${label}`);
+}
+
+function stopTimer(id) {
+  const i = timers.findIndex((t) => t.id === id);
+  if (i >= 0) timers.splice(i, 1);
+  if (!timers.length) { clearInterval(timerTick); timerTick = null; }
+  renderTimers();
+}
+
+// ---------- Share & print ----------
+
+async function shareRecipe() {
+  const r = current.recipe;
+  const url = `${location.origin}/#/recipe/${r.id}`;
+  if (navigator.share) {
+    try { await navigator.share({ title: r.title, text: r.title, url }); return; } catch (e) { if (e.name === 'AbortError') return; }
+  }
+  const box = document.createElement('div');
+  box.className = 'zoom';
+  box.innerHTML = `<div class="card pad share-box"><h3>Share "${esc(r.title)}"</h3>
+    <div class="stack"><a class="btn primary" target="_blank" rel="noopener" href="https://wa.me/?text=${encodeURIComponent(`${r.title} ${url}`)}">Send on WhatsApp</a>
+    <button class="btn" data-copy="${esc(url)}">Copy link</button><button class="btn" data-close-box>Close</button></div></div>`;
+  box.addEventListener('click', async (e) => {
+    if (e.target.closest('[data-copy]')) {
+      try { await navigator.clipboard.writeText(url); toast('Link copied'); } catch { prompt('Copy this link:', url); }
+      box.remove();
+    } else if (e.target === box || e.target.closest('[data-close-box]')) box.remove();
+  });
+  document.body.appendChild(box);
+}
+
+// ---------- Add clippings (photo upload) ----------
+
+// Reads "date taken" from a JPEG's EXIF data. Returns a Date or null.
+async function photoTakenAt(file) {
+  try {
+    const buf = await file.slice(0, 256 * 1024).arrayBuffer();
+    const v = new DataView(buf);
+    if (v.getUint16(0) !== 0xffd8) return null;
+    let off = 2;
+    while (off + 4 < v.byteLength) {
+      const marker = v.getUint16(off), size = v.getUint16(off + 2);
+      if (marker === 0xffe1 && v.getUint32(off + 4) === 0x45786966) {
+        const tiff = off + 10, little = v.getUint16(tiff) === 0x4949;
+        const u16 = (o) => v.getUint16(o, little), u32 = (o) => v.getUint32(o, little);
+        const readTag = (ifd, tag) => {
+          const n = u16(ifd);
+          for (let i = 0; i < n; i++) {
+            const e = ifd + 2 + i * 12;
+            if (u16(e) === tag) return e;
+          }
+          return null;
+        };
+        const ifd0 = tiff + u32(tiff + 4);
+        const str = (e) => { const at = tiff + u32(e + 8); let s = ''; for (let i = 0; i < 19; i++) s += String.fromCharCode(v.getUint8(at + i)); return s; };
+        let e = null;
+        const exifPtr = readTag(ifd0, 0x8769);
+        if (exifPtr) e = readTag(tiff + u32(exifPtr + 8), 0x9003); // DateTimeOriginal
+        e ??= readTag(ifd0, 0x0132); // DateTime
+        if (!e) return null;
+        const m = str(e).match(/(\d{4}):(\d\d):(\d\d) (\d\d):(\d\d):(\d\d)/);
+        return m ? new Date(+m[1], m[2] - 1, +m[3], +m[4], +m[5], +m[6]) : null;
+      }
+      off += 2 + size;
+    }
+  } catch { /* not a readable JPEG */ }
+  return null;
+}
+
+const BATCH_MAX = 30;
+const SAME_RECIPE_SECONDS = 30;
+
+// Splits photos (already in order) into batches of up to 30, never separating photos taken seconds apart.
+function splitIntoBatches(photos) {
+  const batches = [];
+  let i = 0;
+  while (i < photos.length) {
+    let end = Math.min(i + BATCH_MAX, photos.length);
+    if (end < photos.length) {
+      let cut = end;
+      while (cut > i + 1 && photos[cut].taken && photos[cut - 1].taken && (photos[cut].taken - photos[cut - 1].taken) / 1000 <= SAME_RECIPE_SECONDS) cut--;
+      if (cut > i + 1) end = cut;
+    }
+    batches.push(photos.slice(i, end));
+    i = end;
+  }
+  return batches;
+}
+
+async function nextBatchNumber() {
+  const [b, u] = await Promise.all([db.from('batches').select('name'), db.from('uploads').select('batch')]);
+  const names = [...(b.data ?? []).map((x) => x.name), ...(u.data ?? []).map((x) => x.batch)];
+  return Math.max(0, ...names.map((n) => Number(n.match(/(\d+)/)?.[1] ?? 0))) + 1;
+}
+
+async function waitingList() {
+  const { data } = await db.from('uploads').select('batch,uploaded_at,uploaded_by').is('processed_at', null).order('uploaded_at');
+  const groups = new Map();
+  for (const u of data ?? []) {
+    const g = groups.get(u.batch) ?? { count: 0, at: u.uploaded_at, by: u.uploaded_by };
+    g.count++;
+    groups.set(u.batch, g);
+  }
+  return groups;
+}
+
+async function viewUpload() {
+  const waiting = await waitingList();
+  return `<h1>Add clippings</h1>
+    <p class="muted">Pick the photos of your clippings from your phone's photo gallery. Take the recipe page first and its food picture right after (or the whole two-page spread). The app puts them in order and sorts them into batches of about ${BATCH_MAX} photos. They're read overnight and show up in the cookbook the next morning.</p>
+    <div class="card pad stack" id="upload-box">
+      <label class="btn primary" style="width:100%">📷 Choose photos<input type="file" id="photo-picker" accept="image/*" multiple hidden></label>
+      <div id="upload-plan"></div>
+    </div>
+    <h2 class="section-head">Waiting to be read</h2>
+    ${waiting.size ? `<div class="list">${[...waiting].map(([batch, g]) => `<div class="item"><div class="grow"><b>${esc(batch)}</b><div class="muted small">${g.count} photo${g.count === 1 ? '' : 's'} · uploaded ${new Date(g.at).toLocaleDateString()}${g.by ? ` by ${esc(g.by)}` : ''}</div></div><span class="badge" style="background:var(--warn-bg);color:var(--warn)">Waiting</span></div>`).join('')}</div>` : '<p class="empty">Nothing waiting. Everything uploaded so far has been read.</p>'}
+    <p class="muted small" style="margin-top:20px">Prefer typing a recipe in yourself? <a href="#/new">Type in a recipe</a>.</p>`;
+}
+
+let pendingPlan = null;
+
+async function planUpload(files) {
+  const planEl = document.getElementById('upload-plan');
+  planEl.innerHTML = '<p class="muted">Reading the photos…</p>';
+  const photos = await Promise.all([...files].map(async (file, index) => ({ file, index, taken: await photoTakenAt(file) })));
+  const allDated = photos.every((p) => p.taken);
+  photos.sort((a, b) => (allDated ? a.taken - b.taken : 0) || a.index - b.index);
+  const first = await nextBatchNumber();
+  const batches = splitIntoBatches(photos).map((list, i) => ({ name: `Batch ${String(first + i).padStart(2, '0')}`, photos: list }));
+  pendingPlan = batches;
+  planEl.innerHTML = `
+    <p><b>${photos.length} photo${photos.length === 1 ? '' : 's'}</b> → ${batches.map((b) => `${esc(b.name)} (${b.photos.length})`).join(', ')}</p>
+    ${allDated ? '' : '<p class="muted small">Some photos had no "date taken", so they\'re kept in the order you picked them.</p>'}
+    <div class="thumbs">${photos.slice(0, 60).map((p) => `<img src="${URL.createObjectURL(p.file)}" alt="">`).join('')}${photos.length > 60 ? `<span class="muted">+${photos.length - 60} more</span>` : ''}</div>
+    <label class="small">Your name (optional) <input type="text" id="upload-name" value="${esc(store('cookbook-name') ?? '')}" style="max-width:220px"></label>
+    <div class="row"><button class="btn primary" data-start-upload>Upload ${photos.length} photo${photos.length === 1 ? '' : 's'}</button><button class="btn" data-cancel-upload>Cancel</button></div>`;
+}
+
+async function runUpload() {
+  const planEl = document.getElementById('upload-plan');
+  const name = document.getElementById('upload-name')?.value.trim() || null;
+  if (name) store('cookbook-name', name);
+  const all = pendingPlan.flatMap((b) => b.photos.map((p, i) => ({ ...p, batch: b.name, position: i + 1 })));
+  const failed = [];
+  await keepAwake();
+  for (const [n, p] of all.entries()) {
+    planEl.innerHTML = `<p><b>Uploading ${n + 1} of ${all.length}…</b> Please keep this page open.</p><progress max="${all.length}" value="${n}" style="width:100%"></progress>`;
+    const slug = p.batch.toLowerCase().replace(/\s+/g, '-');
+    const ext = (p.file.name.match(/\.(\w+)$/)?.[1] ?? 'jpg').toLowerCase();
+    const path = `inbox/${slug}/${String(p.position).padStart(3, '0')}-${Date.now()}.${ext}`;
+    let ok = false;
+    for (let attempt = 0; attempt < 3 && !ok; attempt++) {
+      const up = await db.storage.from(PHOTO_BUCKET).upload(path, p.file, { contentType: p.file.type || 'image/jpeg', upsert: false });
+      if (up.error && !/exists/i.test(up.error.message)) continue;
+      const row = await db.from('uploads').insert({ batch: p.batch, path, file_name: p.file.name, size_bytes: p.file.size, taken_at: p.taken?.toISOString() ?? null, position: p.position, uploaded_by: name });
+      ok = !row.error;
+    }
+    if (!ok) failed.push(p);
+  }
+  wakeLock?.release().catch(() => {});
+  wakeLock = null;
+  pendingPlan = failed.length ? [{ name: failed[0].batch, photos: failed }] : null;
+  if (failed.length) {
+    planEl.innerHTML = `<div class="banner danger">${failed.length} photo${failed.length === 1 ? '' : 's'} didn't upload (the internet may have dropped).</div><button class="btn primary" data-start-upload>Try those again</button>`;
+  } else {
+    toast(`All ${all.length} photos uploaded`);
+    route();
+  }
 }
 
 // ---------- Router ----------
@@ -595,7 +877,7 @@ async function route() {
   const [path, query] = location.hash.replace(/^#/, '').split('?');
   const parts = (path || '/').split('/').filter(Boolean);
   const params = new URLSearchParams(query ?? '');
-  const navKey = { search: 'search', labels: 'labels', label: 'labels', new: 'new', more: 'more', help: 'more', trash: 'more' }[parts[0]] ?? 'home';
+  const navKey = { search: 'search', labels: 'labels', label: 'labels', new: 'add', add: 'add', upload: 'add', more: 'more', help: 'more', trash: 'more' }[parts[0]] ?? 'home';
   document.querySelectorAll('[data-nav]').forEach((a) => a.classList.toggle('active', a.dataset.nav === navKey));
   try {
     let html;
@@ -608,6 +890,7 @@ async function route() {
       case 'recipe': app.innerHTML = '<p class="loading">Opening recipe…</p>'; html = await viewRecipe(parts[1], params); break;
       case 'edit': html = await viewEdit(parts[1]); break;
       case 'new': html = await viewEdit(null); break;
+      case 'add': case 'upload': html = await viewUpload(); break;
       case 'more': html = viewMore(); break;
       case 'help': html = await viewHelp(); break;
       case 'trash': html = await viewTrash(); break;
@@ -686,13 +969,16 @@ document.addEventListener('click', async (e) => {
     if (label) await toggleLabel(current.recipe.id, label.id);
     return;
   }
-  if (d.factor) {
-    current.factor = Number(d.factor);
-    document.querySelectorAll('[data-factor]').forEach((b) => b.classList.toggle('on', b === t));
-    document.getElementById('ingredients').innerHTML = ingredientList(current.recipe.ingredients, current.factor);
-    document.getElementById('scale-note').textContent = servingsNote(current.recipe, current.factor);
+  if (d.timer) return startTimer(Number(d.timer), d.tlabel);
+  if (d.stopTimer) return stopTimer(d.stopTimer);
+  if ('share' in d) return shareRecipe();
+  if ('print' in d) return window.print();
+  if ('addLabel' in d) {
+    if (await createLabel(prompt('Name of the new label (for example Pesach, Shabbos, Kids love it):') ?? '')) { toast('Label created'); route(); }
     return;
   }
+  if ('startUpload' in d) return runUpload();
+  if ('cancelUpload' in d) { pendingPlan = null; return route(); }
   if (d.pic) { current.pic = d.pic; document.getElementById('pics').innerHTML = picsHtml(current.recipe); return; }
   if ('cook' in d) return openCook();
   if (d.trash) {
@@ -733,6 +1019,7 @@ document.addEventListener('click', async (e) => {
     if (error) return fail(error, 'delete the label');
     await loadAll();
     toast('Label deleted');
+    if (location.hash.startsWith('#/label/')) { location.hash = '#/'; return; }
     return route();
   }
   if ('backup' in d) return backup();
@@ -764,6 +1051,20 @@ document.addEventListener('submit', async (e) => {
     document.getElementById('notes').innerHTML = notesHtml();
     toast('Note saved');
   }
+});
+
+function refreshIngredients() {
+  const box = document.getElementById('ingredients');
+  if (box) box.innerHTML = ingredientList(current.recipe.ingredients, current.factor);
+  const note = document.getElementById('scale-note');
+  if (note) note.textContent = servingsNote(current.recipe, current.factor);
+  const size = document.getElementById('size');
+  if (size) size.value = String(current.factor);
+}
+
+document.addEventListener('change', (e) => {
+  if (e.target.id === 'size') { current.factor = Number(e.target.value); refreshIngredients(); }
+  if (e.target.id === 'photo-picker' && e.target.files.length) planUpload(e.target.files);
 });
 
 document.addEventListener('input', (e) => {

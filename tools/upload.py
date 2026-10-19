@@ -6,6 +6,11 @@ slug = batch.lower().replace(' ', '-')
 from urllib.parse import quote
 Q = quote(batch)
 ids = json.load(open(f'{b}/ids.json'))
+# Batch 01 came from Google Drive (ids.json maps "IMG_0001.HEIC" -> Drive file id);
+# later batches come from the app's inbox (ids.json maps "P001" -> upload info).
+def drive_id(stem):
+    v = ids.get(f'{stem}.HEIC')
+    return v if isinstance(v, str) else None
 def curl(*a):
     r = subprocess.run(['curl', '-sS', '-w', '\n%{http_code}', *H, *a], capture_output=True, text=True)
     body, code = r.stdout.rsplit('\n', 1); return code, body
@@ -15,6 +20,15 @@ def up(local, path):
     code, body = curl('-X', 'POST', f'{U}/storage/v1/object/photos/{path}', '-H', 'Content-Type: image/webp', '-H', 'x-upsert: false', '--data-binary', f'@{local}')
     if code not in ('200', '201') and 'Duplicate' not in body and 'already exists' not in body: raise SystemExit(f'upload failed {path}: {code} {body}')
     return path
+copied = {}
+def photo_copy(stem):
+    # High-res copy (about 3000 px) of an original photo, saved once even if several recipes share it.
+    if stem not in copied:
+        from PIL import Image
+        im = Image.open(f'{b}/full/{stem}.jpg'); im.thumbnail((3000, 3000))
+        loc = f'{b}/out/{stem}-hires.webp'; os.makedirs(f'{b}/out', exist_ok=True); im.save(loc, 'WEBP', quality=78)
+        copied[stem] = up(loc, f'{slug}/photos/{stem}.webp')
+    return copied[stem]
 recipes = json.load(open(f'{b}/recipes.json'))
 existing = json.loads(curl(f'{U}/rest/v1/recipes?select=title,batch&batch=eq.{Q}')[1])
 have = {e['title'] for e in existing}
@@ -31,8 +45,10 @@ for r in recipes:
         'ingredients': r['ingredients'], 'steps': r['steps'],
         'servings': r['servings'], 'servings_text': r['yield_text'],
         'total_time': r['time_printed'] or (f'About {r["time_estimate"][6:]}' if r['time_estimate'].startswith('About ') else r['time_estimate']),
+        'tips': r.get('clipping_notes', []), 'credit': f'{by}{r["source"]}{pg}',
         'page_image': f'{p}/page.webp', 'food_image': f'{p}/food.webp', 'thumb_image': f'{p}/thumb.webp',
-        'drive_page_ids': [ids[f'{x}.HEIC'] for x in r['photos']], 'drive_food_id': ids[f'{r["photos"][-1]}.HEIC'],
+        'drive_page_ids': [i for i in map(drive_id, r['photos']) if i], 'drive_food_id': drive_id(r['photos'][-1]),
+        'photo_images': [photo_copy(x) for x in r['photos']],
         'batch': batch, 'source': 'photo',
         'mixes_fish_and_meat': bool(r.get('contains_fish') and r['kosher_type'] == 'meat'),
         'needs_help': bool(r['needs_help']), 'needs_help_reason': r['needs_help'],
@@ -49,9 +65,10 @@ if not json.loads(body):
         imgs = []
         for x in h['photos']:
             from PIL import Image
-            im = Image.open(f'{b}/full/{x}.jpg').rotate(270, expand=True); im.thumbnail((2000, 2000))
+            rot = json.load(open(f'{b}/rotate.json')) if os.path.exists(f'{b}/rotate.json') else {}
+            im = Image.open(f'{b}/full/{x}.jpg').rotate(rot.get(x, 0), expand=True); im.thumbnail((2000, 2000))
             loc = f'{b}/out/{x}.webp'; im.save(loc, 'WEBP', quality=72); imgs.append(up(loc, f'{slug}/help/{x}.webp'))
-        hrows.append({'batch': batch, 'drive_file_ids': [ids[f'{x}.HEIC'] for x in h['photos']], 'images': imgs, 'reason': h['reason']})
+        hrows.append({'batch': batch, 'drive_file_ids': [i for i in map(drive_id, h['photos']) if i], 'images': imgs, 'reason': h['reason']})
     print('insert help', *curl('-X', 'POST', f'{U}/rest/v1/help_items', '-H', 'Content-Type: application/json', '--data-binary', '@'+dump(hrows)))
 total = len(json.loads(curl(f'{U}/rest/v1/recipes?select=id&batch=eq.{Q}')[1]))
 nh = len(json.loads(curl(f'{U}/rest/v1/recipes?select=id&batch=eq.{Q}&needs_help=eq.true')[1])) + len(help_items)

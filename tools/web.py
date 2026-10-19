@@ -2,15 +2,17 @@ import json, sys, os
 from PIL import Image
 b = sys.argv[1]; out = f'{b}/out'
 recipes = json.load(open(f'{b}/recipes.json'))
-rot = {'IMG_0659': 270, 'IMG_0660': 270, 'IMG_0661': 270}
-binder = {'IMG_0659', 'IMG_0660'}
+# rotate.json (optional): photo stem -> degrees to turn counter-clockwise so the page is upright. Default 0.
+rot = json.load(open(f'{b}/rotate.json')) if os.path.exists(f'{b}/rotate.json') else {}
+# spreads.json (optional): photo stems that show a two-page magazine spread; only the left (recipe) page is kept as the page copy.
+spreads = set(json.load(open(f'{b}/spreads.json'))) if os.path.exists(f'{b}/spreads.json') else set()
 tot = 0
 for r in recipes:
     d = f'{out}/{r["id"]}'; os.makedirs(d, exist_ok=True)
     src = r['photos'][0]
-    im = Image.open(f'{b}/full/{src}.jpg').rotate(rot.get(src, 90), expand=True)
+    im = Image.open(f'{b}/full/{src}.jpg').rotate(rot.get(src, 0), expand=True)
     W, H = im.size
-    page = im if src in binder else im.crop((0, 0, int(W * (0.62 if src == 'IMG_0670' else 0.53)), H))
+    page = im.crop((0, 0, int(W * 0.53), H)) if src in spreads else im
     page.thumbnail((2400, 2400)); page.save(f'{d}/page.webp', 'WEBP', quality=72)
     food = Image.open(f'{b}/food/{r["id"]}.jpg')
     f2 = food.copy(); f2.thumbnail((1200, 1200)); f2.save(f'{d}/food.webp', 'WEBP', quality=78)
