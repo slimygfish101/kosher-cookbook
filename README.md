@@ -13,3 +13,6 @@ full-size original photos stay in Google Drive.
 
 Adding user accounts later: Supabase Auth is built in. Turn it on, then tighten the policies in
 `supabase/schema.sql` (they are all named `family_*`) and fill the existing `created_by` / `updated_by` columns.
+
+Background doc for other Claude chats (keep it up to date when the app changes):
+https://claude.ai/artifact/2L1DwPrmhVmmJMGEzhoaaz ("Family Cookbook App: Background", a Claude Doc).
