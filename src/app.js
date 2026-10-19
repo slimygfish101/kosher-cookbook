@@ -278,7 +278,7 @@ async function viewRecipe(id, params) {
     </div>`;
 }
 
-const SIZES = [[0.5, 'Half'], [1, 'As written'], [1.5, '1½ times'], [2, 'Double'], [3, 'Triple']];
+const SIZES = [[0.5, 'Half'], [1, 'As written'], [2, 'Double'], [3, 'Triple']];
 
 function sizeSelect(id) {
   return `<label class="size"><span>Recipe size</span><select id="${id}" data-size>${SIZES.map(([f, l]) => `<option value="${f}" ${f === current.factor ? 'selected' : ''}>${l}</option>`).join('')}</select></label>`;
@@ -772,6 +772,41 @@ async function photoTakenAt(file) {
 
 const BATCH_MAX = 30;
 const SAME_RECIPE_SECONDS = 30;
+const INBOX_LIMIT_BYTES = 600 * 1024 * 1024; // keeps well inside the free 1 GB of storage
+const EST_UPLOAD_BYTES = 800 * 1024;          // a typical photo after shrinking to reading size
+
+// Photos are shrunk to about 2800 px before uploading: still sharp enough to read small print,
+// but about a quarter of the size, so a whole album fits in the free storage.
+async function shrinkForReading(file) {
+  try {
+    const bitmap = await createImageBitmap(file);
+    const scale = Math.min(1, 2800 / Math.max(bitmap.width, bitmap.height));
+    const canvas = document.createElement('canvas');
+    canvas.width = Math.round(bitmap.width * scale);
+    canvas.height = Math.round(bitmap.height * scale);
+    canvas.getContext('2d').drawImage(bitmap, 0, 0, canvas.width, canvas.height);
+    bitmap.close?.();
+    const blob = await new Promise((res) => canvas.toBlob(res, 'image/jpeg', 0.85));
+    if (blob) return blob;
+  } catch { /* fall back to the original file */ }
+  return file;
+}
+
+// A photo counts as already uploaded if one with the same "date taken" (to the second) was uploaded before.
+async function alreadyUploaded() {
+  const { data } = await db.from('uploads').select('taken_at,file_name,size_bytes');
+  const keys = new Set();
+  for (const u of data ?? []) {
+    if (u.taken_at) keys.add(new Date(u.taken_at).getTime());
+    keys.add(`${u.file_name}|${u.size_bytes}`);
+  }
+  return keys;
+}
+
+async function inboxBytesWaiting() {
+  const { data } = await db.from('uploads').select('size_bytes').is('processed_at', null);
+  return (data ?? []).length * EST_UPLOAD_BYTES;
+}
 
 // Splits photos (already in order) into batches of up to 30, never separating photos taken seconds apart.
 function splitIntoBatches(photos) {
@@ -810,7 +845,8 @@ async function waitingList() {
 async function viewUpload() {
   const waiting = await waitingList();
   return `<h1>Add clippings</h1>
-    <p class="muted">Pick the photos of your clippings from your phone's photo gallery. Take the recipe page first and its food picture right after (or the whole two-page spread). The app puts them in order and sorts them into batches of about ${BATCH_MAX} photos. They're read overnight and show up in the cookbook the next morning.</p>
+    <p class="muted">Pick the photos of your clippings from your phone's photo gallery. Take the recipe page first and its food picture right after (or the whole two-page spread). The app puts them in order and sorts them into batches of about ${BATCH_MAX} photos. They're read overnight and show up in the cookbook the next morning. Can't wait? Open Claude and say <b>"read my uploads"</b> to have them read right away.</p>
+    <p class="muted small">You can pick a whole album at once. Photos are shrunk to reading size before uploading, and photos you've uploaded before are skipped automatically.</p>
     <div class="card pad stack" id="upload-box">
       <label class="btn primary" style="width:100%">📷 Choose photos<input type="file" id="photo-picker" accept="image/*" multiple hidden></label>
       <div id="upload-plan"></div>
@@ -825,14 +861,34 @@ let pendingPlan = null;
 async function planUpload(files) {
   const planEl = document.getElementById('upload-plan');
   planEl.innerHTML = '<p class="muted">Reading the photos…</p>';
-  const photos = await Promise.all([...files].map(async (file, index) => ({ file, index, taken: await photoTakenAt(file) })));
-  const allDated = photos.every((p) => p.taken);
-  photos.sort((a, b) => (allDated ? a.taken - b.taken : 0) || a.index - b.index);
+  const photos = [];
+  for (const [index, file] of [...files].entries()) {
+    if (index % 25 === 0) planEl.innerHTML = `<p class="muted">Reading the photos… ${index} of ${files.length}</p>`;
+    photos.push({ file, index, taken: await photoTakenAt(file) });
+  }
+  const known = await alreadyUploaded();
+  const fresh = photos.filter((p) => !(p.taken && known.has(p.taken.getTime())) && !known.has(`${p.file.name}|${p.file.size}`));
+  const skipped = photos.length - fresh.length;
+  const allDated = fresh.every((p) => p.taken);
+  fresh.sort((a, b) => (allDated ? a.taken - b.taken : 0) || a.index - b.index);
+  const room = Math.max(0, Math.floor((INBOX_LIMIT_BYTES - await inboxBytesWaiting()) / EST_UPLOAD_BYTES));
+  const later = Math.max(0, fresh.length - room);
+  photos.length = 0;
+  photos.push(...fresh.slice(0, room));
+  if (!photos.length) {
+    pendingPlan = null;
+    planEl.innerHTML = skipped && !later
+      ? `<p><b>All ${skipped} photos were already uploaded before.</b> Nothing new to add.</p>`
+      : `<div class="banner warn">The inbox is full right now. Once the waiting photos have been read, choose the rest again (photos already uploaded are skipped automatically).</div>`;
+    return;
+  }
   const first = await nextBatchNumber();
   const batches = splitIntoBatches(photos).map((list, i) => ({ name: `Batch ${String(first + i).padStart(2, '0')}`, photos: list }));
   pendingPlan = batches;
   planEl.innerHTML = `
     <p><b>${photos.length} photo${photos.length === 1 ? '' : 's'}</b> → ${batches.map((b) => `${esc(b.name)} (${b.photos.length})`).join(', ')}</p>
+    ${skipped ? `<p class="muted small">${skipped} photo${skipped === 1 ? ' was' : 's were'} already uploaded before, so ${skipped === 1 ? 'it was' : 'they were'} skipped.</p>` : ''}
+    ${later ? `<div class="banner warn">To stay inside the free storage, ${photos.length} photos go up now. After they've been read, choose the same photos again and the remaining ${later} will go up (the ones already uploaded are skipped automatically).</div>` : ''}
     ${allDated ? '' : '<p class="muted small">Some photos had no "date taken", so they\'re kept in the order you picked them.</p>'}
     <div class="thumbs">${photos.slice(0, 60).map((p) => `<img src="${URL.createObjectURL(p.file)}" alt="">`).join('')}${photos.length > 60 ? `<span class="muted">+${photos.length - 60} more</span>` : ''}</div>
     <label class="small">Your name (optional) <input type="text" id="upload-name" value="${esc(store('cookbook-name') ?? '')}" style="max-width:220px"></label>
@@ -849,11 +905,12 @@ async function runUpload() {
   for (const [n, p] of all.entries()) {
     planEl.innerHTML = `<p><b>Uploading ${n + 1} of ${all.length}…</b> Please keep this page open.</p><progress max="${all.length}" value="${n}" style="width:100%"></progress>`;
     const slug = p.batch.toLowerCase().replace(/\s+/g, '-');
-    const ext = (p.file.name.match(/\.(\w+)$/)?.[1] ?? 'jpg').toLowerCase();
+    const blob = await shrinkForReading(p.file);
+    const ext = blob === p.file ? (p.file.name.match(/\.(\w+)$/)?.[1] ?? 'jpg').toLowerCase() : 'jpg';
     const path = `inbox/${slug}/${String(p.position).padStart(3, '0')}-${Date.now()}.${ext}`;
     let ok = false;
     for (let attempt = 0; attempt < 3 && !ok; attempt++) {
-      const up = await db.storage.from(PHOTO_BUCKET).upload(path, p.file, { contentType: p.file.type || 'image/jpeg', upsert: false });
+      const up = await db.storage.from(PHOTO_BUCKET).upload(path, blob, { contentType: blob.type || 'image/jpeg', upsert: false });
       if (up.error && !/exists/i.test(up.error.message)) continue;
       const row = await db.from('uploads').insert({ batch: p.batch, path, file_name: p.file.name, size_bytes: p.file.size, taken_at: p.taken?.toISOString() ?? null, position: p.position, uploaded_by: name });
       ok = !row.error;
