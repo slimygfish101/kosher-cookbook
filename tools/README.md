@@ -36,9 +36,10 @@ A routine checks every night at about 2:20 AM (America/New_York); you can also d
    Copy `recipes.json`, `help_items.json`, `ids.json` and the three settings files into `batches/batch-NN/` and update `BATCHES.md`.
    Then `python3 inbox.py finish "Batch NN" <work dir>` – checks every photo has its copy, marks the uploads as read and
    clears them out of the inbox. Never run `finish` before the recipes are safely saved.
-6. After the batch is added, schedule a ONE-TIME accuracy check for 4:00 AM America/New_York that night
-   (create_trigger with run_once_at, fresh session, model claude-sonnet-5-5 to save usage; prompt in `checks/CHECK_PROMPT.md`).
-   The check follows `checks/PROCEDURE.md`. The owner wants it only after new recipes, not every night.
+6. Accuracy check: the nightly "Read uploaded recipe photos" run checks every recipe that has no progress marker yet,
+   following `checks/PROCEDURE.md`, with Sonnet subagents (Agent tool, model "sonnet") to save usage. Runs started by
+   the Read now button only read; the check waits for the night. (Scheduled sessions can't push to GitHub: commit and
+   push batch files when possible; if refused, skip — the Supabase `batches` table and recipes are the record.)
 
 Sections (see `src/config.js`): Salads, Soups, Dairy Mains (fish too), Chicken Mains, Meat Mains, Sides, Desserts.
 There is no Appetizers section: an appetizer goes in the section matching what it's made of (fish → Dairy Mains,
