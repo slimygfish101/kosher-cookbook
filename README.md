@@ -1,6 +1,6 @@
 # Family Kosher Cookbook
 
-Live site: https://kosher-cookbook.vercel.app
+Live site: https://kosher-cookbook.vercel.app (short link: https://tinyurl.com/lipascookbook)
 
 A plain HTML/JavaScript web app (no build step) hosted on Vercel's free plan.
 Recipes, labels and notes live in a free Supabase database; shrunk photos live in Supabase storage;
