@@ -55,3 +55,8 @@ Run markers in `photos/inbox/_runs/` (named `<ms timestamp>-app.txt` / `-night.t
 Recipe websites that publish schema.org Recipe data (kosher.com does) are imported by the app itself through
 `api/import.js`, word for word, with no Claude involved. The owner checks section and Meat/Dairy/Pareve and saves.
 Instagram/Facebook/TikTok can't be read automatically; the app asks for the caption text to be pasted instead.
+
+## iPhone Share menu
+An Apple Shortcut on the owner's phone ("My Cookbook", shown in the Share Sheet) posts each shared photo to
+`api/upload.js` (`?taken=<ISO date>`), which puts it in the same inbox as app uploads (screenshots detected by
+shape/PNG and marked "-shot"). `?test=1` = dry run.

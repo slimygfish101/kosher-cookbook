@@ -56,7 +56,8 @@ export default async function handler(req, res) {
   // Screenshots are tall (phone screen shape) or PNG; paper clippings are normal camera photos.
   const tall = info.width && info.height && Math.max(info.width, info.height) / Math.min(info.width, info.height) >= 2;
   const kind = q.kind === 'screenshot' || q.kind === 'clipping' ? q.kind : (info.type === 'image/png' || tall ? 'screenshot' : 'clipping');
-  const taken = q.taken && !Number.isNaN(Date.parse(q.taken)) ? new Date(q.taken).toISOString() : null;
+  const takenRaw = String(q.taken ?? '').trim().replace(/ (\d\d:?\d\d)$/, '+$1'); // a '+' in a link can arrive as a space
+  const taken = takenRaw && !Number.isNaN(Date.parse(takenRaw)) ? new Date(takenRaw).toISOString() : null;
 
   const rows = await sb('/rest/v1/uploads?select=batch,taken_at,processed_at');
   if (!rows.ok) return res.status(502).send('The cookbook\'s storage didn\'t answer. Try again in a minute.');
