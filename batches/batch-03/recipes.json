@@ -1,0 +1,66 @@
+[
+ {
+  "id": "oven-smoked-brisket",
+  "photos": [
+   "P001"
+  ],
+  "food_photo": "P001",
+  "source_type": "link",
+  "title": "Oven Smoked Brisket",
+  "subtitle": null,
+  "recipe_by": "Leah Schapira",
+  "source": "betweencarpools.com — https://betweencarpools.com/oven-smoked-brisket/",
+  "page": null,
+  "section": "meat_mains",
+  "kosher_type": "meat",
+  "contains_fish": false,
+  "description": "It might sound basic, but this cooking method yields a meat that everyone loves.",
+  "yield_text": null,
+  "servings": null,
+  "time_printed": null,
+  "time_estimate": "About 8–9 hours (bakes low and slow at 225°F)",
+  "ingredients": [
+   {
+    "group": null,
+    "text": "3-4 lb second brisket"
+   },
+   {
+    "group": null,
+    "text": "2 tablespoons oil"
+   },
+   {
+    "group": null,
+    "text": "3 tablespoons white sugar"
+   },
+   {
+    "group": null,
+    "text": "1 ½ tablespoons paprika"
+   },
+   {
+    "group": null,
+    "text": "1 ½ teaspoons salt"
+   },
+   {
+    "group": null,
+    "text": "1 ½ teaspoons coarse black pepper"
+   }
+  ],
+  "steps": [
+   "Rub both sides of the Brisket with oil. Combine sugar, paprika, salt and black pepper in a small bowl and rub on meat. Place brisket in a baking pan, fat side up.",
+   "Cover very well (2 layers of foil) and bake for 8-9 hours on 225⁰F. (In the original recipe in Dinner Done, we wrote to remove the brisket from the pan and bake it on 425⁰F, uncovered, for 8 minutes. While it gives it a nice crust, we found it wasn’t a must and on Yom Tov is impractical, so we skipped this step this time).",
+   "At this point, you can remove the brisket from the pan and wrap it in baking paper and then foil. You can refrigerate or freeze it if not eating right away.",
+   "To rewarm, add 1-inch apple juice (or light grape juice) into the bottom of a pan. Wrap brisket loosely in foil and place in pan. Place in oven for 10 minutes, or until warm. If your oven is on a very low temp, you can cover and bake longer until warm."
+  ],
+  "clipping_notes": [
+   {
+    "label": "Note",
+    "text": "You can omit the paprika and black pepper and replace with a tablespoon of instant coffee."
+   },
+   {
+    "label": "Make ahead",
+    "text": "Because I make this brisket so often, rather than start from scratch every time, I prepare 4 at a time. After cooking, let cool and freeze. Then, vacuum seal (or ziplock) the brisket, or wrap it in baking paper and then foil like a package. On Shabbos morning, I place the brisket on top of the Crock Pot to warm. I slice and serve it as a main dish alongside the cholent."
+   }
+  ],
+  "needs_help": null
+ }
+]

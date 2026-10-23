@@ -63,7 +63,9 @@ def cmd_fetch(batch, d):
 def cmd_finish(batch, d):
     ids = json.load(open(f'{d}/ids.json'))
     missing = []
-    for stem in ids:
+    for stem, info in ids.items():
+        if info.get('kind') == 'item':
+            continue  # a link or pasted text: nothing to keep, the recipe holds the words
         # each photo must be kept somewhere: as a recipe's photo copy, or on the "needs my help" list
         codes = [curl('-o', '/dev/null', '-I', f'{U}/storage/v1/object/public/photos/{slug(batch)}/{folder}/{stem}.webp')[0] for folder in ('photos', 'help')]
         if '200' not in codes:
