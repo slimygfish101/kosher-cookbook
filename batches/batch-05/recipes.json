@@ -1,0 +1,67 @@
+[
+ {
+  "id": "maple-salmon",
+  "photos": [
+   "P001"
+  ],
+  "food_photo": "W001",
+  "source": "betweencarpools.com",
+  "title": "Maple Salmon",
+  "subtitle": "Move Over Teriyaki. Maple Salmon is the New Version the Crowd Will Love",
+  "recipe_by": "Leah Schapira",
+  "source_name": "betweencarpools.com",
+  "page": null,
+  "section": "dairy_mains",
+  "kosher_type": "pareve",
+  "contains_fish": true,
+  "description": "Need to serve a big side of salmon to a big crowd? If teriyaki is your typical go-to, up your game with this maple salmon.",
+  "yield_text": null,
+  "servings": null,
+  "time_printed": null,
+  "time_estimate": "About 1 hour 15 minutes, including ½ hour marinating",
+  "ingredients": [
+   {
+    "group": null,
+    "text": "1 side of salmon"
+   },
+   {
+    "group": null,
+    "text": "3 scallions, sliced"
+   },
+   {
+    "group": "Maple Sauce",
+    "text": "½ cup maple syrup"
+   },
+   {
+    "group": "Maple Sauce",
+    "text": "5 garlic cloves, crushed"
+   },
+   {
+    "group": "Maple Sauce",
+    "text": "¼ cup soy sauce"
+   },
+   {
+    "group": "Maple Sauce",
+    "text": "½ tablespoon honey"
+   },
+   {
+    "group": "Maple Sauce",
+    "text": "1 teaspoon mustard"
+   },
+   {
+    "group": "Maple Sauce",
+    "text": "¾ tsp crushed black pepper"
+   }
+  ],
+  "steps": [
+   "Preheat oven to 400F.",
+   "In a saucepan, combine all ingredients and bring it to a boil.",
+   "Place scallions on the salmon. Pour sauce over the salmon. Let marinade for ½ hour. Bake for ½ hour."
+  ],
+  "clipping_notes": [
+   "From the author's answers to readers on the website: works for salmon slices too; room temperature is perfect for serving; bake uncovered; keeps 3-4 days in the fridge."
+  ],
+  "needs_help": null,
+  "source_type": "screenshot"
+ }
+]
