@@ -7,7 +7,8 @@ export const PHOTO_BUCKET = 'photos';
 export const SECTIONS = [
   { key: 'salads_appetizers', name: 'Salads', kosherLabel: true },
   { key: 'soups', name: 'Soups', kosherLabel: true },
-  { key: 'dairy_mains', name: 'Dairy Mains', note: 'Fish mains are here too' },
+  { key: 'fish', name: 'Fish', kosherLabel: true },
+  { key: 'dairy_mains', name: 'Dairy Mains' },
   { key: 'chicken_mains', name: 'Chicken Mains' },
   { key: 'meat_mains', name: 'Meat Mains' },
   { key: 'sides', name: 'Sides', kosherLabel: true },

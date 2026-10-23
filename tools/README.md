@@ -19,6 +19,15 @@ A routine checks every night at about 2:20 AM (America/New_York); you can also d
      to a **Sonnet subagent** (Agent tool, model "sonnet"), several screenshots of one recipe together (they are in the
      order taken/picked; consecutive screenshots of one recipe scrolled down belong together). If a screenshot shows the
      dish, crop it as the food picture (crops.json). Mark these recipes `"source_type": "screenshot"` (`source` stays the site/app name for the credit line).
+     **Screenshot of a website** (the owner's standing request): find the original recipe page (WebSearch with the site
+     name and a few exact ingredient lines; many sites have an `/easyrecipe-print/…` or print page). If the site blocks
+     curl/WebFetch, read it through `https://r.jina.ai/<page url>` (add header `X-With-Images-Summary: true` to list its
+     pictures). Compare word for word: the page fills in anything cut off or covered by buttons/ads, gives the real recipe
+     name and author, and any real difference between the page and the screenshot goes on the help list. Also take the
+     dish's picture from the page (most screenshots have none, or only a tiny one): download it as `full/W001.jpg`
+     (W002… for more), set `food_photo` to that stem with crop `[0,0,1,1]`, and keep `photos` as the screenshot stems.
+     Check by eye that it is this dish. Social media posts (Instagram etc.) usually can't be opened: use the screenshot
+     as is. See `batches/batch-05` for an example.
      Paper clippings (`kind: clipping`) keep the careful reading by the main model.
    **Not every inbox item is a photo.** Items can also be:
    - **PDF** (`P00n.pdf`): run `pdftotext -layout`. If it has real text, use that text exactly (no reading errors) and
@@ -42,8 +51,9 @@ A routine checks every night at about 2:20 AM (America/New_York); you can also d
    the Read now button only read; the check waits for the night. (Scheduled sessions can't push to GitHub: commit and
    push batch files when possible; if refused, skip — the Supabase `batches` table and recipes are the record.)
 
-Sections (see `src/config.js`): Salads, Soups, Dairy Mains (fish too), Chicken Mains, Meat Mains, Sides, Desserts.
-There is no Appetizers section: an appetizer goes in the section matching what it's made of (fish → Dairy Mains,
+Sections (see `src/config.js`): Salads, Soups, Fish (key `fish`), Dairy Mains, Chicken Mains, Meat Mains, Sides, Desserts.
+Salads, Soups, Fish, Sides and Desserts get a Meat/Dairy/Pareve tag (fish is usually Pareve; Dairy if made with dairy).
+There is no Appetizers section: an appetizer goes in the section matching what it's made of (fish → Fish,
 chicken → Chicken Mains, meat → Meat Mains, salad → Salads) and also gets the "Appetizers" label.
 The database key for Salads is still `salads_appetizers` (only the name shown changed).
 

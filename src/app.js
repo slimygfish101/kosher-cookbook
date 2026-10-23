@@ -374,7 +374,8 @@ function guessSection(r) {
   if (/side|kugel|rice|potato|vegetable|roasted veg/.test(t) && !/main/.test(t)) return 'sides';
   if (/chicken|turkey|pargiyot|duck/.test(t) || /chicken|turkey/.test(ing)) return 'chicken_mains';
   if (MEAT.test(t) || MEAT.test(ing)) return 'meat_mains';
-  if (FISH.test(t) || FISH.test(ing) || DAIRY.test(ing)) return 'dairy_mains';
+  if (FISH.test(t) || FISH.test(ing)) return 'fish';
+  if (DAIRY.test(ing)) return 'dairy_mains';
   return '';
 }
 
